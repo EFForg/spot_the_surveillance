@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>Spot the Surveillance</title>
+  <meta name="description" content="EFF Security VR prototype" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="/css/surveillance.css">
+  <meta content="utf-8" http-equiv="encoding">
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <a-scene>
+      <a-assets>
+        <a-mixin id="intro-text"  text="align: left; color: white; width: 4; height: 15 ;value:  Spot the Surveillance:
+        An adventure in security.;" visible="true" position="1.0 2.6 0.88"></a-mixin>
+        <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
+        <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
+        <img id="nyc" crossorigin="anonymous" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
+        <audio id="beep" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fbeeps.mp3?1529105737637" preload="auto"></audio>
+        <audio id="ny-ambience" src="../assets/canal-street.wav" preload="auto"></audio>
+      </a-assets>
+
+      <a-entity position="0 2.2 4">
+        <a-entity camera look-controls wasd-controls>
+          <a-entity position="0 0 -3"
+          geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
+          material="color: white; shader: flat"
+          cursor="maxDistance: 30; fuse: true">
+          <a-animation begin="click" easing="ease-in" attribute="scale"
+          fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="fusing" easing="ease-in" attribute="scale"
+          fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity mixin="intro-text"  event-set__enter="_event: mouseenter;  visible: true" >
+    </a-entity>
+
+    <a-entity position="-10 13 -30">
+      <a-entity mixin="sphere see-through"  event-set__enter="_event: mouseenter; _target: #camera1; visible: true" sound="src: #beep; autoplay: false; loop: false; volume: 20; on: click">
+      </a-entity>
+    </a-entity>
+
+    <a-entity position="0 0.5 1">
+      <a-entity id="camera1" text="align: center; width: 4; height: 20; value: You have spotted a security camera!; color: red" position="-1 3.3 -1"  visible="false">
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="sky" geometry="primitive: sphere; radius:3000"  material="shader: flat; side: back;  src:#nyc" sound="src: #ny-ambience; autoplay:true; loop:true; volume: 0.1" ></a-entity>
+
+  </a-scene>
+</div>
+</body>
+</html>
