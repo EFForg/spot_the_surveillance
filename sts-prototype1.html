@@ -13,6 +13,8 @@
       <a-assets>
         <a-mixin id="intro-text"  text="align: left; color: white; width: 4; height: 15 ;value:  Spot the Surveillance:
         An adventure in security.;" visible="true" position="1.0 2.6 0.88"></a-mixin>
+        <a-mixin id="alpr"  position="1.08 3.9 -3.3" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls"
+        text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" visible="false"></a-mixin>
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
         <img id="nyc"  preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
@@ -39,13 +41,12 @@
     </a-entity>
 
     <a-entity position="-10 13 -30">
-      <a-entity mixin="sphere see-through"  event-set__enter="_event: mouseenter; _target: #camera1; visible: true" sound="src: #beep; autoplay: false; loop: false; volume: 20; on: mouseenter">
+      <a-entity mixin="sphere see-through"  event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #beep; autoplay: false; loop: false; volume: 20; on: mouseenter">
       </a-entity>
     </a-entity>
 
     <a-entity position="0 0.5 1">
-      <a-entity id="camera1"  position="1.08 3.9 -3.3" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls"
-      text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" visible="false">
+      <a-entity mixin="alpr">
       </a-entity>
     </a-entity>
 
