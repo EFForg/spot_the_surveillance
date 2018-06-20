@@ -22,7 +22,7 @@
         <img id="sls" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
         <audio id="beep" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fbeeps.mp3?1529105737637"></audio>
         <audio id="boop" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fboop.wav?1529533097610"></audio>
-        <audio id="ny-ambience" preload="auto" src="../assets/canal-street.wav" ></audio>
+        <audio id="ny-ambience" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fcanal-street.wav?1529107651954"></audio>
       </a-assets>
 
       <a-entity position="0 2.2 4">
@@ -50,7 +50,7 @@
     <a-entity id="alpr-wrapper" position="0 0.5 1">
       <a-entity mixin="alpr">
         <a-text id="close" event-set__enter="_event: click; _target: #alpr; visible: false"
-        sound="src: #boop; autoplay: false; loop: false; volume: 20; on: mouseenter" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true" position="1.6 1.4 1.2"
+        sound="src: #boop; autoplay: false; loop: false; volume: 20; on: click" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
       </a-text>
       </a-entity>
