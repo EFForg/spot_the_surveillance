@@ -6,8 +6,6 @@
   <meta content="utf-8" http-equiv="encoding">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
-  <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-  <script src="https://rawgit.com/rdub80/aframe-teleport-extras/master/dist/aframe-teleport-extras.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -47,12 +45,10 @@
       </a-entity>
     </a-entity>
 
-    <a-entity mixin="alpr">
+    <a-entity position="0 0.5 1">
+      <a-entity mixin="alpr">
+      </a-entity>
     </a-entity>
-
-    <a-entity id="hotspot" mixin="sphere" material="color: green;"  geometry="radius:1" position="-8.0 1.6 -15">
-    </a-entity>
-
 
     <a-entity id="sky" geometry="primitive: sphere; radius:3000"  material="shader: flat; side: back;  src:#nyc" sound="src: #ny-ambience; autoplay:true; loop:true; volume: 0.1" ></a-entity>
 
