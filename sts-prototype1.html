@@ -10,16 +10,18 @@
 <body>
   <div class="wrapper">
     <a-scene>
+          <h1>One moment please...</h1>
       <a-assets>
         <a-mixin id="intro-text"  text="align: left; color: white; width: 4; height: 15 ;value:  Spot the Surveillance:
         An adventure in security.;" visible="true" position="1.0 2.6 0.88"></a-mixin>
-        <a-mixin id="alpr"  position="1.08 3.9 -3.3" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls"
-        text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" visible="false"></a-mixin>
+        <a-mixin id="alpr"  position="1.08 3.9 -3.3" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
+        text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" ></a-mixin>
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
         <img id="nyc"  preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
         <img id="sls" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
         <audio id="beep" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fbeeps.mp3?1529105737637"></audio>
+        <audio id="boop" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fboop.wav?1529533097610"></audio>
         <audio id="ny-ambience" preload="auto" src="../assets/canal-street.wav" ></audio>
       </a-assets>
 
@@ -45,8 +47,12 @@
       </a-entity>
     </a-entity>
 
-    <a-entity position="0 0.5 1">
+    <a-entity id="alpr-wrapper" position="0 0.5 1">
       <a-entity mixin="alpr">
+        <a-text id="close" event-set__enter="_event: click; _target: #alpr; visible: false"
+        sound="src: #boop; autoplay: false; loop: false; volume: 20; on: mouseenter" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true" position="1.6 1.4 1.2"
+        text="align: center; width: 3; height: 3; value: X">
+      </a-text>
       </a-entity>
     </a-entity>
 
