@@ -6,10 +6,11 @@
   <meta content="utf-8" http-equiv="encoding">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="js/sts.js"></script>
 </head>
 <body>
   <div class="wrapper">
-    <a-scene>
+    <a-scene click-test>
       <h1>One moment please...</h1>
       <a-assets>
         <a-mixin id="intro-text"  text="align: left; color: white; width: 4; height: 15 ;value:  Spot the Surveillance:
@@ -47,7 +48,7 @@
     <a-entity mixin="intro-text"  event-set__enter="_event: mouseenter;  visible: true" >
     </a-entity>
 
-    <a-entity id="alpr-hotspot" mixin="sphere see-through" position="-10 13 -30" event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+    <a-entity id="alpr-hotspot" mixin="sphere see-through" class="hotspot" position="-10 13 -30" event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
     </a-entity>
 
     <a-entity id="alpr-wrapper" position="0 0.5 1">
@@ -59,7 +60,7 @@
     </a-entity>
   </a-entity>
 
-  <a-entity id="bodycam-hotspot" mixin="sphere " position="-37.888 -18.600 -21.840" geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+  <a-entity id="bodycam-hotspot" mixin="sphere" class="hotspot" position="-37.888 -18.600 -21.840" geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
   </a-entity>
 
   <a-entity id="bodycam-wrapper">
