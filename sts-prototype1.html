@@ -13,26 +13,29 @@
     <a-scene click-test>
       <h1>One moment please...</h1>
       <a-assets>
+        <!-- mixins -->
         <a-mixin id="intro-text"  text="align: left; color: white; width: 4; height: 15 ;value:  Spot the Surveillance:
         An adventure in security.;" visible="true" position="1.0 2.6 0.88"></a-mixin>
         <a-mixin id="alpr"  position="1.08 3.9 -3.3" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
         text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" >
-      </a-mixin>
+        </a-mixin>
         <a-mixin id="bodycam"  position="-5.5 3.4 0.9" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
         text="align: left; width: 4; height: 20; value: Unlike many other forms of police technology, body-worn cameras can serve both a law enforcement and a public accountability function. Body cameras worn by police can be useful for documenting police misconduct and use of force, but footage can also be used to surveil both people that police interact with and third parties who might not even realize they are being filmed. If combined with facial recognition or other technologies, thousands of police officers wearing body-worn cameras could record the words, deeds, and locations of much of the population at a given time, raising serious First and Fourth Amendment concerns.; color: white;" >
-      </a-mixin>
+        </a-mixin>
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
-		<a-mixin id="counter"  text="align: left; color: white; width: 2; height: 15 ;value:  Counter: ;" visible="true" position="1.45 -0.85 -2.2"></a-mixin>
+	    	<a-mixin id="counter"  text="align: left; color: white; width: 2; height: 15 ;value:  Counter: ;" visible="true" position="1.45 -0.85 -2.2"></a-mixin>
+        <!-- images -->
         <img id="nyc"  preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
         <img id="sls" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
+        <!-- sounds -->
         <audio id="beep"  src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fbeeps.mp3?1529105737637"></audio>
         <audio id="boop"  src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fboop.wav?1529533097610"></audio>
         <audio id="ny-ambience" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fcanal-street.wav?1529107651954"></audio>
         <audio id="ding1" src="/assets/piano-ding.wav"></audio>
       </a-assets>
 
-     
+
         <a-entity camera look-controls wasd-controls position="0 2.2 4">
           <a-entity position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
@@ -43,10 +46,10 @@
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
           fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
-	  <a-entity mixin="counter" id="count-display" >
+	  <a-entity mixin="counter" id="count-display" text="value:  Counter: ;">
 	  </a-entity>
       </a-entity>
-   
+
 
     <a-entity mixin="intro-text"  event-set__enter="_event: mouseenter;  visible: true" >
     </a-entity>
