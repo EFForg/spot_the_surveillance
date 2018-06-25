@@ -6,6 +6,7 @@
   <meta content="utf-8" http-equiv="encoding">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="/js/sts.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -66,17 +67,17 @@
     </a-entity>
 
     <a-entity id="alpr-wrapper" position="0 0.5 1">
-      <a-entity mixin="alpr">
+      <a-entity mixin="alpr" class="popup">
         <a-text mixin="close">
         </a-text>
       </a-entity>
     </a-entity>
 
-    <a-entity id="bodycam-hotspot" mixin="hotspot sphere " position="-37.888 -18.600 -21.840" geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" >
+    <a-entity id="bodycam-hotspot" mixin="hotspot sphere" position="-37.888 -18.600 -21.840" geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" >
     </a-entity>
 
     <a-entity id="bodycam-wrapper">
-      <a-entity  mixin="bodycam" >
+      <a-entity  mixin="bodycam" class="popup">
         <a-text mixin="close" event-set__enter="_event: mouseenter; _target: #bodycam; visible: false">
       </a-text>
       </a-entity>
