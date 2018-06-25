@@ -8,6 +8,9 @@ AFRAME.registerComponent('click-test', {
                 //console.log(this.x++);
                 clickCounter++;
                 console.log(clickCounter);
+				var countValue = document.getElementById("count-display");
+				alert("count display= " countValue);
+				document.getElementById("count-display").setAttribute("value","Counter: " + clickCounter);
             })
         }
     });
