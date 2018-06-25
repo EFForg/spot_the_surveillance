@@ -24,7 +24,7 @@
         </a-mixin>
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
-	    	<a-mixin id="counter"  text="align: left; color: white; width: 2; height: 15 ;value:  Counter: ;" visible="true" position="1.45 -0.85 -2.2"></a-mixin>
+	    	<a-mixin id="counter"  text="align: left; color: white; width: 2; height: 15 ;value: You have found 0 devices;" visible="true" position="1.45 -0.85 -2.2"></a-mixin>
         <!-- images -->
         <img id="nyc"  preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
         <img id="sls" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
@@ -46,7 +46,7 @@
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
           fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
-	  <a-entity mixin="counter" id="count-display" text="value:  Counter: ;">
+	  <a-entity mixin="counter" id="count-display">
 	  </a-entity>
       </a-entity>
 

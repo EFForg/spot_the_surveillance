@@ -15,7 +15,7 @@
 
 		    sceneEl.querySelector('.hotspot').addEventListener('click', () => {
 		      this.data.score++;
-		      var newScore = 'Score: ' + this.data.score
+		      var newScore = 'You have found: ' + this.data.score + 'devices.'
 		      scoreBoard.setAttribute('text', 'value',  newScore)
 		    })
 		  }
