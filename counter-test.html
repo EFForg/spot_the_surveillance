@@ -5,6 +5,7 @@
   <script type="text/javascript">
   AFRAME.registerComponent('listener', {
     init: function () {
+      var score = 0;
       this.el.addEventListener('click', evt => {
         if (evt.target.dataset.wasClicked) {
           alert(evt.target.dataset.wasClicked);
@@ -14,6 +15,8 @@
         evt.target.dataset.wasClicked = true;
         alert('hi' +   evt.target.id);
         // Score up.
+        score++;
+        alert('score='+score);
       });
     }
   });
