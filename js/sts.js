@@ -11,7 +11,7 @@ AFRAME.registerComponent('listener', {
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
-			var newScore = 'You have found: ' + score + ' devices.'
+			var newScore = score + ' / 2'
 			scoreBoard.setAttribute('text', 'value',  newScore);
 		});
 	}

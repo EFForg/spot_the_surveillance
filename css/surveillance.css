@@ -3,6 +3,11 @@ body {
   margin: 2em;
 }
 
+h1 {
+  display: inline-block;
+  margin: 10rem;
+}
+
 .wrapper {
   position: relative;
   height: 100%;
