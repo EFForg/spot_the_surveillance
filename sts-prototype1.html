@@ -22,7 +22,11 @@
         </a-mixin>
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1"></a-mixin>
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
-	    	<a-mixin id="counter"  text="align: center; color: white; width: 2; height: 15 ;value: 0 / 2" visible="true" position="0 -0.85 -2.2"></a-mixin>
+	    	<a-mixin id="counter" material="shader: flat; side: front; color: black; opacity: 0.9" text="align: center; color: white; width: 2; height: 15 ;value: 0 / 2" visible="true" position="0 -0.85 -2.2"></a-mixin>
+        <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
+        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
+        text="align: center; width: 3; height: 3; value: X">
+        </a-mixin>
         <!-- images -->
         <img id="nyc"  preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
         <img id="sls" preload="auto" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
@@ -50,29 +54,25 @@
 
     <!-- all the surveillance object  -->
     <a-entity listener id="surveillance-objects">
-      <a-sphere id="alpr-hotspot" mixin="see-through" class="hotspot" position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+      <a-sphere id="alpr-hotspot" mixin="see-through"  position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot"  class="hotspot" position="-37.888 -18.600 -21.840" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+      <a-sphere id="bodycam-hotspot"  position="-37.888 -18.600 -21.840" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
       </a-sphere>
     </a-entity>
 
     <!-- all the popups -->
     <a-entity id="alpr-wrapper" position="0 0.5 1">
       <a-entity mixin="alpr">
-        <a-text id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
-        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
-        text="align: center; width: 3; height: 3; value: X">
-      </a-text>
+        <a-text mixin="close">
+        </a-text>
     </a-entity>
   </a-entity>
 
   <a-entity id="bodycam-wrapper">
     <a-entity  mixin="bodycam" >
-      <a-text id="close" event-set__enter="_event: mouseenter; _target: #bodycam; visible: false"
-      sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;"
-      text="align: center; width: 3; height: 3; value: X">
-    </a-text>
+      <a-text mixin="close"  event-set__enter=" _target: #bodycam;" >
+      </a-text>
   </a-entity>
 </a-entity>
 
