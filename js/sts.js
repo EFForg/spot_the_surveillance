@@ -1,33 +1,18 @@
-AFRAME.registerComponent('click-test', {
-	schema: {
-		el: {
-			type: 'selector'
-		},
-		score:{
-			type: 'int',
-			default: 0
-		},
-	},
-
+AFRAME.registerComponent('listener', {
 	init: function () {
-		var sceneEl = document.querySelector('a-scene');
-		var scoreBoard = document.querySelector('#count-display');
-
-	//	var elem = document.getElementById("alpr-hotspot");
-
-		sceneEl.querySelector('.hotspot').addEventListener('click', () => {
-			clickID = sceneEl.querySelector('.hotspot').id;
-			alert(clickID);
-			this.data.score++;
-			currentScore = this.data.score;
-			if (currentScore == 1) {
-				var newScore = 'You have found 1 device.'
-			} else {
-				var newScore = 'You have found: ' + this.data.score + ' devices.'
+		var score = 0;
+		this.el.addEventListener('click', evt => {
+			if (evt.target.dataset.wasClicked) {
+				return;
 			}
+			// evt.target tells you which was clicked.
+			evt.target.dataset.wasClicked = true;
+			//alert('evt.target.id);
+			// Score up.
+			var scoreBoard = document.querySelector('#count-display');
+			score++;
+			var newScore = 'You have found: ' + score + ' devices.'
 			scoreBoard.setAttribute('text', 'value',  newScore);
-			var elem = document.getElementById(clickID);
-			elem.parentNode.removeChild(elem);
-		})
+		});
 	}
 });

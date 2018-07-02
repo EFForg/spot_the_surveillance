@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <a-scene click-test>
+    <a-scene>
       <h1>One moment please...</h1>
       <a-assets>
         <!-- mixins -->
@@ -36,7 +36,7 @@
       </a-assets>
 
 
-        <a-entity camera look-controls wasd-controls position="0 2.2 4">
+      <a-entity camera look-controls wasd-controls position="0 2.2 4" >
           <a-entity position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
           material="color: white; shader: flat"
@@ -45,18 +45,25 @@
           fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
           fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
-        </a-entity>
-	  <a-entity mixin="counter" id="count-display">
-	  </a-entity>
-      </a-entity>
+          </a-entity>
+	        <a-entity mixin="counter" id="count-display">
+	        </a-entity>
+       </a-entity>
 
 
     <a-entity mixin="intro-text"  event-set__enter="_event: mouseenter;  visible: true" >
     </a-entity>
 
-    <a-entity id="alpr-hotspot" mixin="sphere see-through" class="hotspot" position="-10 13 -30" event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+    <!-- all the surveillance object  -->
+    <a-entity listener id="surveillance-objects">
+      <a-sphere id="alpr-hotspot" mixin="see-through" class="hotspot" position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+      </a-sphere>
+
+      <a-sphere id="bodycam-hotspot"  class="hotspot" position="-37.888 -18.600 -21.840" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+      </a-sphere>
     </a-entity>
 
+    <!-- all the popups -->
     <a-entity id="alpr-wrapper" position="0 0.5 1">
       <a-entity mixin="alpr">
         <a-text id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
@@ -64,9 +71,6 @@
         text="align: center; width: 3; height: 3; value: X">
       </a-text>
     </a-entity>
-  </a-entity>
-
-  <a-entity id="bodycam-hotspot" mixin="sphere" class="hotspot" position="-37.888 -18.600 -21.840" geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
   </a-entity>
 
   <a-entity id="bodycam-wrapper">
