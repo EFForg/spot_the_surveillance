@@ -54,7 +54,7 @@
 
     <!-- all the surveillance object  -->
     <a-entity listener id="surveillance-objects">
-      <a-sphere id="alpr-hotspot" mixin="see-through"  position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
+      <a-sphere id="alpr-hotspot" mixin="see-through"  position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 1; on: mouseenter">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot"  position="-37.888 -18.600 -21.840" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
@@ -63,14 +63,14 @@
 
     <!-- all the popups -->
     <a-entity id="alpr-wrapper" position="0 0.5 1">
-      <a-entity mixin="alpr">
+      <a-entity mixin="alpr" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click">
         <a-text mixin="close">
         </a-text>
     </a-entity>
   </a-entity>
 
   <a-entity id="bodycam-wrapper">
-    <a-entity  mixin="bodycam" >
+    <a-entity  mixin="bodycam"sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #bodycam;" >
       </a-text>
   </a-entity>
