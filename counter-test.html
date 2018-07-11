@@ -1,0 +1,37 @@
+<head>
+  <title>counter test</title>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+
+  <script type="text/javascript">
+  AFRAME.registerComponent('listener', {
+    init: function () {
+      var score = 0;
+      this.el.addEventListener('click', evt => {
+        if (evt.target.dataset.wasClicked) {
+          alert(evt.target.dataset.wasClicked);
+          return;
+        }
+        // evt.target tells you which was clicked.
+        evt.target.dataset.wasClicked = true;
+        alert('hi' +   evt.target.id);
+        // Score up.
+        score++;
+        alert('score='+score);
+      });
+    }
+  });
+  </script>
+</head>
+
+<body>
+  <a-scene>
+    <a-entity listener>
+      <a-sphere id="sphere1" data-raycastable material="color: white;"  scale=".1 .1 .1" position="1 1 1"></a-sphere>
+      <a-sphere id="sphere2" data-raycastable material="color: blue;"  scale=".1 .1 .1" position="3 3 3"></a-sphere>
+    </a-entity>
+    <a-entity cursor="rayOrigin: mouse" raycaster="objects: [data-raycastable]"></a-entity>
+
+    <a-entity id="sky" geometry="primitive: sphere; radius:3000"  material="color: pink; shader: flat; side: back;"  ></a-entity>
+  </a-scene>
+</body>
+</head>
