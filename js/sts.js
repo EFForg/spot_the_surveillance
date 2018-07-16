@@ -17,14 +17,25 @@ AFRAME.registerComponent('listener', {
 	}
 });
 AFRAME.registerComponent('narration', {
-	init: function () {
-		var score = 0;
-		this.el.addEventListener('mouseenter', evt => {
-			//alert(evt.target.id);
-			// evt.target tells you which was clicked.
-			evt.target.dataset.wasClicked = true;
-			var entity = document.querySelector('#stop');
-			entity.components.sound.stopSound();
+	init:function() {
+		let playing = false;
+		let audio = this.el.components.sound;
+
+		this.el.addEventListener('click', () => {
+			if(!playing) {
+				audio.playSound();
+			} else {
+				audio.stopSound();
+			}
+			playing = !playing;
 		});
-	}
-});
+		this.el.addEventListener('mouseleave', () => {
+			audio.stopSound();
+		})
+		var stopaudio = document.querySelector('#stop');
+		stopaudio.addEventListener('click', () => {
+			alert(stopaudio);
+			audio.stopSound();
+		})
+}
+})

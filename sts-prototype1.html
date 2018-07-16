@@ -68,12 +68,15 @@
 
     <!-- all the popups -->
     <a-entity  id="alpr-wrapper" position="0 0.5 1">
-      <a-entity narration id="stop" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10; on: click">
+      <a-sound narration id="alpr-sound" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10;">
         <a-text mixin="close">
         </a-text>
-        <a-text mixin="stop-sound">
+        <a-text stopsound id="stop" mixin="stop-sound">
         </a-text>
+      </a-sound>
     </a-entity>
+
+
 
   <a-entity id="bodycam-wrapper">
     <a-entity  mixin="bodycam" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
