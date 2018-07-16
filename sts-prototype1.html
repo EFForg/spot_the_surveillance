@@ -27,6 +27,10 @@
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
         </a-mixin>
+        <a-mixin id="stop-sound" event-set__enter="_event: mouseenter; _target: #piano; volume: 0"
+        position="1.6 0.9 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
+        text="align: center; width: 3; height: 3; value: stop">
+        </a-mixin>
         <!-- images -->
         <img id="nyc" src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fnyc-equirectangular-camera.jpg?1524003830350">
         <img id="sls"  src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fsls-header-3.png?1529362107092">
@@ -35,6 +39,7 @@
         <audio id="boop"  src="https://cdn.glitch.com/0b2b0eec-9a34-4815-8998-d78b33723e13%2Fboop.wav?1529533097610"></audio>
         <audio id="ny-ambience" preload="auto" src="assets/canal-street.wav"></audio>
         <audio id="ding1" src="/assets/piano-ding.wav"></audio>
+        <audio id="piano" src="/assets/piano-melody.wav"></audio>
       </a-assets>
 
 
@@ -54,7 +59,7 @@
 
     <!-- all the surveillance object  -->
     <a-entity listener id="surveillance-objects">
-      <a-sphere id="alpr-hotspot" mixin="see-through"  position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 1; on: mouseenter">
+      <a-sphere id="alpr-hotspot" mixin="see-through"  position="-10 13 -30" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot"  position="-37.888 -18.600 -21.840" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding1; autoplay: false; loop: false; volume: 10; on: mouseenter">
@@ -62,14 +67,16 @@
     </a-entity>
 
     <!-- all the popups -->
-    <a-entity id="alpr-wrapper" position="0 0.5 1">
-      <a-entity mixin="alpr" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click">
+    <a-entity  id="alpr-wrapper" position="0 0.5 1">
+      <a-entity narration id="stop" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10; on: click">
         <a-text mixin="close">
+        </a-text>
+        <a-text mixin="stop-sound">
         </a-text>
     </a-entity>
 
   <a-entity id="bodycam-wrapper">
-    <a-entity  mixin="bodycam"sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
+    <a-entity  mixin="bodycam" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #bodycam;" >
       </a-text>
   </a-entity>

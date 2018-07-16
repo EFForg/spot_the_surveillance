@@ -16,3 +16,15 @@ AFRAME.registerComponent('listener', {
 		});
 	}
 });
+AFRAME.registerComponent('narration', {
+	init: function () {
+		var score = 0;
+		this.el.addEventListener('mouseenter', evt => {
+			//alert(evt.target.id);
+			// evt.target tells you which was clicked.
+			evt.target.dataset.wasClicked = true;
+			var entity = document.querySelector('#stop');
+			entity.components.sound.stopSound();
+		});
+	}
+});
