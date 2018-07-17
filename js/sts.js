@@ -20,6 +20,20 @@ AFRAME.registerComponent('narration',{
  dependencies: ['sound'],
 		init:function() {
 			//let audio = this.el.components.sound;
+			this.el.addEventListener("mouseenter", (e) => {
+			//	console.log('entered');
+				let vis = document.querySelectorAll("a-text");
+				vis.forEach(function(el) {
+						el.setAttribute('visible', 'true')
+				})
+			})
+			this.el.addEventListener("mouseleave", (e) => {
+			//	console.log('entered');
+				let vis = document.querySelectorAll("a-text");
+				vis.forEach(function(el) {
+						el.setAttribute('visible', 'false')
+				})
+			})
 			let audio = document.querySelector('#alpr-sound[sound]').components.sound;
 
 			this.el.addEventListener('click', () => {
@@ -28,10 +42,12 @@ AFRAME.registerComponent('narration',{
 			this.el.addEventListener('mouseleave', () => {
 				audio.stopSound();
 			})
-			//var stopaudio = document.querySelector('#stop');
-			//stopaudio.addEventListener('click', () => {
-			//	console.log('stop sound');
-			//	audio.stopSound();
-			//})
+			var stopaudio = document.querySelector('#stop');
+			stopaudio.addEventListener('click', () => {
+				//console.log('stop sound');
+				audio.stopSound();
+				stopaudio.setAttribute('text', 'value', 'audio off')
+			})
+
 	}
 	})
