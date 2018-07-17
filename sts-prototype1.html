@@ -68,12 +68,12 @@
 
     <!-- all the popups -->
     <a-entity  id="alpr-wrapper" position="0 0.5 1">
-      <a-sound narration id="alpr-sound" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10;">
-        <a-text mixin="close">
+      <a-entity narration id="alpr-sound" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10;">
+        <a-text id="close" mixin="close">
         </a-text>
         <a-text stopsound id="stop" mixin="stop-sound">
         </a-text>
-      </a-sound>
+      </a-entity>
     </a-entity>
 
 
