@@ -18,33 +18,20 @@ AFRAME.registerComponent('listener', {
 });
 AFRAME.registerComponent('narration',{
  dependencies: ['sound'],
-
-//	AFRAME.registerComponent('narration', {
 		init:function() {
-			let playing = false;
 			//let audio = this.el.components.sound;
-
 			let audio = document.querySelector('#alpr-sound[sound]').components.sound;
-			console.log(audio);
 
 			this.el.addEventListener('click', () => {
-				if(!playing) {
 					audio.playSound();
-				} else {
-					audio.stopSound();
-				}
-				playing = !playing;
 			});
 			this.el.addEventListener('mouseleave', () => {
 				audio.stopSound();
 			})
-			var stopaudio = document.querySelector('#stop');
-			stopaudio.addEventListener('click', () => {
-				audio.stopSound();
-			})
-			var closeaudio = document.querySelector('#close');
-			stopaudio.addEventListener('click', () => {
-				audio.stopSound();
-			})
+			//var stopaudio = document.querySelector('#stop');
+			//stopaudio.addEventListener('click', () => {
+			//	console.log('stop sound');
+			//	audio.stopSound();
+			//})
 	}
 	})

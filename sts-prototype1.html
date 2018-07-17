@@ -24,11 +24,11 @@
         <a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
 	    	<a-mixin id="counter" material="shader: flat; side: front; color: black; opacity: 0.9" text="align: center; color: white; width: 2; height: 15 ;value: 0 / 2" visible="true" position="0 -0.85 -2.2"></a-mixin>
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
-        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
+        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="2.280 4.736 -1.486" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
         </a-mixin>
         <a-mixin id="stop-sound" event-set__enter="_event: mouseenter; _target: #piano; volume: 0"
-        position="1.6 0.9 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
+        position="0.726 1.907 -1.113" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: stop">
         </a-mixin>
         <!-- images -->
@@ -69,11 +69,11 @@
     <!-- all the popups -->
     <a-entity  id="alpr-wrapper" position="0 0.5 1">
       <a-entity narration id="alpr-sound" mixin="alpr" sound="src: #piano; autoplay: false; loop: false; volume: 10;">
-        <a-text id="close" mixin="close">
-        </a-text>
-        <a-text stopsound id="stop" mixin="stop-sound">
-        </a-text>
       </a-entity>
+      <a-text id="close" mixin="close">
+      </a-text>
+      <a-text id="stop" mixin="stop-sound">
+      </a-text>
     </a-entity>
 
 
