@@ -22,17 +22,18 @@ AFRAME.registerComponent('narration',{
 			//let audio = this.el.components.sound;
 			this.el.addEventListener("mouseenter", (e) => {
 			//	console.log('entered');
-				let vis = document.querySelectorAll("a-text");
-				vis.forEach(function(el) {
-						el.setAttribute('visible', 'true')
-				})
+				let close = document.querySelector("#close");
+			  close.setAttribute('visible', 'true');
+				let stop = document.querySelector("#stop");
+				stop.setAttribute('visible', 'true');
+
 			})
 			this.el.addEventListener("mouseleave", (e) => {
 			//	console.log('entered');
-				let vis = document.querySelectorAll("a-text");
-				vis.forEach(function(el) {
-						el.setAttribute('visible', 'false')
-				})
+let close = document.querySelector("#close");
+			close.setAttribute('visible', 'false');
+	let stop = document.querySelector("#stop");
+			stop.setAttribute('visible', 'false');
 			})
 			let audio = document.querySelector('#alpr-sound[sound]').components.sound;
 
@@ -43,7 +44,7 @@ AFRAME.registerComponent('narration',{
 				audio.stopSound();
 			})
 			var stopaudio = document.querySelector('#stop');
-			stopaudio.addEventListener('click', () => {
+			stopaudio.addEventListener('mouseenter', () => {
 				//console.log('stop sound');
 				audio.stopSound();
 				stopaudio.setAttribute('text', 'value', 'audio off')
