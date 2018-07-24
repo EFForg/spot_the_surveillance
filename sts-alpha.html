@@ -82,7 +82,8 @@
 
     <!--a-text id="leave-now" mixin="exit-text">
     </a-text-->
-    <a-link href="https://eff.org" title="Back to EFF website" image="assets/EFF-logo-lockup-black.png" rotation="-90 0 0" scale="20 20 1" highlighted="true" highlightedColor="#ec1e1e" color="#ec1e1e" portal="#ec1e1e" position="17.398 -125.081 3.2"></a-link>
+
+    <a-entity link="highlighted: true; highlightedColor:#000000; portal:#ec1e1e; href: https://eff.org; title: Back to EFF website; image: assets/EFF-logo-lockup-black.png" rotation="-90 0 0" scale="20 20 1" position="17.398 -125.081 3.2" material="shader:portal;pano:http://eff.org"></a-entity>
     <a-entity id="exit-scene" mixin="exit">
     </a-entity>
     <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ny-ambience; loop:true; volume: 0.1" >
