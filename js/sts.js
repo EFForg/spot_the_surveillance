@@ -1,7 +1,7 @@
 AFRAME.registerComponent('listener', {
 	init: function () {
 		var score = 0;
-		this.el.addEventListener('click', evt => {
+		this.el.addEventListener('mouseenter', evt => {
 			if (evt.target.dataset.wasClicked) {
 				return;
 			}
