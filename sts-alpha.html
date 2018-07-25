@@ -7,16 +7,26 @@
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="js/sts.js"></script>
+  <script src="js/links.js"></script>
 </head>
 <body>
   <div class="wrapper">
     <a-scene>
       <h1>One moment please...</h1>
       <a-assets>
+        <!-- images -->
+        <img id="sts-sky" src="assets/sts-sky1-flip.jpg">
+        <img id="sls"  src="assets/sls-header-3.png?">
+        <img id="eff-logo" src="assets/eff-logo-black.svg">
+        <!-- sounds -->
+        <audio id="beep"  src="assets/beeps.mp3"></audio>
+        <audio id="boop"  src="assets/boop.wav"></audio>
+        <audio id="ny-ambience" preload="auto" autoplay loop="true" src="assets/canal-street.wav"></audio>
+        <audio id="ding"  src="assets/piano-ding.wav" poolsize="10"></audio>
         <!-- mixins -->
         <a-mixin id="alpr"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
         text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" >
-        </a-mixin>
+      </a-mixin>1.000
         <a-mixin id="bodycam"  position="-5.5 3.4 0.9" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
         text="align: left; width: 4; height: 20; value: Unlike many other forms of police technology, body-worn cameras can serve both a law enforcement and a public accountability function. Body cameras worn by police can be useful for documenting police misconduct and use of force, but footage can also be used to surveil both people that police interact with and third parties who might not even realize they are being filmed. If combined with facial recognition or other technologies, thousands of police officers wearing body-worn cameras could record the words, deeds, and locations of much of the population at a given time, raising serious First and Fourth Amendment concerns.; color: white;" >
         </a-mixin>
@@ -28,17 +38,10 @@
         </a-mixin>
         <a-mixin id="exit-text" position="7.128 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" visible="true"
         text=" color: white; align: center; width: 3; height: 3; value:EXIT" scale="100 100 0" rotation="-90 0 0">
-      </a-mixin>
+        <a-mixin id="exit-logo" position="7.128 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
+        </a-mixin>
         <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
         </a-mixin>
-        <!-- images -->
-        <img id="sts-sky" src="assets/sts-sky1-flip.jpg">
-        <img id="sls"  src="assets/sls-header-3.png?">
-        <!-- sounds -->
-        <audio id="beep"  src="assets/beeps.mp3"></audio>
-        <audio id="boop"  src="assets/boop.wav"></audio>
-        <audio id="ny-ambience" preload="auto" autoplay src="assets/canal-street.wav"></audio>
-        <audio id="ding"  src="assets/piano-ding.wav" poolsize="10"></audio>
       </a-assets>
 
 
@@ -80,10 +83,11 @@
       </a-entity>
     </a-entity>
 
-    <!--a-text id="leave-now" mixin="exit-text">
+    <!--a-text id="leave-now" mixin="exit-text" exitlink="href: https://eff.org">
     </a-text-->
+    <a-entity id="exit-sts" mixin="exit-logo" exitlink="href: https://eff.org" >
+    </a-entity>
 
-    <a-entity link="highlighted: true; highlightedColor:#000000; backgroundColor: red; href: https://eff.org; titleColor: black; title: Back to EFF website; image: assets/camera-tree.jpg" rotation="-90 0 0" scale="20 20 1" position="17.398 -125.081 3.2"></a-entity>
     <a-entity id="exit-scene" mixin="exit">
     </a-entity>
     <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ny-ambience; loop:true; volume: 0.1" >
