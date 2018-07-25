@@ -36,8 +36,6 @@
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
         </a-mixin>
-        <a-mixin id="exit-text" position="7.128 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" visible="true"
-        text=" color: white; align: center; width: 3; height: 3; value:EXIT" scale="100 100 0" rotation="-90 0 0">
         <a-mixin id="exit-logo" position="7.128 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
         </a-mixin>
         <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
@@ -83,12 +81,10 @@
       </a-entity>
     </a-entity>
 
-    <!--a-text id="leave-now" mixin="exit-text" exitlink="href: https://eff.org">
-    </a-text-->
     <a-entity id="exit-sts" mixin="exit-logo" exitlink="href: https://eff.org" >
     </a-entity>
 
-    <a-entity id="exit-scene" mixin="exit">
+    <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
     <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ny-ambience; loop:true; volume: 0.1" >
     </a-entity>
