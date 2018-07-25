@@ -11,7 +11,7 @@ AFRAME.registerComponent('listener', {
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
-			var newScore = score + ' / 2'
+			var newScore = score + ' / 7'
 			scoreBoard.setAttribute('text', 'value',  newScore);
 		});
 	}
