@@ -19,8 +19,8 @@
         <img id="sls"  src="assets/sls-header-3.png?">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
-        <audio id="beep"  src="assets/beeps.mp3"></audio>
-        <audio id="boop"  src="assets/boop.wav"></audio>
+        <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
+        <audio id="boop" preload="auto" src="assets/boop.wav"></audio>
         <audio id="ny-ambience" preload="auto" autoplay loop="true" src="assets/canal-street.wav"></audio>
         <audio id="ding"  src="assets/piano-ding.wav" poolsize="10"></audio>
         <!-- mixins -->
@@ -28,7 +28,7 @@
         <a-mixin id="alpr"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
         text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" >
         </a-mixin>
-        <a-mixin id="alpr-mobile"  position="5.263 3.591 7.228" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="0 -150 0" " visible="false"
+        <a-mixin id="alpr-mobile"  position="5.263 3.591 7.228" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; src:#sls" rotation="0 -150 0" " visible="false"
         text="align: left; width: 4; height: 20; value: Alpr mobile device.; color: white;" >
         </a-mixin>
         <a-mixin id="biometric"  position="-7.090 4.335 2.069" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
@@ -37,7 +37,7 @@
         <a-mixin id="bodycam"  position="-5.5 3.4 0.9" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
         text="align: left; width: 4; height: 20; value: Unlike many other forms of police technology, body-worn cameras can serve both a law enforcement and a public accountability function. Body cameras worn by police can be useful for documenting police misconduct and use of force, but footage can also be used to surveil both people that police interact with and third parties who might not even realize they are being filmed. If combined with facial recognition or other technologies, thousands of police officers wearing body-worn cameras could record the words, deeds, and locations of much of the population at a given time, raising serious First and Fourth Amendment concerns.; color: white;" >
         </a-mixin>
-        <a-mixin id="camera-popup"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
+        <a-mixin id="camera"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
         text="align: left; width: 4; height: 20; value: Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text.; color: white;" >
        </a-mixin>
        <a-mixin id="drone-popup"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
@@ -84,7 +84,10 @@
       <a-sphere id="biometric-hotspot" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
+      </a-sphere>
+
+      <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="drone-hotspot"   position="-19.595 115.894 80.722" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="5 5 5">
@@ -105,7 +108,7 @@
   </a-entity>
 
   <a-entity  id="biometric-popup" mixin="biometric" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
-    <a-text mixin="close"  event-set__enter=" _target: #biometric;" >
+    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup;" >
     </a-text>
   </a-entity>
 
@@ -116,8 +119,13 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="camera1-popup" mixin="camera-popup" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
+    <a-entity  id="camera1-popup" mixin="camera" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
+      </a-text>
+    </a-entity>
+
+    <a-entity  id="camera2-popup" mixin="camera" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="5.382 2.697 8.360" rotation="0 -110 0" >
+      <a-text mixin="close"  event-set__enter=" _target: #camera2-popup;" >
       </a-text>
     </a-entity>
 
@@ -126,10 +134,12 @@
       </a-text>
     </a-entity>
 
+    <!-- exit -->
     <a-entity id="exit-sts" mixin="exit-logo" exitlink="href: https://eff.org" >
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
+
     <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ny-ambience; loop:true; volume: 0.1" >
     </a-entity>
 
