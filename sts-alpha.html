@@ -16,7 +16,7 @@
       <a-assets>
         <!-- images -->
         <img id="sts-sky" src="assets/sts-sky1-flip.jpg">
-        <img id="sls"  src="assets/sls-header-3.png?">
+        <img id="sls"  src="assets/ALPR-text.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
@@ -26,22 +26,22 @@
         <!-- mixins -->
         <!-- popups -->
         <a-mixin id="alpr"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
-        text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: white;" >
+        text="align: left; width: 4; height: 20; value: Automated license plate readers (ALPRs) are high-speed, computer-controlled camera systems that are typically mounted on street poles, streetlights, highway overpasses, mobile trailers, or attached to police squad cars. ALPRs automatically capture all license plate numbers that come into view, along with the location, date, and time. The data, which includes photographs of the vehicle and sometimes its driver and passengers, is then uploaded to a central server.; color: black;" >
         </a-mixin>
-        <a-mixin id="alpr-mobile"  position="5.263 3.591 7.228" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; src:#sls" rotation="0 -150 0" " visible="false"
-        text="align: left; width: 4; height: 20; value: Alpr mobile device.; color: white;" >
+        <a-mixin id="alpr-mobile"  position="5.263 3.591 7.228" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; src:#sls" rotation="0 -150 0"  visible="false"
+        text="align: left; width: 4; height: 20; value: Alpr mobile device.; color: black;" >
         </a-mixin>
-        <a-mixin id="biometric"  position="-7.090 4.335 2.069" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
-        text="align: left; width: 4; height: 20; value: Here is some text about biometric devices; color: white;" >
+        <a-mixin id="biometric"  position="-3.969 1.410 -2.09" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:assets/ALPR-text.png" visible="false"
+        text="align: left; width: 4; height: 20; value: Here is some text about biometric devices; color: black;" >
         </a-mixin>
-        <a-mixin id="bodycam"  position="-5.5 3.4 0.9" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" visible="false"
-        text="align: left; width: 4; height: 20; value: Unlike many other forms of police technology, body-worn cameras can serve both a law enforcement and a public accountability function. Body cameras worn by police can be useful for documenting police misconduct and use of force, but footage can also be used to surveil both people that police interact with and third parties who might not even realize they are being filmed. If combined with facial recognition or other technologies, thousands of police officers wearing body-worn cameras could record the words, deeds, and locations of much of the population at a given time, raising serious First and Fourth Amendment concerns.; color: white;" >
+        <a-mixin id="bodycam"  position="-5.913 2.526 -0.698" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; src:/assets/ALPR-no-text.png" visible="false"
+        text="align: left; width: 4; height: 20; value: Unlike many other forms of police technology, body-worn cameras can serve both a law enforcement and a public accountability function. Body cameras worn by police can be useful for documenting police misconduct and use of force, but footage can also be used to surveil both people that police interact with and third parties who might not even realize they are being filmed. If combined with facial recognition or other technologies, thousands of police officers wearing body-worn cameras could record the words, deeds, and locations of much of the population at a given time, raising serious First and Fourth Amendment concerns.; color: black;" >
         </a-mixin>
         <a-mixin id="camera"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 -40 0" visible="false"
-        text="align: left; width: 4; height: 20; value: Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text.; color: white;" >
+        text="align: left; width: 4; height: 20; value: Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text. Security camera text.; color: black;" >
        </a-mixin>
-       <a-mixin id="drone-popup"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
-       text="align: left; width: 4; height: 20; value: Drone! Drone! Drone!.; color: white;" >
+       <a-mixin id="drone"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#sls" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
+       text="align: left; width: 4; height: 20; value: Drone! Drone! Drone!.; color: black;" >
        </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
@@ -83,10 +83,10 @@
       <a-sphere id="alpr-hotspot" mixin="see-through"  position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="bodycam-hotspot"  position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="biometric-hotspot"  position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
@@ -118,8 +118,8 @@
   </a-entity>
 
     <a-entity id="bodycam-wrapper">
-      <a-entity  mixin="bodycam" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
-        <a-text mixin="close"  event-set__enter=" _target: #bodycam;" >
+      <a-entity id="bodycam-popup" mixin="bodycam" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
+        <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;" >
         </a-text>
       </a-entity>
     </a-entity>
@@ -134,15 +134,12 @@
       </a-text>
     </a-entity>
 
-    <a-entity  id="drone-popup" mixin="drone-popup" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
+    <a-entity  id="drone-popup" mixin="drone" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #drone-popup;" >
       </a-text>
     </a-entity>
 
     <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="-0.294 1.837 -7.487">
-    </a-entity>
-
-
       <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" >
       </a-text>
     </a-entity>
