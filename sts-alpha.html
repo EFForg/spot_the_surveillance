@@ -80,16 +80,16 @@
       <a-sphere id="alpr-mobile-hotspot"   position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="alpr-hotspot"  position="16.222 39.245 -14.044" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="alpr-hotspot" mixin="see-through" position="16.222 39.245 -14.044" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot"  position="-19.774 -4.212 -38.747" data-raycastable  event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-19.774 -4.212 -38.747" data-raycastable  event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="biometric-hotspot"  position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" mixin="see-through" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
       </a-sphere>
 
       <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
@@ -124,7 +124,8 @@
   </a-entity>
 
 
-    <a-entity  id="camera1-popup" mixin="camera" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="3.309 2.16 -3.872" rotation="0 -30 0">
+    <a-entity  id="camera1-popup" mixin="camera" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="3.309 2.16
+     -3.872" rotation="0 -30 0">
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
       </a-text>
     </a-entity>
