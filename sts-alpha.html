@@ -43,6 +43,8 @@
        <a-mixin id="drone"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#drone-card" rotation="20 170 0"  visible="false"
        >
        </a-mixin>
+       <a-mixin id="false"  geometry="primitive: plane; width: 3; height: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
+       </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
        </a-mixin>
@@ -101,6 +103,13 @@
       </a-sphere>
     </a-entity>
 
+    <!-- false positives -->
+    <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+    </a-sphere>
+
+    <a-sphere id="light-hotspot" position="-34.533 16.11 -12.77" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+    </a-sphere>
+
     <!-- all the popups -->
     <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup;" >
@@ -140,12 +149,24 @@
       </a-text>
     </a-entity>
 
+    <!-- false positives -->
+    <a-entity  id="bird-popup" mixin="false" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; value: Good try, but that's just a bird. Keep looking!" position="-1.822 5.516  12.799">
+      <a-text mixin="close"  event-set__enter=" _target: #bird-popup;" >
+      </a-text>
+    </a-entity>
+
+    <a-entity  id="light-popup" mixin="false" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; value: Good try, but that's just a light fixture. Keep looking! ">
+      <a-text mixin="close"  event-set__enter=" _target: #light-popup;" >
+      </a-text>
+    </a-entity>
+
     <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
       <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
       </a-text>
       <a-entity id="donate" mixin="close" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
       </a-entity>
     </a-entity>
+<!-- end popups -->
 
     <a-entity id="exit-sts"   mixin="exit-logo" data-raycastable event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter">
     </a-entity>
