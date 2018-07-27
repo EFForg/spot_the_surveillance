@@ -143,8 +143,8 @@
     <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
       <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
       </a-text>
-      <a-text exitlink id="donate" mixin="close" position="2.48 0.9 1.8" http="https://supporters.eff.org/donate/join-eff-today" value="Donate" >
-      </a-text>
+      <a-entity id="donate" mixin="close" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
+      </a-entity>
     </a-entity>
 
     <a-entity id="exit-sts"   mixin="exit-logo" data-raycastable event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter">
