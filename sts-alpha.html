@@ -18,6 +18,7 @@
         <img id="alpr-card"  src="assets/alpr-card.png">
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
+        <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="sts-sky" src="assets/sts-sky1-flip.jpg">
@@ -49,13 +50,13 @@
 
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1">
         </a-mixin>
-	    	<a-mixin id="counter" material="shader: flat; side: front; color: black; opacity: 0.9" text="align: center; color: white; width: 2; height: 15 ;value: 0 / 7" visible="true" position="0 -0.85 -2.2">
+	    	<a-mixin id="counter"  geometry="primitive: plane; width: 0.75; height: 0.25; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ;value: 0 / 7" visible="true" position="0 -0.85 -2.2">
         </a-mixin>
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
         </a-mixin>
-        <a-mixin id="exit-logo" position="7.128 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
+        <a-mixin id="exit-logo" position="8 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
         </a-mixin>
         <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
         </a-mixin>
@@ -139,8 +140,10 @@
       </a-text>
     </a-entity>
 
-    <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="-0.294 1.837 -7.487">
-      <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" >
+    <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -6.17">
+      <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
+      </a-text>
+      <a-text exitlink  mixin="close" http="https://supporters.eff.org/donate/join-eff-today" value="Donate" >
       </a-text>
     </a-entity>
 
