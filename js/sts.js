@@ -14,7 +14,7 @@ AFRAME.registerComponent('listener', {
 			var newScore = score + ' / 7'
 			scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
-				alert("Congrats!");
+				//alert("Congrats!");
 			}
 		});
 	}
