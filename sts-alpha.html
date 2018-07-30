@@ -43,7 +43,7 @@
        <a-mixin id="drone"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#drone-card" rotation="20 170 0"  visible="false"
        >
        </a-mixin>
-       <a-mixin id="false"  geometry="primitive: plane; width: 3; height: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
+       <a-mixin id="false"  geometry="primitive: plane; width: 3; height: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;" position="-4.157 3.211 -0.375" rotation="0 60 0" visible="false">
        </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
@@ -107,7 +107,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" position="-34.533 16.11 -12.77" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+    <a-sphere id="light-hotspot" mixin="see-through" position="-34.533 16.11 -12.77" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
     </a-sphere>
 
     <!-- all the popups -->
