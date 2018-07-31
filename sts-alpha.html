@@ -4,6 +4,7 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="/css/surveillance.css">
   <meta content="utf-8" http-equiv="encoding">
+  <!--script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script-->
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="js/sts.js"></script>
@@ -21,13 +22,13 @@
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-ptz.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-blur.jpg">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
-        <audio id="boop" preload="auto" src="assets/boop.wav"></audio>
+        <audio id="boop"  src="assets/boop.wav"></audio>
         <audio id="ny-ambience" preload="auto" autoplay loop="true" src="assets/canal-street.wav"></audio>
-        <audio id="ding"  src="assets/piano-ding.wav" poolsize="10"></audio>
+        <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
         <!-- mixins -->
         <!-- popups -->
         <a-mixin id="alpr"  position="4.493 3.587 -4.257" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="20 -40 0"  visible="false">
@@ -49,14 +50,14 @@
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
        </a-mixin>
 
+       <!-- misc mixins -->
 
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1">
         </a-mixin>
-	    	<a-mixin id="counter"  geometry="primitive: plane; width: 0.75; height: 0.25; " material="shader: flat; side: front; opacity: 0.8; transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" visible="true" position="0 -0.85 -2.2">
+	    	<a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front; opacity: 0.9; transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
         </a-mixin>
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
-        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
-        text="align: center; width: 3; height: 3; value: X">
+        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
         </a-mixin>
         <a-mixin id="exit-logo" position="8 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
         </a-mixin>
@@ -122,8 +123,8 @@
     </a-entity>
 
   <a-entity  id="biometric-popup" mixin="biometric" sound="src: #beep; autoplay: false; loop: false; volume: 5; on: click" >
-    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup" position="2.045 2.062 0.284">
-    </a-text>
+    <a-plane mixin="close"  event-set__enter=" _target: #biometric-popup" position="2.045 2.062 0.284">
+    </a-plane>
   </a-entity>
 
 
@@ -151,19 +152,19 @@
 
     <!-- false positives -->
     <a-entity  id="bird-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="20 180 0" position="3.236 3.7 7">
-      <a-text mixin="close"event-set__enter=" _target: #bird-popup;" >
-      </a-text>
+      <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
+      </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-4.930 1.767 0.955" rotation="0 60 0">
-      <a-text mixin="close"  event-set__enter=" _target: #light-popup;" >
-      </a-text>
+    <a-entity  id="light-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="1.156 0.625 0.246" rotation="0 60 0">
+      <a-entity mixin="close"  event-set__enter=" _target: #light-popup;" geometry="width: 0.5; height: 0.5;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
+      </a-entity>
     </a-entity>
-
-    <a-entity  id="exit-screen" mixin="exit-text" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
-      <a-text mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
-      </a-text>
-      <a-entity id="donate" mixin="close" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
+<!-- exit -->
+    <a-entity  id="exit-screen" mixin="exit-text" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
+      <a-enttity mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
+      </a-entity>
+      <a-entity id="donate" mixin="close" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
       </a-entity>
     </a-entity>
 <!-- end popups -->
