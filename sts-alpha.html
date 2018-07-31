@@ -55,7 +55,7 @@
 	    	<a-mixin id="counter"  geometry="primitive: plane; width: 0.75; height: 0.25; " material="shader: flat; side: front; opacity: 0.8; transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" visible="true" position="0 -0.85 -2.2">
         </a-mixin>
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
-        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 0.5; height: 0.5;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
+        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 1;" visible="true"
         text="align: center; width: 3; height: 3; value: X">
         </a-mixin>
         <a-mixin id="exit-logo" position="8 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
@@ -81,7 +81,7 @@
 
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
-      <a-sphere id="alpr-mobile-hotspot"   position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot" mixin="see-through"  position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="20 20 20">
       </a-sphere>
 
       <a-sphere id="alpr-hotspot" mixin="see-through" position="16.222 39.245 -14.044" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
@@ -99,7 +99,7 @@
       <a-sphere id="camera2-hotspot" mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="drone-hotspot"  position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="10 10 10">
+      <a-sphere id="drone-hotspot" mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="10 10 10">
       </a-sphere>
     </a-entity>
 
@@ -107,7 +107,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" mixin="see-through" position="-34.533 16.11 -12.77" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+    <a-sphere id="light-hotspot" mixin="see-through" position="-34.218 15.962 -15.142" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
     </a-sphere>
 
     <!-- all the popups -->
@@ -122,7 +122,7 @@
     </a-entity>
 
   <a-entity  id="biometric-popup" mixin="biometric" sound="src: #beep; autoplay: false; loop: false; volume: 5; on: click" >
-    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup" >
+    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup" position="2.045 2.062 0.284">
     </a-text>
   </a-entity>
 
