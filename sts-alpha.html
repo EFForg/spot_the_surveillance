@@ -21,7 +21,7 @@
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-ptz.jpg">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
@@ -43,7 +43,7 @@
        <a-mixin id="drone"  position="-1.822 4 8"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#drone-card" rotation="20 170 0"  visible="false"
        >
        </a-mixin>
-       <a-mixin id="false"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;" position="-4.157 3.211 -0.375" rotation="0 60 0" visible="false">
+       <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
        </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
@@ -90,16 +90,16 @@
       <a-sphere id="biometric-hotspot"  position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" position="-19.774 -4.212 -38.747" data-raycastable event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-19.774 -4.212 -38.747" data-raycastable event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
+      <a-sphere id="camera2-hotspot" mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="drone-hotspot"   position="-19.595 115.894 80.722" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="5 5 5">
+      <a-sphere id="drone-hotspot"  position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter" scale="10 10 10">
       </a-sphere>
     </a-entity>
 
@@ -150,12 +150,12 @@
     </a-entity>
 
     <!-- false positives -->
-    <a-entity  id="bird-popup" mixin="false" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="20 180 0" position="3.236 3.7 7">
+    <a-entity  id="bird-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="20 180 0" position="3.236 3.7 7">
       <a-text mixin="close"event-set__enter=" _target: #bird-popup;" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="light-popup" mixin="false" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! ">
+    <a-entity  id="light-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-4.930 1.767 0.955" rotation="0 60 0">
       <a-text mixin="close"  event-set__enter=" _target: #light-popup;" >
       </a-text>
     </a-entity>
