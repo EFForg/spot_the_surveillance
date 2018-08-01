@@ -16,12 +16,13 @@
       <a-assets>
         <!-- images -->
         <img id="alpr-card"  src="assets/alpr-card.png">
+        <img id="alpr-mobile-card"  src="assets/alpr-mobile-card.png">
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-copcar.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-biometric.jpg">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
@@ -32,7 +33,7 @@
         <!-- popups -->
         <a-mixin id="alpr"  position="4.493 3.587 -4.257" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="20 -40 0"  visible="false">
         </a-mixin>
-        <a-mixin id="alpr-mobile"  position="5.010 3.474 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="0 -150 0"  visible="false" >
+        <a-mixin id="alpr-mobile"  position="5.010 3.474 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="0 -150 0"  visible="false" >
         </a-mixin>
         <a-mixin id="biometric"  position="-4.300 1.819 -2.272" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true;  src:#biometric-card"  visible="false" >
         </a-mixin>
@@ -45,7 +46,7 @@
        </a-mixin>
        <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
        </a-mixin>
-       <a-mixin id="intro"  position="2.062 2.411 0.532" geometry="primitive: plane; width: 2; height: 5; " material="shader: flat; side: front; opacity: 0; transparent: true; color: white"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: SPOT THE SURVEILLANCE. Look around and point the central cursor at a spy technology to reveal more information."  visible="true">
+       <a-mixin id="intro"  position="1.088 2.072 -4" rotation="0 -20 0" geometry="primitive: plane; width: 2; height: 5; " material="shader: flat; side: front; opacity: 0; transparent: true; color: white"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: SPOT THE SURVEILLANCE. Look around and point the central cursor at a spy technology to reveal more information."  visible="true">
       </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
