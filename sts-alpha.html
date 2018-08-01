@@ -21,9 +21,11 @@
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
+        <img id="congrats-card" src="assets/congrats-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-biometric.jpg">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
+        <img id="exit-card" src="assets/exit-card.png">
+        <img id="sts-sky" src="assets/sts-sky1-flip-biometric.jpg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
         <audio id="boop"  src="assets/boop.wav"></audio>
@@ -48,8 +50,9 @@
        </a-mixin>
        <a-mixin id="intro"  position="1.088 2.072 -4" rotation="0 -20 0" geometry="primitive: plane; width: 2; height: 5; " material="shader: flat; side: front; opacity: 0; transparent: true; color: white"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: SPOT THE SURVEILLANCE. Look around and point the central cursor at a spy technology to reveal more information."  visible="true">
       </a-mixin>
-       <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
-       text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
+       <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
+       </a-mixin>
+       <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card"  visible="false" >
        </a-mixin>
 
        <!-- misc mixins -->
@@ -61,7 +64,7 @@
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
         </a-mixin>
-        <a-mixin id="exit-logo" position="8 -40.524 2.747" geometry="primitive: plane; width: 0.5; height: 0.5;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" scale="50 10 0" visible="true" >
+        <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
         </a-mixin>
         <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
         </a-mixin>
@@ -169,15 +172,20 @@
     </a-entity>
 <!-- exit -->
 
-    <a-entity  id="exit-screen" mixin="exit-text"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
-      <a-entity mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" material="visible: true; transparent: false; opacity: 1;" position="1.467 1.356 0.510" >
+    <a-entity  id="exit-screen" mixin="exit-text"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-60 0 0">
+      <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  material="visible: false; transparent: false; opacity: 1;" position="0 -0.623 0.470" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
       </a-entity>
-      <a-entity id="donate" mixin="close" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
+      <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.176 -1.134 2.568"  >
+      </a-entity>
+    </a-entity>
+
+    <a-entity  id="congrats-popup" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-70 0 0">
+      <a-entity id="replay" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1;" position="-0.147 -2.750 1.839" text="value: REPLAY" >
       </a-entity>
     </a-entity>
 <!-- end popups -->
 
-    <a-entity id="exit-sts"   mixin="exit-logo" data-raycastable event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter">
+    <a-entity id="exit-sts"   mixin="exit-logo" data-raycastable  sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
