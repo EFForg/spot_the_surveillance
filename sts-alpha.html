@@ -4,7 +4,6 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="/css/surveillance.css">
   <meta content="utf-8" http-equiv="encoding">
-  <!--script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script-->
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="js/sts.js"></script>
@@ -22,12 +21,12 @@
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="drone-card"  src="assets/drone-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-blur.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-copcar.jpg">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <!-- sounds -->
         <audio id="beep" preload="auto" src="assets/beeps.mp3"></audio>
         <audio id="boop"  src="assets/boop.wav"></audio>
-        <audio id="ny-ambience" preload="auto" autoplay loop="true" src="assets/canal-street.wav"></audio>
+        <audio id="ny-ambience" autoplay loop="true" src="assets/canal-street.wav"></audio>
         <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
         <!-- mixins -->
         <!-- popups -->
@@ -46,6 +45,8 @@
        </a-mixin>
        <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
        </a-mixin>
+       <a-mixin id="intro"  position="2.062 2.411 0.532" geometry="primitive: plane; width: 2; height: 5; " material="shader: flat; side: front; opacity: 0; transparent: true; color: white"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: SPOT THE SURVEILLANCE. Look around and point the central cursor at a spy technology to reveal more information."  visible="true">
+      </a-mixin>
        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 8; height: 4; " material="shader: flat; side: front; opacity: 1; color: white"  visible="false"
        text="align: left; width: 4; height: 20; value:Would you like to exit Spot the Surveillance?; color: black;" >
        </a-mixin>
@@ -54,7 +55,7 @@
 
         <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1">
         </a-mixin>
-	    	<a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front; opacity: 0.9; transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
+	    	<a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
         </a-mixin>
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
@@ -160,9 +161,15 @@
       <a-entity mixin="close"  event-set__enter=" _target: #light-popup;" geometry="width: 0.5; height: 0.5;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
       </a-entity>
     </a-entity>
+    <!-- intro -->
+    <a-entity  id="intro-popup" mixin="intro" >
+      <a-entity mixin="close"  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="width: 0.25; height: 0.25;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.613 0.426 0.379">
+      </a-entity>
+    </a-entity>
 <!-- exit -->
-    <a-entity  id="exit-screen" mixin="exit-text" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
-      <a-enttity mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" >
+
+    <a-entity  id="exit-screen" mixin="exit-text"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-50 0 0">
+      <a-entity mixin="close"  event-set__enter=" _target: #exit-screen;" text="value: Resume" material="visible: true; transparent: false; opacity: 1;" position="1.467 1.356 0.510" >
       </a-entity>
       <a-entity id="donate" mixin="close" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" position="2.48 0.9 1.8" exitlink="href: https://supporters.eff.org/donate/join-eff-today" text="value: Donate" >
       </a-entity>
