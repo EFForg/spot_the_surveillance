@@ -1,6 +1,9 @@
 AFRAME.registerComponent('listener', {
 	init: function () {
 		var score = 0;
+		var scene = document.querySelector('a-scene');
+		var congrats = document.querySelector('#congrats-popup');
+		var congrats2 = document.querySelector('#congrats-popup2');
 		this.el.addEventListener('mouseenter', evt => {
 			if (evt.target.dataset.wasClicked) {
 				return;
@@ -13,8 +16,16 @@ AFRAME.registerComponent('listener', {
 			score++;
 			var newScore = score + ' / 7'
 			scoreBoard.setAttribute('text', 'value',  newScore);
-			if (score == 7) {
-				//alert("Congrats!");
+			if (score > 2) {
+
+				function tada() {
+				console.log("Congrats!");
+				//scene.exitVR();
+				congrats.setAttribute('visible', true);
+				congrats2.setAttribute('visible', true);
+			}
+			setTimeout(tada, 2000);
+
 			}
 		});
 	}

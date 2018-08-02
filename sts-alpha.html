@@ -179,7 +179,12 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="congrats-popup" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="1.391 -6.7 -4" rotation="-70 0 0">
+    <a-entity  id="congrats-popup" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="2.918 2.853 -2.606" rotation="0 -30 0">
+      <a-entity id="replay" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1;" position="-0.147 -2.750 1.839" text="value: REPLAY" >
+      </a-entity>
+    </a-entity>
+
+    <a-entity  id="congrats-popup2" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="-6.269 2.853 9.655" rotation="0 -230 0">
       <a-entity id="replay" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1;" position="-0.147 -2.750 1.839" text="value: REPLAY" >
       </a-entity>
     </a-entity>
