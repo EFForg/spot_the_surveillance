@@ -21,7 +21,7 @@
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
-        <img id="congrats-card" src="assets/congrats-card.png">
+        <img id="congrats-card" src="assets/congrats-card-gold.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <img id="exit-card" src="assets/exit-card.png">
@@ -64,6 +64,10 @@
         <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
         </a-mixin>
+        <a-mixin id="replay"
+        sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter"  geometry="primitive: plane; width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1; color: black" position="0.011 -1.926 0.102" text="value: REPLAY"  >
+        </a-mixin>
+
         <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
         </a-mixin>
         <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
@@ -179,15 +183,22 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="congrats-popup" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="2.918 2.853 -2.606" rotation="0 -30 0">
-      <a-entity id="replay" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1;" position="-0.147 -2.750 1.839" text="value: REPLAY" >
+    <a-entity  id="congrats-popup1" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="8.254 2.580 -2.305" rotation="0 -80 0">
+      <a-entity id="replay1" mixin="replay"  >
       </a-entity>
     </a-entity>
 
-    <a-entity  id="congrats-popup2" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="-6.269 2.853 9.655" rotation="0 -230 0">
-      <a-entity id="replay" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1;" position="-0.147 -2.750 1.839" text="value: REPLAY" >
+    <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0">
+      <a-entity id="replay2" mixin="replay" >
       </a-entity>
     </a-entity>
+
+    <a-entity  id="congrats-popup3" mixin="congrats" position="-5.114 2.558  -5.631" rotation="0 30 0">
+      <a-entity id="replay3" mixin="replay" >
+      </a-entity>
+    </a-entity>
+
+
 <!-- end popups -->
 
     <a-entity id="exit-sts"   mixin="exit-logo" data-raycastable  sound="src: #ding; autoplay: false; loop: false; volume: 10; on: mouseenter">
