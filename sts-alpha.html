@@ -4,7 +4,7 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="/css/surveillance.css">
   <meta content="utf-8" http-equiv="encoding">
-  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="js/aframe-master.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="js/sts.js"></script>
   <script src="js/links.js"></script>
@@ -28,10 +28,10 @@
         <img id="exit-card" src="assets/exit-card.png">
         <img id="sts-sky" src="assets/sts-sky1-flip-biometric.jpg">
         <!-- sounds -->
-        <audio id="intro-audio" autoplay src="assets/intro.mp3"></audio>
+        <audio id="intro-audio" src="assets/intro.mp3"></audio>
         <audio id="beep"  src="assets/beeps.mp3"></audio>
         <audio id="boop"  src="assets/boop.wav"></audio>
-        <audio id="ny-ambience" autoplay loop="true" src="assets/canal-street.wav"></audio>
+        <audio id="ambience" autoplay loop="true" src="assets/traffic.mp3"></audio>
         <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
         <!-- mixins -->
         <!-- popups -->
@@ -167,13 +167,13 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="1.156 0.625 0.246" rotation="0 60 0">
+    <a-entity  id="light-popup" mixin="false-positive" sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-4.184 2.203 -2.925" rotation="0 60 0">
       <a-entity mixin="close"  event-set__enter=" _target: #light-popup;" geometry="width: 0.5; height: 0.5;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
       </a-entity>
     </a-entity>
     <!-- intro -->
-    <a-entity  id="intro-popup" mixin="intro" >
-      <a-entity mixin="close"  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="width: 0.25; height: 0.25;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.613 0.426 0.379">
+    <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 3; width: 3" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.2 0 0.379">
       </a-entity>
     </a-entity>
 <!-- exit -->
@@ -208,7 +208,7 @@
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
 
-    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ny-ambience; loop:true; volume: 0.1" >
+    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 1" >
     </a-entity>
 
 </a-scene>
