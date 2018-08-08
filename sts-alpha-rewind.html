@@ -170,13 +170,13 @@
     </a-entity>
 
     <a-entity  id="light-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 5.872 -0.366" rotation="40 60 0">
-      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; visible: false" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
     </a-entity>
 
     <!-- intro -->
     <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
-      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="-0.216 -1.919 0.443">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="-0.216 -1.919 0.443">
       </a-entity>
     </a-entity>
 
