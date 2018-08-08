@@ -20,7 +20,7 @@
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
-        <img id="camera-card" src="assets/camera-card.png">
+        <img id="camera-card" src="assets/camera-card.png" poolsize="2">
         <img id="congrats-card" src="assets/congrats-card-gold.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
@@ -109,7 +109,7 @@
       <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
+      <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="drone-hotspot"   position="-19.595 115.894 80.722" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
@@ -124,7 +124,7 @@
 
     <!-- all the popups -->
     <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile"  >
-      <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup;" >
+      <a-text mixin="close"   event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
       </a-text>
     </a-entity>
 
@@ -152,8 +152,8 @@
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera2-popup" mixin="camera" position="7.0 1.23 3.612" rotation="0 -120 0" >
-      <a-text mixin="close"  event-set__enter=" _target: #camera2-popup;" >
+    <a-entity  id="camera2-popup" mixin="camera-popup" position="7.0 1.23 3.612" rotation="0 -120 0" >
+      <a-text mixin="close"  event-set__enter=" _target: #camera2-popup;" position="2.357 1.726 1.458" >
       </a-text>
     </a-entity>
 
