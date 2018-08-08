@@ -35,7 +35,7 @@
         <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
         <!-- mixins -->
         <!-- popups -->
-        <a-mixin id="alpr"  position="4.493 3.587 -4.257" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="20 -40 0"  visible="false">
+        <a-mixin id="alpr"  position="4.046 2.689 -0.650"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="20 -40 0"  visible="false">
         </a-mixin>
         <a-mixin id="alpr-mobile"  position="5.010 3.474 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="0 -150 0"  visible="false" >
         </a-mixin>
@@ -43,7 +43,7 @@
         </a-mixin>
         <a-mixin id="bodycam"  position="-4.423 2.067 -2.417" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" visible="false" >
         </a-mixin>
-        <a-mixin id="camera-popup"  position="4.046 2.689 -0.650" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#camera-card" rotation="20 -40 0" visible="false"
+        <a-mixin id="camera-popup"  position="4.493 3.587 -4.257"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#camera-card" rotation="20 -40 0" visible="false"
          >
        </a-mixin>
        <a-mixin id="drone-popup"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#drone-card" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
@@ -124,7 +124,7 @@
 
     <!-- all the popups -->
     <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile"  >
-      <a-text mixin="close"  material="visible: true; opacity: 1" event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
+      <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
       </a-text>
     </a-entity>
 
