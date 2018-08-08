@@ -100,7 +100,7 @@
       <a-sphere id="alpr-hotspot"   position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true"  scale="3 3 3">
+      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="biometric-hotspot" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
@@ -119,7 +119,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot"   position="-22 17 -1" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="10 10 10">
+    <a-sphere id="light-hotspot" mixin="see-through"  position="-20.5 12.7 -7" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="4 4 4">
     </a-sphere>
 
     <!-- all the popups -->
