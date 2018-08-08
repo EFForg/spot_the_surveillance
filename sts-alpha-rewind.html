@@ -130,7 +130,7 @@
 
     <a-entity id="alpr-wrapper" position="0 0.5 1">
       <a-entity mixin="alpr">
-        <a-text mixin="close">
+        <a-text mixin="close" event-set__enter=" _target: #alpr;" >
         </a-text>
     </a-entity>
   </a-entity>
