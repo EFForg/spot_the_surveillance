@@ -51,7 +51,7 @@
         </a-mixin>
         <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
         </a-mixin>
-        <a-mixin id="intro"  position="1.088 4.189 -3.289" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 10;"  visible="true">
+        <a-mixin id="intro"  position="1.088 5.325 -3.289" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 10;"  visible="true">
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
@@ -175,7 +175,7 @@
 
     <!-- intro -->
     <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
-      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 3; width: 3" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.2 0 0.379">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="-0.216 -1.919 0.443">
       </a-entity>
     </a-entity>
 
