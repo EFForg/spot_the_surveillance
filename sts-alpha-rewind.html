@@ -119,10 +119,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <!--a-sphere id="light-hotspot"  position="-34.218 15.962 -15.142" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="3 3 3">
-    </a-sphere-->
-
-    <a-sphere id="light-hotspot"   position="-34.995 25 -1" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="3 3 3">
+    <a-sphere id="light-hotspot"   position="-22 17 -1" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="10 10 10">
     </a-sphere>
 
     <!-- all the popups -->
@@ -172,7 +169,7 @@
     </a-entity>
 
     <a-entity  id="light-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-4.184 2.203 -2.925" rotation="0 60 0">
-      <a-entity mixin="close"  event-set__enter=" _target: #light-popup;" geometry="width: 0.5; height: 0.5;" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; visible: false" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
       </a-entity>
     </a-entity>
 
