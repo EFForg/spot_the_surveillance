@@ -94,10 +94,10 @@
 
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
-      <a-sphere id="alpr-mobile-hotspot"   position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot"  mixin="see-through" position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="alpr-hotspot"   position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot" mixin="see-through"  position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot" mixin="see-through" position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true"  scale="3 3 3">
@@ -106,7 +106,7 @@
       <a-sphere id="biometric-hotspot" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera-popup; visible: true" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
       <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
