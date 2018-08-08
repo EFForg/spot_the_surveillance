@@ -103,16 +103,16 @@
       <a-sphere id="bodycam-hotspot" mixin="see-through" position="-115.001 -33.839 -246.276 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #bodycam; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" mixin="see-through" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" mixin="see-through" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
+      <a-sphere id="camera2-hotspot" mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="drone-hotspot"   position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
+      <a-sphere id="drone-hotspot"  mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
       </a-sphere>
     </a-entity>
     <!-- false positives -->
@@ -124,7 +124,7 @@
 
     <!-- all the popups -->
     <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile"  >
-      <a-text mixin="close"   event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
+      <a-text mixin="close"  material="visible: true; opacity: 1" event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
       </a-text>
     </a-entity>
 
@@ -163,7 +163,7 @@
     </a-entity>
 
     <!-- false positives -->
-    <a-entity  id="bird-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="20 180 0" position="3.236 3.7 7">
+    <a-entity  id="bird-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="20 180 0" position="1.862 3.624 8.830">
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
     </a-entity>
