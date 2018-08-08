@@ -173,6 +173,12 @@
       </a-entity>
     </a-entity>
 
+    <!-- intro -->
+    <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
+      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 3; width: 3" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.2 0 0.379">
+      </a-entity>
+    </a-entity>
+
     <a-entity id="exit-sts" mixin="exit-logo" exitlink="href: https://eff.org" >
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
