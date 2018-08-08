@@ -26,7 +26,7 @@
         <img id="intro-card" src="assets/intro-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <img id="exit-card" src="assets/exit-card.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-biometric.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-blurred.jpg">
         <!-- sounds -->
         <audio id="intro-audio" src="assets/intro.mp3"></audio>
         <audio id="beep"  src="assets/beeps.mp3"></audio>
@@ -39,7 +39,7 @@
         </a-mixin>
         <a-mixin id="alpr-mobile"  position="5.010 3.474 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="0 -150 0"  visible="false" >
         </a-mixin>
-        <a-mixin id="biometric"  position="-7.090 4.335 2.069" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#biometric-card" visible="false" >
+        <a-mixin id="biometric"  position="-7.090 2.137 2.069" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; src:#biometric-card" visible="false" >
         </a-mixin>
         <a-mixin id="bodycam"  position="-4.423 2.067 -2.417" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" visible="false" >
         </a-mixin>
@@ -119,7 +119,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" mixin="see-through"  position="-20.5 12.7 -7" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="4 4 4">
+    <a-sphere id="light-hotspot"  position="-20.5 12.7 -7" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
     <!-- all the popups -->
@@ -168,7 +168,7 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-4.184 2.203 -2.925" rotation="0 60 0">
+    <a-entity  id="light-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 5.872 -0.366" rotation="40 60 0">
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; visible: false" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394">
       </a-entity>
     </a-entity>
