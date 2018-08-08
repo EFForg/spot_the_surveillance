@@ -65,10 +65,10 @@
          <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
          </a-mixin>
          <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
-         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
+          position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
          </a-mixin>
          <a-mixin id="replay"
-         sound="src: #boop; autoplay: false; loop: false; volume: 10; on: mouseenter"  geometry="primitive: plane; width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1; color: black" position="0.011 -1.926 0.102" text="value: REPLAY"  >
+          geometry="primitive: plane; width: 3; height: 1;" material="visible: true; transparent: false; opacity: 1; color: black" position="0.011 -1.926 0.102" text="value: REPLAY"  >
          </a-mixin>
 
          <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
