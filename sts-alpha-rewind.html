@@ -105,7 +105,7 @@
       <a-sphere id="bodycam-hotspot" mixin="see-through" position="-4.333 0.577 -5.112 " data-raycastable geometry="radius: 1" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot"  position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" mixin="see-through" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
@@ -141,12 +141,12 @@
     </a-text>
   </a-entity>
 
-    <a-entity >
+  
       <a-entity id="bodycam-popup" mixin="bodycam" >
         <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;" >
         </a-text>
       </a-entity>
-    </a-entity>
+
 
     <a-entity  id="camera1-popup" mixin="camera-popup"  >
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
