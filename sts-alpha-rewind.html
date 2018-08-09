@@ -117,6 +117,7 @@
       <a-sphere id="drone-hotspot"  mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
       </a-sphere>
     </a-entity>
+
     <!-- false positives -->
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
@@ -141,7 +142,7 @@
     </a-text>
   </a-entity>
 
-  
+
       <a-entity id="bodycam-popup" mixin="bodycam" >
         <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;" >
         </a-text>
@@ -183,9 +184,9 @@
     <!-- exit -->
 
           <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
-          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  material="visible: true; transparent: false; opacity: 1;" position="-0.036 -0.881 0.394" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
           </a-entity>
-          <a-entity id="resume" mixin="close" event-set__enter="_event: mouesenter; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.061 -2.267 1.132" material="visible: true; transparent: false; opacity: 1;" >
+          <a-entity id="resume" mixin="close"event-set__enter="_event: mouseenter; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.061 -2.267 1.132"  >
           </a-entity>
         </a-entity>
 
