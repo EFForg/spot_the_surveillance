@@ -36,9 +36,9 @@
         <!-- mixins -->
         <!-- popups -->
 
-        <a-mixin id="alpr"  position="7.482 3.189 0.368"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" rotation="20 -40 0"  visible="false">
+        <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card" position="7.482 1.642 0.368"  rotation="20 -80 0"  visible="false">
         </a-mixin>
-        <a-mixin id="alpr-mobile"  position="5.010 3.474 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="0 -150 0"  visible="false" >
+        <a-mixin id="alpr-mobile"  position="5.010 4.083 6.979" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="0 -150 0"  visible="false" >
         </a-mixin>
         <a-mixin id="biometric"  position="-7.090 2.137 2.069" rotation="0 100 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" visible="false" >
         </a-mixin>
@@ -52,7 +52,7 @@
         </a-mixin>
         <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
         </a-mixin>
-        <a-mixin id="intro"  position="1.088 5.325 -3.289" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 1;"  visible="true">
+        <a-mixin id="intro"  position="0.715 4.5 -5.991" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 1;"  visible="true">
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
@@ -96,10 +96,10 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot"   position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot" mixin="see-through"  position="14.489 40.071 -11.129" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="alpr-mobile-hotspot"   position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot" mixin="see-through"  position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot" mixin="see-through" position="-3.325 0.577 -6.036" data-raycastable geometry="radius: 0.5" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
@@ -108,7 +108,7 @@
       <a-sphere id="biometric-hotspot" mixin="see-through" position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot"  position="40.675 106.831 -68.152" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
       <a-sphere id="camera2-hotspot" mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
@@ -122,7 +122,7 @@
     <a-sphere id="bird-hotspot"   position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot"  position="-19.084 9.421 -7.871" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="2 2 2">
+    <a-sphere id="light-hotspot" mixin="see-through" position="-19.084 9.421 -7.871" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="2 2 2">
     </a-sphere>
 
     <!-- all the popups -->
@@ -142,19 +142,17 @@
     </a-text>
   </a-entity>
 
-
       <a-entity id="bodycam-popup" mixin="bodycam" >
         <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;" >
         </a-text>
       </a-entity>
-
 
     <a-entity  id="camera1-popup" mixin="camera-popup"  >
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera2-popup" mixin="camera-popup" position="7.0 1.23 3.612" rotation="0 -120 0" >
+    <a-entity  id="camera2-popup" mixin="camera-popup" position="7.0 1.4 3.612" rotation="0 -120 0" >
       <a-text mixin="close"  event-set__enter=" _target: #camera2-popup;" position="2.357 1.726 1.458" >
       </a-text>
     </a-entity>
@@ -177,7 +175,7 @@
 
     <!-- intro -->
     <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
-      <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="-0.216 -1.919 0.443">
+      <a-entity mixin="close"  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
       </a-entity>
     </a-entity>
 
@@ -210,7 +208,7 @@
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
-    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 5" >
+    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 10" >
     </a-entity>
 
 </a-scene>
