@@ -102,7 +102,7 @@
       <a-sphere id="alpr-mobile-hotspot"  mixin="see-through" position="144.400 -17.342 317.810" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" position="-4.333 0.577 -5.112 " data-raycastable geometry="radius: 1" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" >
+      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-4.333 0.577 -5.112 " data-raycastable geometry="radius: 1" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="biometric-hotspot"  position="-170.935 -123.839 -304.428" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
@@ -130,14 +130,14 @@
       </a-text>
     </a-entity>
 
-      <a-entity mixin="alpr" >
-        <a-text mixin="close" event-set__enter=" _target: #alpr;" >
+      <a-entity id="alpr-popup" mixin="alpr" >
+        <a-text mixin="close" event-set__enter=" _target: #alpr-popup;" >
         </a-text>
     </a-entity>
 
 
   <a-entity  id="biometric-popup" mixin="biometric"  >
-    <a-text mixin="close"  event-set__enter=" _target: #biometric;" >
+    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup;" >
     </a-text>
   </a-entity>
 
@@ -182,10 +182,10 @@
 
     <!-- exit -->
 
-        <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
-          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  material="visible: false; transparent: false; opacity: 1;" position="0 -0.623 0.470" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+          <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
+          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  material="visible: true; transparent: false; opacity: 1;" position="-0.036 -0.881 0.394" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
           </a-entity>
-          <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.176 -1.134 2.568"  >
+          <a-entity id="resume" mixin="close" event-set__enter="_event: mouesenter; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.061 -2.267 1.132" material="visible: true; transparent: false; opacity: 1;" >
           </a-entity>
         </a-entity>
 
@@ -205,7 +205,7 @@
         </a-entity>
         <!-- end popups -->
 
-    <a-entity id="exit-sts" mixin="exit-logo" exitlink="href: https://eff.org" >
+    <a-entity id="exit-sts" mixin="exit-logo"  >
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
