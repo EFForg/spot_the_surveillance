@@ -4,10 +4,10 @@ AFRAME.registerComponent('replay', {
 		this.el.addEventListener('click', evt => {
         console.log('clicked');
 				function gameover() {
-					scene.exitVR();
-          scene.enterVR();
+					location.reload(true);
 				}
-        	setTimeout(gameover, 10000)
+        	setTimeout(gameover, 2000);
+          scene.enterVR();
 
 		});
 	}
