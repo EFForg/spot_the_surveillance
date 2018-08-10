@@ -30,27 +30,27 @@ AFRAME.registerComponent('listener', {
 			var newScore = score + ' / 7'
 			scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
-				// remove all other popups
-				function hidePopups() {
-					console.log('hidePopups');
-					alpr.setAttribute('visible', false);
-					alprMobile.setAttribute('visible', false);
-					biometric.setAttribute('visible', false);
-					bodyCam.setAttribute('visible', false);
-					camera1.setAttribute('visible', false);
-					camera2.setAttribute('visible', false);
-					drone.setAttribute('visible', false);
-					bird.setAttribute('visible', false);
-					light.setAttribute('visible', false);
-					intro.setAttribute('visible', false);
-				}
 				function tada() {
 				congrats1.setAttribute('visible', true);
 				congrats2.setAttribute('visible', true);
 				congrats3.setAttribute('visible', true);
 			}
+			// remove all other popups
+			function hidePopups() {
+				console.log('hidePopups');
+				alpr.setAttribute('visible', false);
+				alprMobile.setAttribute('visible', false);
+				biometric.setAttribute('visible', false);
+				bodyCam.setAttribute('visible', false);
+				camera1.setAttribute('visible', false);
+				camera2.setAttribute('visible', false);
+				drone.setAttribute('visible', false);
+				bird.setAttribute('visible', false);
+				light.setAttribute('visible', false);
+				intro.setAttribute('visible', false);
+			}
 			setTimeout(tada, 10000);
-			setTimeout(hidePopups, 20000);
+			setTimeout(hidePopups, 25000);
 			}
 		});
 	}
