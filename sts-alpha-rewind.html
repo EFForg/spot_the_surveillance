@@ -8,6 +8,7 @@
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="js/sts.js"></script>
   <script src="js/links.js"></script>
+  <script src="js/replay.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -187,19 +188,20 @@
           <a-entity id="resume" mixin="close"event-set__enter="_event: click; _target: #exit-screen; visible: false" geometry="height: 0.6; width: 1.6;" position="-0.061 -2.267 1.132"  >
           </a-entity>
         </a-entity>
-
-        <a-entity  id="congrats-popup1" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="8.254 2.580 -2.305" rotation="0 -80 0">
-          <a-entity id="replay1" mixin="replay"  >
+        <a-entity id="congrats-cards" replay>
+          <a-entity  id="congrats-popup1" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="8.254 2.580 -2.305" rotation="0 -80 0">
+            <a-entity id="replay1" mixin="replay"  >
+            </a-entity>
           </a-entity>
-        </a-entity>
 
-        <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0">
-          <a-entity id="replay2" mixin="replay" >
+          <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0">
+            <a-entity id="replay2" mixin="replay" >
+            </a-entity>
           </a-entity>
-        </a-entity>
 
-        <a-entity  id="congrats-popup3" mixin="congrats" position="-5.114 2.558  -5.631" rotation="0 30 0">
-          <a-entity id="replay3" mixin="replay" >
+          <a-entity  id="congrats-popup3" mixin="congrats" position="-5.114 2.558  -5.631" rotation="0 30 0">
+            <a-entity id="replay3" mixin="replay" >
+            </a-entity>
           </a-entity>
         </a-entity>
         <!-- end popups -->
