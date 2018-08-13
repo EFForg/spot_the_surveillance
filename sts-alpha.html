@@ -2,7 +2,7 @@
   <title>Spot the Surveillance</title>
   <meta name="description" content="EFF Security VR prototype" />
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <link rel="stylesheet" href="/css/surveillance.css">
+  <link rel="stylesheet" href="/css/sts.css">
   <meta content="utf-8" http-equiv="encoding">
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
@@ -22,7 +22,7 @@
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png" poolsize="2">
-        <img id="congrats-card" src="assets/congrats-card-gold.png">
+        <img id="congrats-card" src="assets/congrats-card-replay.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
@@ -53,7 +53,7 @@
         </a-mixin>
         <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
         </a-mixin>
-        <a-mixin id="intro"  position="0.715 1.780 -5.991" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  visible="true">
+        <a-mixin id="intro"  position="0.715 4.5 -5.991" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 1;"  visible="true">
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
@@ -210,7 +210,7 @@
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
-    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 20" >
+    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 10" >
     </a-entity>
 
 </a-scene>
