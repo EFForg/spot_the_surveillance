@@ -31,27 +31,44 @@ AFRAME.registerComponent('listener', {
 			scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
 				function tada() {
-				congrats1.setAttribute('visible', true);
-				congrats2.setAttribute('visible', true);
-				congrats3.setAttribute('visible', true);
-			}
-			// remove all other popups
-			function hidePopups() {
-				console.log('hidePopups');
-				alpr.setAttribute('visible', false);
-				alprMobile.setAttribute('visible', false);
-				biometric.setAttribute('visible', false);
-				bodyCam.setAttribute('visible', false);
-				camera1.setAttribute('visible', false);
-				camera2.setAttribute('visible', false);
-				drone.setAttribute('visible', false);
-				bird.setAttribute('visible', false);
-				light.setAttribute('visible', false);
-				intro.setAttribute('visible', false);
-			}
-			setTimeout(tada, 10000);
-			setTimeout(hidePopups, 25000);
+					var congratsAudio = document.getElementById("congrats-audio");
+					congratsAudio.play();
+					congrats1.setAttribute('visible', true);
+					congrats2.setAttribute('visible', true);
+					congrats3.setAttribute('visible', true);
+				}
+				// remove all other popups
+				function hidePopups() {
+					console.log('hidePopups');
+					alpr.setAttribute('visible', false);
+					alprMobile.setAttribute('visible', false);
+					biometric.setAttribute('visible', false);
+					bodyCam.setAttribute('visible', false);
+					camera1.setAttribute('visible', false);
+					camera2.setAttribute('visible', false);
+					drone.setAttribute('visible', false);
+					bird.setAttribute('visible', false);
+					light.setAttribute('visible', false);
+					intro.setAttribute('visible', false);
+				}
+				setTimeout(tada, 10000);
+				setTimeout(hidePopups, 27000);
 			}
 		});
 	}
 });
+
+//function isHidden(el) {
+//    return (el.offsetParent === null)
+//}
+
+AFRAME.registerComponent("drone-nar", {
+	init: function() {
+		if ( this.el.offsetParent != null) {
+			console.log ('offset' + this.el.offsetParent)
+			this.el.addEventListener("click", (e)=> {
+				console.log('clicked');
+			})
+		}
+	}
+})
