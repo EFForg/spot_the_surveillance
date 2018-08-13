@@ -58,7 +58,7 @@
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
-        <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card"  visible="false" >
+        <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card" visible="false" >
         </a-mixin>
 
         <!-- misc mixins -->
@@ -190,21 +190,21 @@
           </a-entity>
         </a-entity>
         <a-entity id="congrats-cards" >
-          <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0">
+          <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 10; on: click"  >
             <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
             </a-entity>
           </a-entity>
 
-          <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0">
+          <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 10; on: click"  >
             <a-entity id="sls2" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay2" mixin="replay" >
             </a-entity>
           </a-entity>
 
-          <a-entity  id="congrats-popup3" mixin="congrats" position="-4.763 1.852 -1.975" rotation="0 70 0">
+          <a-entity  id="congrats-popup3" mixin="congrats" position="-4.763 1.852 -1.975" rotation="0 70 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 10; on: click"  >
             <a-entity id="sls3" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay3" mixin="replay" >

@@ -31,8 +31,8 @@ AFRAME.registerComponent('listener', {
 			scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
 				function tada() {
-					var congratsAudio = document.getElementById("congrats-audio");
-					congratsAudio.play();
+					//var congratsAudio = document.getElementById("congrats-audio");
+					//congratsAudio.play();
 					congrats1.setAttribute('visible', true);
 					congrats2.setAttribute('visible', true);
 					congrats3.setAttribute('visible', true);
