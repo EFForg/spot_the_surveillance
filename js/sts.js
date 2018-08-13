@@ -57,18 +57,3 @@ AFRAME.registerComponent('listener', {
 		});
 	}
 });
-
-//function isHidden(el) {
-//    return (el.offsetParent === null)
-//}
-
-AFRAME.registerComponent("drone-nar", {
-	init: function() {
-		if ( this.el.offsetParent != null) {
-			console.log ('offset' + this.el.offsetParent)
-			this.el.addEventListener("click", (e)=> {
-				console.log('clicked');
-			})
-		}
-	}
-})
