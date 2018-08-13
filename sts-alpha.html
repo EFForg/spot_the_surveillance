@@ -70,7 +70,7 @@
           position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
          </a-mixin>
          <a-mixin id="replay"
-          geometry="primitive: plane; height: 0.35; width: 1.2;" material="visible: true; transparent: false; opacity: 1; color: black" position="-0.010 -1.525 0.074"  >
+          geometry="primitive: plane; height: 0.35; width: 1.2;" material="visible: true; transparent: true; opacity: 0;  position="-0.010 -1.525 0.074"  >
          </a-mixin>
 
          <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
@@ -190,16 +190,22 @@
         </a-entity>
         <a-entity id="congrats-cards" >
           <a-entity  id="congrats-popup1" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="5.584 1.250 -1.325" rotation="0 -80 0">
+            <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+            </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
             </a-entity>
           </a-entity>
 
           <a-entity  id="congrats-popup2" mixin="congrats" position="-1.961 2.310 9.023" rotation="0 -190 0">
+            <a-entity id="sls2" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+            </a-entity>
             <a-entity replay id="replay2" mixin="replay" >
             </a-entity>
           </a-entity>
 
           <a-entity  id="congrats-popup3" mixin="congrats" position="-4.763 1.852 -1.975" rotation="0 70 0">
+            <a-entity id="sls3" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+            </a-entity>
             <a-entity replay id="replay3" mixin="replay" >
             </a-entity>
           </a-entity>
