@@ -33,7 +33,7 @@
         <audio id="congrats-audio" src="assets/congrats.mp3"></audio>
         <audio id="beep"  src="assets/beeps.mp3"></audio>
         <audio id="boop"  src="assets/boop.wav"></audio>
-        <audio id="ambience" autoplay loop="true" src="assets/traffic.mp3"></audio>
+        <audio id="ambience" src="assets/traffic.mp3"></audio>
         <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
         <!-- mixins -->
         <!-- popups -->
@@ -58,7 +58,7 @@
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
-        <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card"  visible="false" >
+        <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 10;"  visible="false" >
         </a-mixin>
 
         <!-- misc mixins -->
@@ -190,7 +190,7 @@
           </a-entity>
         </a-entity>
         <a-entity id="congrats-cards" >
-          <a-entity  id="congrats-popup1" mixin="congrats"  sound="src: #beep; autoplay: false; loop: false; volume: 1; on: click" position="5.584 1.250 -1.325" rotation="0 -80 0">
+          <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0">
             <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
@@ -217,7 +217,7 @@
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
-    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; loop:true; volume: 10" >
+    <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; autoplay: true; loop: false; volume: 1;"  >
     </a-entity>
 
 </a-scene>
