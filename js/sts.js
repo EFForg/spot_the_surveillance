@@ -39,7 +39,6 @@ AFRAME.registerComponent('listener', {
 				}
 				// remove all other popups
 				function hidePopups() {
-					console.log('hidePopups');
 					alpr.setAttribute('visible', false);
 					alprMobile.setAttribute('visible', false);
 					biometric.setAttribute('visible', false);
