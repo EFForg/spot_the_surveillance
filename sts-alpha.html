@@ -62,7 +62,7 @@
         </a-mixin>
         <a-mixin id="congrats"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card" visible="false" >
         </a-mixin>
-        <a-mixin id="arrow"  position="0 -5 -2" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow" visible="false" >
+        <a-mixin id="arrow"  position="0 -5 -2" geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow" visible="false" >
         </a-mixin>
 
         <!-- misc mixins -->
@@ -201,10 +201,16 @@
             </a-entity>
           </a-entity>
 
-          <a-entity  id="congrats-left-arrow" mixin="arrow" position="-1.961 2.310 9.023" rotation="0 -190 0" material="src:#left-arrow" >
+          <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
           </a-entity>
 
-          <a-entity  id="congrats-right-arrow" mixin="arrow"  position="-4.763 1.852 -1.975"  rotation="0 40 0">
+          <a-entity  id="congrats-left-arrow2" mixin="arrow" position="4.683 1.9 6.271" rotation="0 -120 0" material="src:#left-arrow" >
+          </a-entity>
+
+          <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 50 0">
+          </a-entity>
+
+          <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
           </a-entity>
 
         </a-entity>

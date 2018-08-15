@@ -3,8 +3,10 @@ AFRAME.registerComponent('listener', {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
 		var congrats = document.querySelector('#congrats-popup1');
-		var congratsLeft = document.querySelector('#congrats-left-arrow');
-		var congratsRight = document.querySelector('#congrats-right-arrow');
+		var congratsLeft1 = document.querySelector('#congrats-left-arrow');
+		var congratsLeft2 = document.querySelector('#congrats-left-arrow');
+		var congratsRight1 = document.querySelector('#congrats-right-arrow');
+		var congratsRight2 = document.querySelector('#congrats-right-arrow');
 		// all other popups
 		var alpr = document.querySelector('#alpr-popup');
 		var alprMobile = document.querySelector('#alpr-mobile-popup');
@@ -32,8 +34,10 @@ AFRAME.registerComponent('listener', {
 			if (score == 7) {
 				function tada() {
 					congrats.setAttribute('visible', true);
-					congratsLeft.setAttribute('visible', true);
-					congratsRight.setAttribute('visible', true);
+					congratsLeft1.setAttribute('visible', true);
+					congratsLeft2.setAttribute('visible', true);
+					congratsRight1.setAttribute('visible', true);
+					congratsRight2.setAttribute('visible', true);
 				}
 				// remove all other popups
 				function hidePopups() {
