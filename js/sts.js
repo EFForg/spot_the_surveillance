@@ -3,10 +3,10 @@ AFRAME.registerComponent('listener', {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
 		var congrats = document.querySelector('#congrats-popup1');
-		var congratsLeft1 = document.querySelector('#congrats-left-arrow');
-		var congratsLeft2 = document.querySelector('#congrats-left-arrow');
-		var congratsRight1 = document.querySelector('#congrats-right-arrow');
-		var congratsRight2 = document.querySelector('#congrats-right-arrow');
+		var congratsLeft1 = document.querySelector('#congrats-left-arrow1');
+		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
+		var congratsRight1 = document.querySelector('#congrats-right-arrow1');
+		var congratsRight2 = document.querySelector('#congrats-right-arrow2');
 		// all other popups
 		var alpr = document.querySelector('#alpr-popup');
 		var alprMobile = document.querySelector('#alpr-mobile-popup');
@@ -18,7 +18,6 @@ AFRAME.registerComponent('listener', {
 		var bird = document.querySelector('#bird-popup');
 		var light = document.querySelector('#light-popup');
 		var intro = document.querySelector('#intro-popup');
-
 
 		this.el.addEventListener('mouseenter', evt => {
 			if (evt.target.dataset.wasClicked) {

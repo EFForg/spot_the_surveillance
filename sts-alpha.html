@@ -102,7 +102,7 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot" mixin="see-through" position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot"  position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="alpr-mobile-hotspot" mixin="see-through" position="57.658 1 143.185" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
@@ -190,7 +190,7 @@
           <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
           <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
           </a-entity>
-          <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false" material="visible: true; opacity: 1.0" geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
+          <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false"  geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
           </a-entity>
         </a-entity>
         <a-entity id="congrats-cards" >
@@ -207,7 +207,7 @@
           <a-entity  id="congrats-left-arrow2" mixin="arrow" position="4.683 1.9 6.271" rotation="0 -120 0" material="src:#left-arrow" >
           </a-entity>
 
-          <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 50 0">
+          <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 80 0">
           </a-entity>
 
           <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
