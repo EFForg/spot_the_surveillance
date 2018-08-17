@@ -7,6 +7,7 @@ AFRAME.registerComponent('listener', {
 		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
 		var congratsRight1 = document.querySelector('#congrats-right-arrow1');
 		var congratsRight2 = document.querySelector('#congrats-right-arrow2');
+		var confetti = document.querySelector('#confetti');
 		// all other popups
 		var alpr = document.querySelector('#alpr-popup');
 		var alprMobile = document.querySelector('#alpr-mobile-popup');
@@ -37,6 +38,7 @@ AFRAME.registerComponent('listener', {
 					congratsLeft2.setAttribute('visible', true);
 					congratsRight1.setAttribute('visible', true);
 					congratsRight2.setAttribute('visible', true);
+					confetti.setAttribute('particle-system:enabled', true);
 				}
 				// remove all other popups
 				function hidePopups() {

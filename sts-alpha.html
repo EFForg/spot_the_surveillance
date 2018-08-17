@@ -6,6 +6,7 @@
   <meta content="utf-8" http-equiv="encoding">
   <script src="js/aframe.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   <script src="js/sts.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
@@ -188,14 +189,14 @@
     <!-- exit -->
 
           <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
-          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394"  link="href: https://www.eff.org/issues/street-level-surveillance;" >
+          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
           </a-entity>
           <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false"  geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
           </a-entity>
         </a-entity>
-        <a-entity id="congrats-cards" >
+        <a-entity id="congrats-all" >
           <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 5; on: click"  >
-            <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" link="href:https://www.eff.org/issues/street-level-surveillance" >
+            <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
             </a-entity>
@@ -212,6 +213,8 @@
 
           <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
           </a-entity>
+
+          <a-entity id="confetti" particle-system="accelerationSpread: 20 0 20; color: white; enabled: false;  particleCount: 300; opacity: 0.3; preset: default; size: 0.5; velocityValue: 0 15 0" position="5.584 1.250 -1.4"  ></a-entity>
 
         </a-entity>
         <!-- end popups -->
