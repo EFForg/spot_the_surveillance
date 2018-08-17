@@ -21,7 +21,7 @@
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
         <img id="counter-bg" src="assets/binos-in-box.png">
-        <img id="camera-card" src="assets/camera-card.png" poolsize="2">
+        <img id="camera-card" src="assets/camera-card.png">
         <img id="congrats-card" src="assets/congrats-card-replay.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
@@ -32,11 +32,11 @@
         <img id="sts-sky" src="assets/sts-sky1-flip-blurred.jpg">
         <!-- sounds -->
         <audio id="intro-audio" src="assets/intro.mp3"></audio>
-        <audio id="congrats-audio" src="assets/congrats.mp3" poolsize="4"></audio>
+        <audio id="congrats-audio" src="assets/congrats.mp3"></audio>
         <audio id="beep"  src="assets/beeps.mp3"></audio>
         <audio id="boop"  src="assets/boop.wav"></audio>
         <audio id="ambience" src="assets/traffic-fade.mp3"></audio>
-        <audio id="ding"  src="assets/piano-ding.wav" poolsize="20"></audio>
+        <audio id="ding"  src="assets/piano-ding.wav"></audio>
         <!-- mixins -->
         <!-- popups -->
 
@@ -188,14 +188,14 @@
     <!-- exit -->
 
           <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0">
-          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+          <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394"  link="href: https://www.eff.org/issues/street-level-surveillance;" >
           </a-entity>
           <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false"  geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
           </a-entity>
         </a-entity>
         <a-entity id="congrats-cards" >
           <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 5; on: click"  >
-            <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+            <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" link="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
             </a-entity>
