@@ -8,6 +8,7 @@
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   <script src="js/sts.js"></script>
+  <script src="js/clickonce.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
 </head>
@@ -121,7 +122,7 @@
       <a-sphere id="biometric-hotspot"  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot"   position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot"  click-once position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
@@ -159,7 +160,7 @@
    </a-entity>
 
       <a-entity id="bodycam-popup" mixin="bodycam" >
-        <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;"  >
+        <a-text id="bodycam-close"   position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 1; transparent: false; visible: true;" >
         </a-text>
       </a-entity>
 

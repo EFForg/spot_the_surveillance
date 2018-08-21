@@ -24,11 +24,9 @@ AFRAME.registerComponent('listener', {
 			if (evt.target.dataset.wasClicked) {
 				return;
 			}
-
 			// evt.target tells you which was clicked.
+
 			evt.target.dataset.wasClicked = true;
-			var theEntity = evt.target;
-			theEntity.parentNode.removeChild(theEntity);
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
