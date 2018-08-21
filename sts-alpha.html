@@ -95,17 +95,16 @@
          </a-mixin>
       </a-assets>
 
-
       <a-entity camera look-controls wasd-controls position="0 2.2 4" >
-          <a-entity position="0 0 -3"
+          <a-cursor id="cursor" position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
           material="color: white; shader: flat"
-          cursor="maxDistance: 30; fuse: true">
+          cursor="maxDistance: 30; fuse: true" raycaster="objects: .clickable;">
           <a-animation begin="click" easing="ease-in" attribute="scale"
           fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
           fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
-          </a-entity>
+        </a-cursor>
 	        <a-entity mixin="counter" id="count-display">
 	        </a-entity>
        </a-entity>
@@ -122,7 +121,7 @@
       <a-sphere id="biometric-hotspot"  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot"  click-once position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" class="clickable" click-once  position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
@@ -160,7 +159,7 @@
    </a-entity>
 
       <a-entity id="bodycam-popup" mixin="bodycam" >
-        <a-text id="bodycam-close"   position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 1; transparent: false; visible: true;" >
+        <a-text id="bodycam-close" mixin="close" class="clickable" click-once  position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 1; transparent: false; visible: true;" event-set__enter=" _target: #bodycam-popup;">
         </a-text>
       </a-entity>
 
