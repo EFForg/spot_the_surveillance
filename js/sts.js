@@ -54,8 +54,8 @@ AFRAME.registerComponent('listener', {
 					light.setAttribute('visible', false);
 					intro.setAttribute('visible', false);
 				}
-				setTimeout(tada, 10000);
-				setTimeout(hidePopups, 27000);
+				setTimeout(tada, 5000);
+				setTimeout(hidePopups, 10000);
 			}
 		});
 	}
