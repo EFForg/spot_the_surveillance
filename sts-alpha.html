@@ -121,7 +121,7 @@
       <a-sphere id="alpr-hotspot" class="clickable" click-once  mixin="spotted"  data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true" geometry="height:2; width:2;" position="12.386 26.037 -7.557" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="alpr-mobile-hotspot" class="clickable" click-once data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" position="57.658 1 143.185" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot" class="clickable" click-once mixin="spotted" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" geometry="height: 1; width: 1;" position="6.920 1.419 17.431" rotation="180 0 0" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="biometric-hotspot" mixin="spotted" class="clickable" click-once  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
@@ -133,7 +133,7 @@
       <a-sphere id="camera1-hotspot" class="clickable" click-once mixin="spotted"  data-raycastable event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" geometry="height:4; width: 4;" position="17.628 59.430 -37.161" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" class="clickable" click-once   data-raycastable geometry="height:100; width: 100;" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" position="67.684 28.461 17.549" scale="3 3 3">
+      <a-sphere id="camera2-hotspot" class="clickable" click-once  mixin="spotted"  data-raycastable geometry="height:4; width: 4;" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true" position="67.684 28.461 17.549" rotation="180 70 0" scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="drone-hotspot" class="clickable" click-once    data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true" geometry="height:100; width: 100;" position="-20.611 146.779 133.158" scale="5 5 5">
