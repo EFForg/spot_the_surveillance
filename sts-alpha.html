@@ -59,10 +59,10 @@
         </a-mixin>
         <a-mixin id="bodycam"  position="-5.281 1.118 -2.832" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" visible="false" >
         </a-mixin>
-        <a-mixin id="camera-popup"  position="3.300 2.988 -2.717"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0" visible="false"
+        <a-mixin id="camera"  position="3.300 2.988 -2.717"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0" visible="false"
          >
        </a-mixin>
-       <a-mixin id="drone-popup"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#drone-card" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
+       <a-mixin id="drone"  position="-1.822 5.516  12.799" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#drone-card" rotation="20 170 0" scale="1.8 1.8 0" visible="false"
         >
         </a-mixin>
         <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
@@ -166,18 +166,18 @@
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera1-popup" mixin="camera-popup" event-set__exit="_event: mouseleave; _target: #camera1-popup; sound.volume: 0;" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="camera1-popup" mixin="camera" event-set__exit="_event: mouseleave; _target: #camera1-popup; sound.volume: 0;" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera2-popup" mixin="camera-popup" event-set__exit="_event: mouseleave; _target: #camera2-popup; sound.volume: 0;" position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="camera2-popup" mixin="camera" event-set__exit="_event: mouseleave; _target: #camera2-popup; sound.volume: 0;" position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-text mixin="close" material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #camera2-popup;" position="2.357 1.726 1.458" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="drone-popup" mixin="drone-popup" event-set__exit="_event: mouseleave; _target: #drone-popup; sound.volume: 0;" sound="src: #drone-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close"  material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #drone-popup;" >
+    <a-entity  id="drone-popup" mixin="drone" event-set__exit="_event: mouseleave; _target: #drone-popup; sound.volume: 0;" sound="src: #drone-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-text mixin="close" event-set__enter=" _target: #drone-popup;" >
       </a-text>
     </a-entity>
 
