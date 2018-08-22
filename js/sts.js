@@ -25,6 +25,7 @@ AFRAME.registerComponent('listener', {
 				return;
 			}
 			// evt.target tells you which was clicked.
+
 			evt.target.dataset.wasClicked = true;
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
