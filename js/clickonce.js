@@ -7,7 +7,7 @@ AFRAME.registerComponent('click-once', {
     // Define function to be executed on click.
     var clickHandler = function (e) {
       // Log clicks.
-      //console.log('clicked');
+      console.log('clicked');
       // Remove "clickable" class from entity.
       self.el.classList.remove('clickable');
       // Refresh raycaster object list to reflect changes.
