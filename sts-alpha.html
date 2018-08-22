@@ -167,7 +167,7 @@
     </a-entity>
 
     <a-entity  id="camera1-popup" class="clickable" mixin="camera" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close" class="clickable" material="visible: true; transparent: false; opacity: 1;" event-set__enter=" _target: #camera1-popup; sound.volume: 0;" >
+      <a-text mixin="close" class="clickable" event-set__enter=" _target: #camera1-popup; sound.volume: 0;" >
       </a-text>
     </a-entity>
 
@@ -235,7 +235,7 @@
 
     <a-entity id="exit-sts" class="clickable"  mixin="exit-logo"  >
     </a-entity>
-    <a-entity  id="attribution" class="clickable" event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.888 -12.750 -2.03" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
+    <a-entity  id="attribution-hotspot" class="clickable" event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.888 -12.750 -2.03" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
