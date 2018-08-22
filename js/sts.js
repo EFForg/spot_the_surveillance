@@ -39,7 +39,7 @@ AFRAME.registerComponent('listener', {
 					congratsLeft2.setAttribute('visible', true);
 					congratsRight1.setAttribute('visible', true);
 					congratsRight2.setAttribute('visible', true);
-					confetti.setAttribute('particle-system:enabled', true);
+					//confetti.setAttribute('particle-system:enabled', true);
 				}
 				// remove all other popups
 				function hidePopups() {
