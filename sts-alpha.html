@@ -27,6 +27,7 @@
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
+        <img id="attribution-card" src="assets/attribution-card.png">
         <img id="exit-card" src="assets/exit-card.png">
         <img id="left-arrow" src="assets/left-arrow-white.png">
         <img id="right-arrow" src="assets/right-arrow-white.png">
@@ -67,6 +68,8 @@
         <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="shader: flat; side: front; opacity: 0.9; transparent: true; color: black;"  visible="false">
         </a-mixin>
         <a-mixin id="intro"  position="0.715 4.5 -5.991" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 5;"  visible="true">
+       </a-mixin>
+       <a-mixin id="attribution-text"  position="8.212 -7.200 -5.255" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-60 -30 0" visible="false" >
        </a-mixin>
         <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
         </a-mixin>
@@ -121,7 +124,7 @@
       <a-sphere id="biometric-hotspot" mixin="see-through" position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-3.325 0.577 -6.036" data-raycastable geometry="radius: 0.5" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" mixin="see-through" position="-3.325 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
@@ -194,7 +197,9 @@
       <a-entity mixin="close"  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
       </a-entity>
     </a-entity>
-
+  <!-- attribution -->
+  <a-entity  id="attribution-popup" mixin="attribution-text"  >
+  </a-entity>
     <!-- exit -->
 
           <a-entity  id="exit-screen" mixin="exit-text" event-set__exit="_event: mouseleave; _target: #exit-screen; sound.volume: 0;" position="1.391 -6.7 -4" rotation="-60 0 0" sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
@@ -229,6 +234,8 @@
         <!-- end popups -->
 
     <a-entity id="exit-sts" mixin="exit-logo"  >
+    </a-entity>
+    <a-entity  id="attribution" event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.888 -12.750 -2.03" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
