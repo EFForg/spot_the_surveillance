@@ -112,7 +112,7 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot"  position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot"  position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-popup; visible: true"  scale="3 3 3">
       </a-sphere>
 
       <a-sphere id="alpr-mobile-hotspot" mixin="see-through" position="57.658 1 143.185" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
@@ -143,48 +143,48 @@
 
     <!-- all the popups -->
 
-      <a-entity id="alpr-popup" mixin="alpr" sound="src: #alpr-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-entity id="alpr-popup" mixin="alpr" event-set__exit="_event: mouseleave; _target: #alpr-popup; sound.volume: 0;" sound="src: #alpr-audio; autoplay: false; loop: false; volume: 5; on: click">
         <a-text mixin="close" event-set__enter=" _target: #alpr-popup;" >
         </a-text>
     </a-entity>
 
-    <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
+    <a-entity  id="alpr-mobile-popup" mixin="alpr-mobile" event-set__exit="_event: mouseleave; _target: #alpr-mobile-popup; sound.volume: 0;" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup;"  position="2.127 1.842 0.131" >
       </a-text>
     </a-entity>
 
-   <a-entity  id="biometric-popup" mixin="biometric"  sound="src: #biometric-audio; autoplay: false; loop: false; volume: 5; on: click">
+   <a-entity  id="biometric-popup" mixin="biometric" event-set__exit="_event: mouseleave; _target: #biometric-popup; sound.volume: 0;" sound="src: #biometric-audio; autoplay: false; loop: false; volume: 5; on: click">
     <a-text mixin="close"  event-set__enter=" _target: #biometric-popup;" >
     </a-text>
    </a-entity>
 
-      <a-entity id="bodycam-popup" mixin="bodycam" sound="src: #bodycam-audio; autoplay: false; loop: false; volume: 5; on: click">
-        <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;"  >
-        </a-text>
-      </a-entity>
+    <a-entity id="bodycam-popup" mixin="bodycam" event-set__exit="_event: mouseleave; _target: #bodycam-popup; sound.volume: 0;" sound="src: #bodycam-audio; autoplay: false; loop: false; volume: 5; on: click" >
+      <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup;"  >
+      </a-text>
+    </a-entity>
 
-    <a-entity  id="camera1-popup" mixin="camera-popup" sound="src: #camera2-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="camera1-popup" mixin="camera-popup" event-set__exit="_event: mouseleave; _target: #camera1-popup; sound.volume: 0;" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-text mixin="close"  event-set__enter=" _target: #camera1-popup;" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera2-popup" mixin="camera-popup" position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close"  event-set__enter=" _target: #camera2-popup;" position="2.357 1.726 1.458" >
+    <a-entity  id="camera2-popup" mixin="camera-popup" event-set__exit="_event: mouseleave; _target: #camera2-popup; sound.volume: 0;" position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-text mixin="close" material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #camera2-popup;" position="2.357 1.726 1.458" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="drone-popup" mixin="drone-popup" sound="src: #drone-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close"  event-set__enter=" _target: #drone-popup;" >
+    <a-entity  id="drone-popup" mixin="drone-popup" event-set__exit="_event: mouseleave; _target: #drone-popup; sound.volume: 0;" sound="src: #drone-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-text mixin="close"  material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #drone-popup;" >
       </a-text>
     </a-entity>
 
     <!-- false positives -->
-    <a-entity  id="bird-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 200 0" position="1.862 3.751 7.715" sound="src: #bird-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="bird-popup" mixin="false-positive" event-set__exit="_event: mouseleave; _target: #bird-popup; sound.volume: 0;"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 200 0" position="1.862 3.751 7.715" sound="src: #bird-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" mixin="false-positive"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="light-popup" mixin="false-positive" event-set__exit="_event: mouseleave; _target: #light-popup; sound.volume: 0;" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
     </a-entity>
@@ -197,14 +197,14 @@
 
     <!-- exit -->
 
-          <a-entity  id="exit-screen" mixin="exit-text"  position="1.391 -6.7 -4" rotation="-60 0 0" sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
+          <a-entity  id="exit-screen" mixin="exit-text" event-set__exit="_event: mouseleave; _target: #exit-screen; sound.volume: 0;" position="1.391 -6.7 -4" rotation="-60 0 0" sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
           <a-entity id="sls" mixin="close" geometry="height: 1; width: 3; "  position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
           </a-entity>
           <a-entity id="resume" mixin="close" event-set__enter="_event: click; _target: #exit-screen; visible: false"  geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
           </a-entity>
         </a-entity>
         <a-entity id="congrats-all" >
-          <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 5; on: click"  >
+          <a-entity  id="congrats-popup1" event-set__exit="_event: mouseleave; _target: #congrats-popup; sound.volume: 0;" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0" sound="src: #congrats-audio; autoplay: false; loop: false; volume: 5; on: click"  >
             <a-entity id="sls1" mixin="close" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" mixin="replay"  >
@@ -223,7 +223,7 @@
           <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
           </a-entity>
 
-          <a-entity id="confetti" particle-system="accelerationSpread: 20 0 20; color: white; enabled: false;  particleCount: 300; opacity: 0.3; preset: default; size: 0.5; velocityValue: 0 15 0" position="5.584 1.250 -1.4"  ></a-entity>
+          <!--a-entity id="confetti" particle-system="accelerationSpread: 20 0 20; color: white; enabled: false;  particleCount: 300; opacity: 0.3; preset: default; size: 0.5; velocityValue: 0 15 0" position="5.584 1.250 -1.4"  ></a-entity-->
 
         </a-entity>
         <!-- end popups -->
