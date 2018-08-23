@@ -32,7 +32,7 @@
         <img id="exit-card" src="assets/exit-card.png">
         <img id="left-arrow" src="assets/left-arrow-white.png">
         <img id="right-arrow" src="assets/right-arrow-white.png">
-        <img id="sts-sky" src="assets/sts-sky1-flip-blurred.jpg">
+        <img id="sts-sky" src="assets/sts-sky1-flip-bird.jpg">
         <!-- sounds -->
         <audio id="alpr-audio" src="assets/alpr.mp3"></audio>
         <audio id="alpr-mobile-audio" src="assets/alpr-mobile.mp3"></audio>
@@ -121,10 +121,10 @@
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once  mixin="see-through" position="57.658 1 143.185"  event-set__click="_event: click; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  position="-99.870 -72.889 -176.212"  geometry="radius: 4" event-set__click="_event: click; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" mixin="see-through" data-clickable click-once  position="-99.870 -72.889 -176.212"  geometry="radius: 4" event-set__click="_event: click; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" data-clickable click-once  position="-2.85 0.577 -6.036"  geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" mixin="see-through" data-clickable click-once  position="-2.85 0.577 -6.036"  geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" data-clickable click-once mixin="see-through" position="17.628 59.430 -37.161"  geometry="radius: 4" event-set__click="_event: click; _target: #camera1-popup; visible: true" scale="2 2 2">
@@ -138,7 +138,7 @@
     </a-entity>
 
     <!-- false positives -->
-    <a-sphere id="bird-hotspot"  data-clickable click-once  position="34.995 69.7 58.84"  event-set__click="_event: click; _target: #bird-popup; visible: true"  scale="3 3 3">
+    <a-sphere id="bird-hotspot" mixin="see-through" data-clickable click-once  position="9.162 24.43 21.694"  event-set__click="_event: click; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
     <a-sphere id="light-hotspot" data-clickable click-once mixin="see-through" position="-19.084 9.421 -7.871"  event-set__click="_event: click; _target: #light-popup; visible: true"  scale="2 2 2">
