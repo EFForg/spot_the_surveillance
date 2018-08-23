@@ -141,10 +141,10 @@
     </a-entity>
 
     <!-- false positives -->
-    <a-sphere id="bird-hotspot"  class="clickable" click-once mixin="spotted" position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
+    <a-sphere id="bird-hotspot"  class="clickable" click-once   mixin="spotted" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true" geometry="height:1; width: 1" position="8.03 30.247 13.019" rotation="110 0 0" scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" class="clickable" click-once mixin="spotted"  data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" geometry="height:1; width: 1;" position="-19.084 9.421 -7.871" scale="2 2 2">
+    <a-sphere id="light-hotspot" class="clickable" click-once mixin="spotted"  data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true" geometry="height:2; width: 2;" position="-19.084 9.421 -7.871" rotation= "0 40 0" scale="2 2 2">
     </a-sphere>
 
     <!-- all the popups -->
