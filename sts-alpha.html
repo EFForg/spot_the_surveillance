@@ -115,33 +115,33 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="see-through" position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="see-through" position="12.386 26.037 -7.557"  event-set__click="_event: click; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="alpr-mobile-hotspot" data-clickable click-once  mixin="see-through" position="57.658 1 143.185" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot" data-clickable click-once  mixin="see-through" position="57.658 1 143.185"  event-set__click="_event: click; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" data-clickable click-once  position="-99.870 -72.889 -176.212"  geometry="radius: 4" event-set__click="_event: click; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" data-clickable click-once  position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" data-clickable click-once  position="-2.85 0.577 -6.036"  geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" data-clickable click-once mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" data-clickable click-once mixin="see-through" position="17.628 59.430 -37.161"  geometry="radius: 4" event-set__click="_event: click; _target: #camera1-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" data-clickable click-once mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
+      <a-sphere id="camera2-hotspot" data-clickable click-once mixin="see-through" position="239.637 86.628 62.650 "  geometry="radius: 4" event-set__click="_event: click; _target: #camera2-popup; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="drone-hotspot" data-clickable click-once  mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
+      <a-sphere id="drone-hotspot" data-clickable click-once  mixin="see-through" position="-20.611 146.779 133.158"  event-set__click="_event: click; _target: #drone-popup; visible: true"  scale="5 5 5">
       </a-sphere>
     </a-entity>
 
     <!-- false positives -->
-    <a-sphere id="bird-hotspot"  data-clickable click-once  position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
+    <a-sphere id="bird-hotspot"  data-clickable click-once  position="34.995 69.7 58.84"  event-set__click="_event: click; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" data-clickable click-once mixin="see-through" position="-19.084 9.421 -7.871" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="2 2 2">
+    <a-sphere id="light-hotspot" data-clickable click-once mixin="see-through" position="-19.084 9.421 -7.871"  event-set__click="_event: click; _target: #light-popup; visible: true"  scale="2 2 2">
     </a-sphere>
 
     <!-- all the popups -->
@@ -152,7 +152,7 @@
     </a-entity>
 
     <a-entity  id="alpr-mobile-popup"  data-clickable mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
-      <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup; sound.volume: 0;"  position="2.127 1.842 0.131" >
+      <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup; sound.volume: 0;"  position="4.703 3.742 7.890" >
       </a-text>
     </a-entity>
 
@@ -187,7 +187,7 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" data-clickablemixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="light-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; sound.volume: 0;; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
     </a-entity>
