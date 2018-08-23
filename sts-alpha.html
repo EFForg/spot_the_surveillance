@@ -102,7 +102,7 @@
           <a-entity id="cursor" position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
           material="color: white; shader: flat"
-          cursor="maxDistance: 30; fuse: true" raycaster="objects: .clickable;">
+          cursor="maxDistance: 30; fuse: true" raycaster="objects: [data-clickable]";>
           <a-animation begin="click" easing="ease-in" attribute="scale"
           fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
@@ -115,86 +115,86 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot" class="clickable" click-once  mixin="see-through" position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
+      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="see-through" position="12.386 26.037 -7.557" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="alpr-mobile-hotspot" class="clickable" click-once  mixin="see-through" position="57.658 1 143.185" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
+      <a-sphere id="alpr-mobile-hotspot" data-clickable click-once  mixin="see-through" position="57.658 1 143.185" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" scale="20 20 20">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" class="clickable" click-once  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" data-clickable click-once  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" class="clickable" click-once  position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" data-clickable click-once  position="-2.85 0.577 -6.036" data-raycastable geometry="radius: 0.25" event-set__click="_event: click; _target: #bodycam-popup; visible: true" scale="1 1 1">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" class="clickable" click-once mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
+      <a-sphere id="camera1-hotspot" data-clickable click-once mixin="see-through" position="17.628 59.430 -37.161" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" scale="2 2 2">
       </a-sphere>
 
-      <a-sphere id="camera2-hotspot" class="clickable" click-once mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
+      <a-sphere id="camera2-hotspot" data-clickable click-once mixin="see-through" position="239.637 86.628 62.650 " data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #camera2-popup; visible: true"  scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="drone-hotspot" class="clickable" click-once  mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
+      <a-sphere id="drone-hotspot" data-clickable click-once  mixin="see-through" position="-20.611 146.779 133.158" data-raycastable event-set__enter="_event: mouseenter; _target: #drone-popup; visible: true"  scale="5 5 5">
       </a-sphere>
     </a-entity>
 
     <!-- false positives -->
-    <a-sphere id="bird-hotspot"  class="clickable" click-once  position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
+    <a-sphere id="bird-hotspot"  data-clickable click-once  position="34.995 69.7 58.84" data-raycastable event-set__enter="_event: mouseenter; _target: #bird-popup; visible: true"  scale="3 3 3">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" class="clickable" click-once mixin="see-through" position="-19.084 9.421 -7.871" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="2 2 2">
+    <a-sphere id="light-hotspot" data-clickable click-once mixin="see-through" position="-19.084 9.421 -7.871" data-raycastable event-set__enter="_event: mouseenter; _target: #light-popup; visible: true"  scale="2 2 2">
     </a-sphere>
 
     <!-- all the popups -->
 
-      <a-entity id="alpr-popup" class="clickable" mixin="alpr" sound="src: #alpr-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-entity id="alpr-popup" data-clickable mixin="alpr" sound="src: #alpr-audio; autoplay: false; loop: false; volume: 5; on: click">
         <a-text mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0" >
         </a-text>
     </a-entity>
 
-    <a-entity  id="alpr-mobile-popup"  class="clickable" mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
+    <a-entity  id="alpr-mobile-popup"  data-clickable mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #alpr-mobile-popup; sound.volume: 0;"  position="2.127 1.842 0.131" >
       </a-text>
     </a-entity>
 
-   <a-entity  id="biometric-popup" class="clickable" mixin="biometric" sound="src: #biometric-audio; autoplay: false; loop: false; volume: 5; on: click">
+   <a-entity  id="biometric-popup" data-clickable mixin="biometric" sound="src: #biometric-audio; autoplay: false; loop: false; volume: 5; on: click">
     <a-text mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0;" >
     </a-text>
    </a-entity>
 
-    <a-entity id="bodycam-popup" class="clickable" mixin="bodycam" sound="src: #bodycam-audio; autoplay: false; loop: false; volume: 5; on: click" >
+    <a-entity id="bodycam-popup" data-clickable mixin="bodycam" sound="src: #bodycam-audio; autoplay: false; loop: false; volume: 5; on: click" >
       <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0;"  >
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera1-popup" class="clickable" mixin="camera" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close" class="clickable" event-set__enter=" _target: #camera1-popup; sound.volume: 0;" >
+    <a-entity  id="camera1-popup" data-clickable mixin="camera" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-text mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="camera2-popup" class="clickable" mixin="camera"  position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close" class="clickable" material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #camera2-popup; sound.volume: 0;" position="2.357 1.726 1.458" >
+    <a-entity  id="camera2-popup" data-clickable mixin="camera"  position="7.0 1.4 3.612" rotation="0 -120 0" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-text mixin="close" data-clickable material="visible:true; transparent:false; opacity: 1;" event-set__enter=" _target: #camera2-popup; sound.volume: 0;" position="2.357 1.726 1.458" >
       </a-text>
     </a-entity>
 
-    <a-entity  id="drone-popup" class="clickable" mixin="drone"  sound="src: #drone-audio; autoplay: false; loop: false; volume: 6; on: click">
+    <a-entity  id="drone-popup" data-clickable mixin="drone"  sound="src: #drone-audio; autoplay: false; loop: false; volume: 6; on: click">
       <a-text mixin="close" event-set__enter=" _target: #drone-popup; sound.volume: 0;">
       </a-text>
     </a-entity>
 
     <!-- false positives -->
-    <a-entity  id="bird-popup" class="clickable" mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 200 0" position="1.862 3.751 7.715" sound="src: #bird-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="bird-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 200 0" position="1.862 3.751 7.715" sound="src: #bird-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false; sound.volume: 0;" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" class="clickable"mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="light-popup" data-clickablemixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; sound.volume: 0;; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
     </a-entity>
 
     <!-- intro -->
     <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
-      <a-entity mixin="close" class="clickable"  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
+      <a-entity mixin="close" data-clickable  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
       </a-entity>
     </a-entity>
   <!-- attribution -->
@@ -210,9 +210,9 @@
         </a-entity>
         <a-entity id="congrats-all" >
           <a-entity  id="congrats-popup1" mixin="congrats" position="5.584 1.250 -1.325" rotation="0 -80 0"   >
-            <a-entity id="sls1" mixin="close" class="clickable" geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
+            <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
-            <a-entity replay id="replay1" class="clickable"  mixin="replay"  >
+            <a-entity replay id="replay1" data-clickable  mixin="replay"  >
             </a-entity>
           </a-entity>
 
@@ -233,9 +233,9 @@
         </a-entity>
         <!-- end popups -->
 
-    <a-entity id="exit-sts" class="clickable"  mixin="exit-logo"  >
+    <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
     </a-entity>
-    <a-entity  id="attribution-hotspot" class="clickable" event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.888 -12.750 -2.03" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
+    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.888 -12.750 -2.03" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
