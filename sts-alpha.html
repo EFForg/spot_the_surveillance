@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   <script src="js/sts.js"></script>
-  <script src="js/clickonce.js"></script>
+  <!--script src="js/clickonce.js"></script-->
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
 </head>
@@ -84,7 +84,7 @@
 
          <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1">
          </a-mixin>
-         <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;">
+         <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; visible: false; src:#found;">
          </a-mixin>
          <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
          </a-mixin>
@@ -124,10 +124,10 @@
       <a-sphere id="alpr-mobile-hotspot" class="clickable" click-once mixin="spotted" data-raycastable event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" geometry="height: 1; width: 1;" position="6.920 1.419 17.431" rotation="180 0 0" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" mixin="spotted" class="clickable" click-once  position="-99.870 -72.889 -176.212" data-raycastable geometry="radius: 4" event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  scale="3 3 3">
+      <a-sphere id="biometric-hotspot" class="clickable" click-once  mixin="spotted"  data-raycastable  event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  geometry="radius: 4" position="-99.870 -72.889 -176.212" scale="3 3 3">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" class="clickable" click-once mixin="spotted"  data-raycastable event-set__click="_event: click; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1">
+      <a-sphere id="bodycam-hotspot" class="clickable" click-once   data-raycastable event-set__click="_event: click; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" class="clickable" click-once mixin="spotted"  data-raycastable event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true" geometry="height:4; width: 4;" position="17.628 59.430 -37.161" scale="2 2 2">

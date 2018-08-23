@@ -21,12 +21,16 @@ AFRAME.registerComponent('listener', {
 		var intro = document.querySelector('#intro-popup');
 
 		this.el.addEventListener('mouseenter', evt => {
+			console.log('hello')
 			if (evt.target.dataset.wasClicked) {
 				return;
 			}
 			// evt.target tells you which was clicked.
 
 			evt.target.dataset.wasClicked = true;
+			let myEl = document.querySelector(evt.target.id);
+			console.log(myEl);
+			myEl.setAttribute('visible',true);
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
