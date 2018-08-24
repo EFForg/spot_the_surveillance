@@ -121,7 +121,7 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="spotted"   event-set__click="_event: click; _target: #alpr; visible: true" geometry="height:6; width:6;" position="10.132 27.559 -6.899" rotation="50 0 0">
+      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="spotted"   event-set__click="_event: click; _target: #alpr; visible: true" geometry="height:6; width:6;" position="10.132 27.559 -6.899" rotation="50 0 0" visible="true">
       </a-sphere>
 
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__click="_event: click; _target: #alpr-mobile-popup; visible: true" geometry="height: 2; width: 2;" position="1.754 2.065 8.623" rotation="180 0 20" visible="false">
@@ -133,7 +133,7 @@
       <a-sphere id="bodycam-hotspot" data-clickable click-once mixin="spotted"   event-set__click="_event: click; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
       </a-sphere>
 
-      <a-sphere id="camera1-hotspot" data-clickable click-once mixin="spotted"  event-set__click="_event: click; _target: #camera1-popup; visible: true" geometry="height:12; width: 12;" position="23.59  60.40  -36.113" rotation="40 0 0"  >
+      <a-sphere id="camera1-hotspot" data-clickable click-once mixin="spotted"  event-set__click="_event: click; _target: #camera1-popup; visible: true" geometry="height:12; width: 12;" position="23.59  60.40  -36.113" rotation="40 0 0"  visible="true">
       </a-sphere>
 
       <a-sphere id="camera2-hotspot" data-clickable click-once  mixin="spotted"   geometry="height:4; width: 4;" event-set__click="_event: click; _target: #camera2-popup; visible: true" position="67.684 28.461 17.549" rotation="180 70 0" scale="3 3 3" visible="false">
@@ -158,7 +158,7 @@
     </a-entity>
 
     <a-entity  id="alpr-mobile-popup"  data-clickable mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
-      <a-text  event-set__enter=" _target: #alpr-mobile-popup;  visible: false sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 0.721 1.556" material="color: black; shader: flat; side: front;visible: true; transparent: false; opacity: 1;" >      
+      <a-text  event-set__enter=" _target: #alpr-mobile-popup;  visible: false sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 0.721 1.556" material="color: black; shader: flat; side: front;visible: true; transparent: false; opacity: 1;" >
       </a-text>
     </a-entity>
 
