@@ -60,9 +60,9 @@
         </a-mixin>
         <a-mixin id="alpr-mobile"  position="4.267 4.876 6.961" geometry="primitive: plane; width: 4; height: 4;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
         </a-mixin>
-        <a-mixin id="biometric"  position="-7.090 1.235 1.077" rotation="0 100 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" visible="false" >
+        <a-mixin id="biometric"  position="-7.264 1.235 -0.369" rotation="0 90 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" visible="false" >
         </a-mixin>
-        <a-mixin id="bodycam"  position="-5.281 1.118 -2.832" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" visible="false" >
+        <a-mixin id="bodycam"  position="-6.684 1.118 -4.531" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" visible="false" >
         </a-mixin>
         <a-mixin id="camera"  position="3.300 2.988 -2.717"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0" visible="false"
          >
@@ -127,7 +127,7 @@
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__click="_event: click; _target: #alpr-mobile-popup; visible: true" geometry="height: 2; width: 2;" position="1.754 2.065 8.623" rotation="180 0 20" visible="false">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__click="_event: click; _target: #biometric; visible: true"  geometry="radius: 4" position="-99.870 -72.889 -176.212" scale="3 3 3" visible="false">
+      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__click="_event: click; _target: #biometric; visible: true"  geometry="height: 7; width: 7;" position="-16.318 -9.975 -24.458"  visible="false">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot" data-clickable click-once mixin="spotted"   event-set__click="_event: click; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
