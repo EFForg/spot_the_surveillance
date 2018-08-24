@@ -144,7 +144,7 @@
     </a-entity>
 
     <!-- false positives -->
-    <a-sphere id="bird-hotspot"  data-clickable  mixin="see-through" event-set__click="_event: click; _target: #bird-popup; visible: true" geometry="height:1; width: 1" position="9.162 24.43 21.694" rotation="110 0 0" scale="3 3 3">
+    <a-sphere id="bird-hotspot"  data-clickable  mixin="see-through" event-set__click="_event: click; _target: #bird-popup; visible: true" geometry="height:3; width: 3" position="9.039 28.395 17.084" rotation="110 0 0" material="visible:true; transparent: false; opacity: 1">
     </a-sphere>
 
     <a-sphere id="light-hotspot" data-clickable  mixin="see-through"   event-set__click="_event: click; _target: #light-popup; visible: true" geometry="height:2; width: 2;" position="-19.084 9.421 -7.871" rotation= "0 40 0" scale="2 2 2">
@@ -158,7 +158,7 @@
     </a-entity>
 
     <a-entity  id="alpr-mobile-popup"  data-clickable mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
-      <a-text  event-set__enter=" _target: #alpr-mobile-popup;  visible: false sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 0.721 1.556" material="color: black; shader: flat; side: front;visible: true; transparent: false; opacity: 1;" >
+      <a-text event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup;  visible: false; sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 0.721 1.556" material="color: black; shader: flat; side: front;visible: true; transparent: false; opacity: 1;" >
       </a-text>
     </a-entity>
 
