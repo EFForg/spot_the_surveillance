@@ -127,7 +127,7 @@
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__click="_event: click; _target: #alpr-mobile-popup; visible: true" geometry="height: 2.5; width: 3;" position="3.622 1.58 8.019" rotation="180 0 20" visible="false">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__click="_event: click; _target: #biometric; visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"   visible="true">
+      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__click="_event: click; _target: #biometric; visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"  visible="false">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot" data-clickable click-once mixin="spotted"   event-set__click="_event: click; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
@@ -147,7 +147,7 @@
     <a-sphere id="bird-hotspot"  data-clickable  mixin="see-through" event-set__click="_event: click; _target: #bird-popup; visible: true" geometry="height:3; width: 3" position="9.039 32.076 17.084" rotation="110 0 0" material="visible:true; transparent: false; opacity: 1">
     </a-sphere>
 
-    <a-sphere id="light-hotspot" data-clickable  mixin="see-through"   event-set__click="_event: click; _target: #light-popup; visible: true" geometry="height:2; width: 2;" position="-19.084 9.421 -7.871" rotation= "0 40 0" scale="2 2 2">
+    <a-sphere id="light-hotspot" data-clickable  mixin="see-through"   event-set__click="_event: click; _target: #light-popup; visible: true" geometry="height:2; width: 2;" position="-19.031 9.249 -8.468" rotation= "0 40 0" scale="2 2 2">
     </a-sphere>
 
     <!-- all the popups -->
@@ -193,7 +193,7 @@
       </a-entity>
     </a-entity>
 
-    <a-entity  id="light-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.493 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-entity  id="light-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.122 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; sound.volume: 0;; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
     </a-entity>
