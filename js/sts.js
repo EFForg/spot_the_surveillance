@@ -20,7 +20,7 @@ AFRAME.registerComponent('listener', {
 		var light = document.querySelector('#light-popup');
 		var intro = document.querySelector('#intro-popup');
 
-		this.el.addEventListener('click', (e) => {
+		this.el.addEventListener('mouseenter', (e) => {
 			e.target.setAttribute("visible", "true")
 			if (e.target.dataset.wasClicked) {
 				return;
