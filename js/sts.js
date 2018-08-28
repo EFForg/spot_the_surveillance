@@ -2,7 +2,7 @@ AFRAME.registerComponent('listener', {
 	init: function () {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
-		var congrats = document.querySelector('#congrats-popup1');
+		var congrats = document.querySelector('#congrats-popup');
 		var congratsLeft1 = document.querySelector('#congrats-left-arrow1');
 		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
 		var congratsRight1 = document.querySelector('#congrats-right-arrow1');

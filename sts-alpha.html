@@ -11,6 +11,7 @@
   <script src="js/clickonce.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
+  <script src="js/audio.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -215,12 +216,12 @@
           </a-entity>
         </a-entity>
         <a-entity id="congrats-all" >
-          <a-entity  id="congrats-popup1" mixin="congrats" data-clickable position="5.584 1.250 -1.325" rotation="0 -80 0" >
+          <a-sound  id="congrats-popup" mixin="congrats" data-clickable congrats-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  position="5.584 1.250 -1.325">
             <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" data-clickable  mixin="replay"  >
             </a-entity>
-          </a-entity>
+          </a-sound>
 
           <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
           </a-entity>
