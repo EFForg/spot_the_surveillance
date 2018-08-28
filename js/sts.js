@@ -36,6 +36,7 @@ AFRAME.registerComponent('listener', {
 			if (score == 7) {
 				function tada() {
 					congrats.setAttribute('visible', true);
+					congrats.setAttribute('material', { visible: true});
 					congratsLeft1.setAttribute('visible', true);
 					congratsLeft2.setAttribute('visible', true);
 					congratsRight1.setAttribute('visible', true);
