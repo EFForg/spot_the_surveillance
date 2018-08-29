@@ -10,7 +10,7 @@ AFRAME.registerComponent('play-audio', {
         if(!playing) {
           audio.playSound();
         } else {
-          audio.pauseSound();
+          audio.stopSound();
         }
       }
       playing = !playing;
