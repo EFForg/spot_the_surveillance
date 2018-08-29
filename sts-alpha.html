@@ -59,7 +59,7 @@
 
         <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-card" position="7.482 1.642 0.368"  rotation="20 -80 0"  visible="false">
         </a-mixin>
-        <a-mixin id="alpr-mobile"  position="4.267 4.876 6.961" geometry="primitive: plane; width: 4; height: 4;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
+        <a-mixin id="alpr-mobile"  position="4.076 5.453 6.580" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
         </a-mixin>
         <a-mixin id="biometric"  position="-7.264 1.235 -0.369" rotation="0 90 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#biometric-card" visible="false" >
         </a-mixin>
@@ -192,7 +192,7 @@
     </a-sound>
 
     <!-- false positives -->
-    <a-sound  id="bird-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.275 4.930 9.298" visible="false" >
+    <a-sound  id="bird-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.275 4.930 8.518" visible="false" >
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false; sound.volume: 0;  material.visible: false;" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
     </a-sound>
