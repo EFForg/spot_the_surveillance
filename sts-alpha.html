@@ -42,7 +42,7 @@
         <audio id="alpr-mobile-audio" src="assets/alpr-mobile.mp3"></audio>
         <audio id="biometric-audio" src="assets/biometric.mp3"></audio>
         <audio id="bodycam-audio" src="assets/bodycam.mp3"></audio>
-        <audio id="camera-audio" src="assets/camera.mp3"></audio>
+        <audio id="camera-audio" src="assets/camera.mp3" poolSize="2"></audio>
         <audio id="drone-audio" src="assets/drone.mp3"></audio>
         <audio id="bird-audio" src="assets/bird.mp3"></audio>
         <audio id="light-audio" src="assets/light.mp3"></audio>
@@ -191,7 +191,7 @@
     </a-sound>
 
     <!-- false positives -->
-    <a-sound  id="bird-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.275 4.930 8.518" visible="false" >
+    <a-sound  id="bird-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.112 4.358 6.778" visible="false" >
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false; sound.volume: 0;  material.visible: false;" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
     </a-sound>
@@ -244,7 +244,7 @@
 
     <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
     </a-entity>
-    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -3.844" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
+    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 10; height: 5;" material="color: #ec1e1e; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: attribution">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
