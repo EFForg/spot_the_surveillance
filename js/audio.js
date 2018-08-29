@@ -6,17 +6,20 @@ AFRAME.registerComponent('play-audio', {
 
     this.el.addEventListener('click', () => {
       var viz = this.el.getAttribute('material').visible;
+      console.log('vis=' + viz);
       if (viz){
         if(!playing) {
           audio.playSound();
         } else {
           audio.stopSound();
         }
+        playing = !playing;
       }
-      playing = !playing;
+
     });
     this.el.addEventListener('mouseleave', () => {
-      audio.stopSound();
+      audio.pauseSound();
+      playing = !playing;
     })
   }
 })
