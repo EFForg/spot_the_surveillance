@@ -128,7 +128,7 @@
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" geometry="height: 2.5; width: 3;" position="3.622 1.58 8.019" rotation="180 0 20" visible="false">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__enter="_event: mouseenter; _target: #biometric; visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"  visible="false">
+      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"  visible="false">
       </a-sphere>
 
       <a-sphere id="bodycam-hotspot" data-clickable click-once mixin="spotted"   event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
@@ -163,10 +163,10 @@
       </a-text>
     </a-entity>
 
-   <a-entity  id="biometric-popup" data-clickable mixin="biometric" sound="src: #biometric-audio; autoplay: false; loop: false; volume: 5; on: click">
+   <a-sound  id="biometric-popup" mixin="biometric" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#biometric-audio">
     <a-text mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0;" >
     </a-text>
-   </a-entity>
+  </a-sound>
 
     <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#bodycam-audio">
       <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0;"  >
