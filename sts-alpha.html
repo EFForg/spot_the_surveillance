@@ -122,7 +122,7 @@
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
-      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="spotted"   event-set__enter="_event: mouseenter; _target: #alpr; visible: true" geometry="height:6; width:6;" position="10.379 26.918 -11.273" rotation="50 0 0" visible="false">
+      <a-sphere id="alpr-hotspot" data-clickable click-once  mixin="spotted"   event-set__enter="_event: mouseenter; _target: #alpr-popup; visible: true" geometry="height:6; width:6;" position="10.379 26.918 -11.273" rotation="50 0 0" visible="false">
       </a-sphere>
 
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true" geometry="height: 2.5; width: 3;" position="3.622 1.58 8.019" rotation="180 0 20" visible="false">
@@ -153,15 +153,15 @@
 
     <!-- all the popups -->
 
-      <a-entity id="alpr-popup" data-clickable mixin="alpr" sound="src: #alpr-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-sound  id="alpr-popup" mixin="alpr" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-audio">
         <a-text mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0" >
         </a-text>
-    </a-entity>
+    </a-sound>
 
-    <a-entity  id="alpr-mobile-popup"  data-clickable mixin="alpr-mobile" sound="src: #alpr-mobile-audio; autoplay: false; loop: false; volume: 5; on: click" >
+    <a-sound  id="alpr-mobile-popup" mixin="alpr-mobile" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-mobile-audio">
       <a-text event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup;  visible: false; sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 1.6 1.189" material="color: black; shader: flat; side: front;visible: false; transparent: true; opacity: 0;" >
       </a-text>
-    </a-entity>
+    </a-sound>
 
    <a-sound  id="biometric-popup" mixin="biometric" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#biometric-audio">
     <a-text mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0;" >
