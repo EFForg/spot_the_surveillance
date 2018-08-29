@@ -4,7 +4,7 @@ AFRAME.registerComponent('play-audio', {
     var entity = document.querySelector('a-sound');
     let audio = this.el.components.sound;
 
-    this.el.addEventListener('click', () => {
+    this.el.addEventListener('mouseenter', () => {
       var viz = this.el.getAttribute('material').visible;
       console.log('vis=' + viz);
       if (viz){
