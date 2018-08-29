@@ -31,8 +31,8 @@
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <img id="attribution-card" src="assets/attribution-card.png">
         <img id="exit-card" src="assets/exit-card.png">
-        <img id="left-arrow" src="assets/left-arrow-white.png">
-        <img id="right-arrow" src="assets/right-arrow-white.png">
+        <img id="left-arrow" src="assets/arrows-left.jpg">
+        <img id="right-arrow" src="assets/arrows-right.jpg">
 
         <img id="found" src="assets/selected.png">
 
@@ -168,10 +168,12 @@
     </a-text>
    </a-entity>
 
-    <a-entity id="bodycam-popup" data-clickable mixin="bodycam" sound="src: #bodycam-audio; autoplay: false; loop: false; volume: 5; on: click" >
+    <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#bodycam-audio">
       <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0;"  >
       </a-text>
-    </a-entity>
+    </a-sound>
+
+
 
     <a-entity  id="camera1-popup" data-clickable mixin="camera" sound="src: #camera-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-text mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;" >
@@ -216,7 +218,7 @@
           </a-entity>
         </a-entity>
         <a-entity id="congrats-all" >
-          <a-sound  id="congrats-popup" mixin="congrats" data-clickable congrats-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false">
+          <a-sound  id="congrats-popup" mixin="congrats" data-clickable play-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
             <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" data-clickable  mixin="replay"  >

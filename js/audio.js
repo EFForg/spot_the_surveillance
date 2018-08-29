@@ -1,9 +1,8 @@
-AFRAME.registerComponent('congrats-audio', {
+AFRAME.registerComponent('play-audio', {
   init:function() {
     let playing = false;
     var entity = document.querySelector('a-sound');
     let audio = this.el.components.sound;
-    this.el.setAttribute("src", "assets/congrats.mp3");
 
     this.el.addEventListener('click', () => {
       var viz = this.el.getAttribute('material').visible;
@@ -11,10 +10,13 @@ AFRAME.registerComponent('congrats-audio', {
         if(!playing) {
           audio.playSound();
         } else {
-          audio.stopSound();
+          audio.pauseSound();
         }
       }
       playing = !playing;
     });
+    this.el.addEventListener('mouseleave', () => {
+      audio.stopSound();
+    })
   }
 })
