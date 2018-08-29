@@ -192,15 +192,15 @@
     </a-sound>
 
     <!-- false positives -->
-    <a-entity  id="bird-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.275 4.930 9.298" sound="src: #bird-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-sound  id="bird-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="10 170 0" position="0.275 4.930 9.298" visible="false" >
       <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false; sound.volume: 0;" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
       </a-entity>
-    </a-entity>
+    </a-sound>
 
-    <a-entity  id="light-popup" data-clickable mixin="false-positive" text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking! " position="-3.026 4.122 -0.366" rotation="40 60 0" sound="src: #light-audio; autoplay: false; loop: false; volume: 5; on: click">
+    <a-sound  id="light-popup" mixin="false-positive" data-clickable play-audio autoplay="false" loop="false" src="#light-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking!" position="-3.026 4.122 -0.366" rotation="40 60 0" visible="false" >
       <a-entity mixin="close"  event-set__enter="_event: mouseenter; _target: #light-popup; sound.volume: 0;; visible: false" geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
       </a-entity>
-    </a-entity>
+    </a-sound>
 
     <!-- intro -->
     <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
