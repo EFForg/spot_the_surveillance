@@ -6,7 +6,7 @@ AFRAME.registerComponent('play-audio', {
 
     this.el.addEventListener('mouseenter', () => {
       var viz = this.el.getAttribute('material').visible;
-      console.log('vis=' + viz);
+      //console.log('vis=' + viz);
       if (viz){
         if(!playing) {
           audio.playSound();
