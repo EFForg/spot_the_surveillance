@@ -42,7 +42,7 @@
         <audio id="alpr-mobile-audio" src="assets/alpr-mobile.mp3"></audio>
         <audio id="biometric-audio" src="assets/biometric.mp3"></audio>
         <audio id="bodycam-audio" src="assets/bodycam.mp3"></audio>
-        <audio id="camera-audio" src="assets/camera.mp3" poolSize="2"></audio>
+        <audio id="camera-audio" src="assets/camera.mp3"></audio>
         <audio id="drone-audio" src="assets/drone.mp3"></audio>
         <audio id="bird-audio" src="assets/bird.mp3"></audio>
         <audio id="light-audio" src="assets/light.mp3"></audio>
@@ -170,12 +170,12 @@
     </a-text>
   </a-sound>
 
-    <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#bodycam-audio">
+    <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" poolSize="2" volume="5"  visible="false" src="#bodycam-audio">
       <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0; material.visible: false;"  >
       </a-text>
     </a-sound>
 
-    <a-sound  id="camera1-popup" mixin="camera1" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#camera-audio">
+    <a-sound  id="camera1-popup" mixin="camera1" data-clickable play-audio autoplay="false" loop="false" poolSize="2" volume="5"  visible="false" src="#camera-audio">
       <a-text mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;  material.visible: false;" >
       </a-text>
     </a-sound>
