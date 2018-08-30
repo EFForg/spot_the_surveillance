@@ -6,6 +6,7 @@
   <meta content="utf-8" http-equiv="encoding">
   <script src="js/aframe.js"></script>
   <script src="js/aframe-event-set-component.js"></script>
+  <script src="js/load-scene.js"></script>
   <script src="js/sts.js"></script>
   <script src="js/clickonce.js"></script>
   <script src="js/links.js"></script>
@@ -13,9 +14,10 @@
   <script src="js/audio.js"></script>
 </head>
 <body>
+  <div id="initial-bg">
+  </div>
   <div class="wrapper">
     <a-scene>
-      <h1>Get ready to Spot the Surveillance...</h1>
       <a-assets timeout="15000">
         <!-- images -->
         <img id="alpr-card"  src="assets/alpr-card.png">
@@ -107,6 +109,7 @@
          </a-mixin>
       </a-assets>
 
+
       <a-entity camera look-controls wasd-controls position="0 2.2 4" >
           <a-entity id="cursor" position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
@@ -121,6 +124,14 @@
 	        </a-entity>
        </a-entity>
 
+      <!-- intro -->
+      <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
+          <a-entity loadscene mixin="close" data-clickable  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
+          </a-entity>
+    </a-entity>
+    <!-- everything besides the intro card, camera and counter -->
+
+    <a-entity id="sts-live" visible="false">
     <!-- all the surveillance objects  -->
     <a-entity listener id="surveillance-objects">
 
@@ -201,11 +212,6 @@
       </a-entity>
     </a-sound>
 
-    <!-- intro -->
-    <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
-      <a-entity mixin="close" data-clickable  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905">
-      </a-entity>
-    </a-entity>
   <!-- attribution -->
   <a-entity  id="attribution-popup" mixin="attribution-text"  >
   </a-entity>
@@ -250,7 +256,7 @@
     </a-entity>
     <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; autoplay: true; loop: true; volume: 1;"  >
     </a-entity>
-
+ </a-entity> <!-- end sts-live -->
 </a-scene>
 </div>
 </body>
