@@ -1,4 +1,5 @@
 body {
+  background: #86a7dd;
   font-family: "Trebuchet", helvetica, arial, sans-serif;
   margin: 2em;
 }
@@ -8,7 +9,7 @@ h1 {
   margin: 5rem;
 }
 
-#initial-bg {
+.initial-bg {
   position: fixed;
   left: 0;
   right: 0;
