@@ -1,11 +1,8 @@
 var ding = document.getElementById("ding");
+var hotspots = document.getElementById("surveillance-objects");
 
-var el = document.getElementsByClassName('hotspot');
-for (var i=0; i < el.length; i++) {
-    // Here we have the same onclick
-    el.item(i).onclick = function() {
-       console.log('Click just happened');
-          ding.load();
-          ding.play();
-    };
-}
+hotspots.addEventListener("mouseenter", function( event ) {
+  console.log('Click just happened');
+  ding.load();
+  ding.play();
+});
