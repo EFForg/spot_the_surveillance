@@ -141,10 +141,10 @@
       <a-sphere id="alpr-mobile-hotspot" data-clickable click-once mixin="spotted"  event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup; visible: true; material.visible: true" geometry="height: 2.5; width: 3;" position="3.622 1.58 8.019" rotation="180 0 20" visible="false">
       </a-sphere>
 
-      <a-sphere id="biometric-hotspot" data-clickable click-once  mixin="spotted"    event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true; material.visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"  visible="false">
+      <a-sphere id="biometric-hotspot" class="hotspot" data-clickable click-once  mixin="spotted"    event-set__enter="_event: mouseenter; _target: #biometric-popup; visible: true; material.visible: true"  geometry="height: 7; width: 7;" position="-14.982 -9.975 -25.215" rotation="0 20 0"  visible="false">
       </a-sphere>
 
-      <a-sphere id="bodycam-hotspot" data-clickable click-once mixin="spotted"   event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true; material.visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
+      <a-sphere id="bodycam-hotspot" class="hotspot" data-clickable click-once mixin="spotted"   event-set__enter="_event: mouseenter; _target: #bodycam-popup; visible: true; material.visible: true"  geometry="height: 1; width: 1" position="-2.85 0.577 -6.036" scale="1 1 1" visible="false">
       </a-sphere>
 
       <a-sphere id="camera1-hotspot" data-clickable click-once mixin="spotted"  event-set__enter="_event: mouseenter; _target: #camera1-popup; visible: true; material.visible: true" geometry="height:12; width: 12;" position="23.244 58.391 -39.778" rotation="40 0 0"  visible="false">
@@ -260,4 +260,5 @@
 </a-scene>
 </div>
 </body>
+<script src="js/audio-hotspot.js"></script>
 </html>
