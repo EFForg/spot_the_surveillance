@@ -1,40 +1,22 @@
 body {
-  background: #86a7dd;
+  background: #000000;
   font-family: "Trebuchet", helvetica, arial, sans-serif;
   margin: 2em;
 }
 
 h1 {
+  color: white;
   display: inline-block;
   margin: 5rem;
 }
 
-.initial-bg {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1;
-
-  display: block;
-  background: #86a7dd;
-  background-image: url('../assets/sts-sky-crop.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-
-  -webkit-filter: blur(6px);
-  -moz-filter: blur(6px);
-  -o-filter: blur(6px);
-  -ms-filter: blur(6px);
-  filter: blur(6px);
-}
 .wrapper {
   position: relative;
   height: 100%;
   width: 100%;
   z-index: 999;
 }
+
 #counter-results {
   background: rgba(200, 200, 200, 0.8);
   display: inline-block;
