@@ -104,7 +104,7 @@
           geometry="primitive: plane; height: 0.35; width: 1.2;" material="visible: false; transparent: true; opacity: 0;" position="-0.010 -1.525 0.074"  >
          </a-mixin>
 
-         <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-screen; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
+         <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
          </a-mixin>
          <a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
          </a-mixin>
@@ -218,10 +218,10 @@
   </a-entity>
     <!-- exit -->
 
-          <a-entity  id="exit-screen" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
+          <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
           <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
           </a-entity>
-          <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-screen; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
+          <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-popup; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
           </a-entity>
         </a-entity>
         <a-entity id="congrats-all" >
