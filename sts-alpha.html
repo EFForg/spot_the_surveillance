@@ -216,38 +216,40 @@
   <!-- attribution -->
   <a-entity  id="attribution-popup" mixin="attribution-text"  >
   </a-entity>
-    <!-- exit -->
 
-          <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
-          <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
-          </a-entity>
-          <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-popup; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
-          </a-entity>
-        </a-entity>
-        <a-entity id="congrats-all" >
-          <a-sound  id="congrats-popup" mixin="congrats" data-clickable play-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
+  <!-- exit -->
+  <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
+      <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+      </a-entity>
+      <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-popup; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
+      </a-entity>
+  </a-entity>
+
+  <!-- congrats -->
+  <a-entity id="congrats-all" >
+      <a-sound  id="congrats-popup" mixin="congrats" data-clickable play-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
             <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
             <a-entity replay id="replay1" data-clickable  mixin="replay"  >
             </a-entity>
-          </a-sound>
+      </a-sound>
 
-          <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
-          </a-entity>
+      <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
+      </a-entity>
 
-          <a-entity  id="congrats-left-arrow2" mixin="arrow" position="4.683 1.9 6.271" rotation="0 -120 0" material="src:#left-arrow" >
-          </a-entity>
+      <a-entity  id="congrats-left-arrow2" mixin="arrow" position="4.683 1.9 6.271" rotation="0 -120 0" material="src:#left-arrow" >
+      </a-entity>
 
-          <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 80 0">
-          </a-entity>
+      <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 80 0">
+      </a-entity>
 
-          <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
-          </a-entity>
+      <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
+      </a-entity>
 
-          <!--a-entity id="confetti" particle-system="accelerationSpread: 20 0 20; color: white; enabled: false;  particleCount: 300; opacity: 0.3; preset: default; size: 0.5; velocityValue: 0 15 0" position="5.584 1.250 -1.4"  ></a-entity-->
+      <!--a-entity id="confetti" particle-system="accelerationSpread: 20 0 20; color: white; enabled: false;  particleCount: 300; opacity: 0.3; preset: default; size: 0.5; velocityValue: 0 15 0" position="5.584 1.250 -1.4"  ></a-entity-->
 
-        </a-entity>
-        <!-- end popups -->
+  </a-entity>
+  <!-- end popups -->
 
     <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
     </a-entity>
@@ -261,5 +263,5 @@
 </a-scene>
 </div>
 </body>
-<script src="js/audio-hotspot.js"></script>
+<script src="js/audio-hotspot.js"></script> <!-- audio cues -->
 </html>
