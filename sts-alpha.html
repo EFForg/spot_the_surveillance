@@ -80,9 +80,9 @@
         </a-mixin>
         <a-mixin id="intro"  position="0.715 2.8 -5.991" rotation="0 -5 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: true; loop: false; volume: 5;"  visible="true">
        </a-mixin>
-       <a-mixin id="attribution-text"  position="5.584 -4.109 -2.995" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-60 -30 0" visible="false" >
+       <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" >
        </a-mixin>
-        <a-mixin id="exit-text"  position="0 -5 -2" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  visible="false" >
+        <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" >
         </a-mixin>
         <a-mixin id="congrats"  position="5.584 1.250 -1.325" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card; visible:false;" visible="false" >
         </a-mixin>
@@ -218,7 +218,7 @@
   </a-entity>
     <!-- exit -->
 
-          <a-entity  id="exit-screen" mixin="exit-text" e position="1.391 -6.7 -4" rotation="-60 0 0" sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
+          <a-entity  id="exit-screen" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
           <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
           </a-entity>
           <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-screen; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
