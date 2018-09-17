@@ -8,7 +8,7 @@
   <script src="js/aframe-event-set-component.js"></script>
   <script src="js/load-scene.js"></script>
   <script src="js/clickonce.js"></script>
-  <script src="js/sts.js"></script>
+  <script src="js/counter-congrats.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
@@ -232,10 +232,10 @@
 
   <!-- congrats -->
   <a-entity id="congrats-all" >
-      <a-sound  id="congrats-popup" mixin="congrats" data-clickable play-audio rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
+      <a-sound  id="congrats-popup" mixin="congrats" data-clickable rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
             <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
             </a-entity>
-            <a-entity replay id="replay1" data-clickable  mixin="replay"  >
+            <a-entity replay id="replay1" data-clickable  mixin="replay">
             </a-entity>
       </a-sound>
 
