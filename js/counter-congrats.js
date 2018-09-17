@@ -41,6 +41,19 @@ AFRAME.registerComponent('listener', {
 					congratsLeft2.setAttribute('visible', true);
 					congratsRight1.setAttribute('visible', true);
 					congratsRight2.setAttribute('visible', true);
+					congratsAudio = congrats.components.sound;
+					let playing = false;
+					congrats.addEventListener('mouseenter', () => {
+						  if (!playing) {
+								congratsAudio.playSound();
+								playing = true;
+							}
+					});
+					congrats.addEventListener('mouseleave', () => {
+						    congratsAudio.stopSound();
+							  playing = false;
+
+					});
 					//confetti.setAttribute('particle-system:enabled', true);
 				}
 				// remove all other popups
