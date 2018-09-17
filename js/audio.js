@@ -1,25 +1,31 @@
 AFRAME.registerComponent('play-audio', {
   init:function() {
+    var self = this;
     let playing = false;
     var entity = document.querySelector('a-sound');
-    let audio = this.el.components.sound;
+    let audio = self.el.components.sound;
 
-    this.el.addEventListener('mouseenter', () => {
-      var viz = this.el.getAttribute('material').visible;
-      //console.log('vis=' + viz);
+    self.el.addEventListener('mouseenter', () => {
+      var viz = self.el.getAttribute('material').visible;
+      console.log('vis=' + viz);
       if (viz){
         if(!playing) {
+          console.log('playing');
           audio.playSound();
+        //  self.el.removeAttribute('data-clickable');
         } else {
+          console.log('stopping')
           audio.stopSound();
+        //  self.el.setAttribute('data-clickable');
         }
         playing = !playing;
       }
 
     });
-    this.el.addEventListener('mouseleave', () => {
+    self.el.addEventListener('mouseleave', () => {
+      console.log('pausing');
       audio.pauseSound();
-      playing = !playing;
+      playing = false;
     })
   }
 })
