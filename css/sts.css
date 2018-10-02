@@ -16,14 +16,3 @@ h1 {
   width: 100%;
   z-index: 999;
 }
-
-#counter-results {
-  background: rgba(200, 200, 200, 0.8);
-  display: inline-block;
-  padding: 1rem;
-  position: absolute;
-  right: 5rem;
-  bottom: 5rem;
-  width: 25rem;
-  z-index: 1000;
-}

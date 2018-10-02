@@ -16,8 +16,6 @@
 
 </head>
 <body>
-  <div class="initial-bg">
-  </div>
   <div class="wrapper">
     <a-scene>
       <h1>Get ready to Spot the Surveillance...</h1>
@@ -27,18 +25,17 @@
         <img id="alpr-mobile-card"  src="assets/alpr-mobile-card.png">
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
-        <img id="counter-bg" src="assets/resized-binoculars-power-of-2.png">
+        <img id="counter-bg" src="assets/binos-in-box.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="congrats-card" src="assets/congrats-card-replay.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <img id="attribution-card" src="assets/attribution-card.png">
-        <img id="exit-card" src="assets/exit-card-replay.png">
+        <img id="exit-card" src="assets/exit-card.png">
         <img id="left-arrow" src="assets/arrows-left.png">
         <img id="right-arrow" src="assets/arrows-right.png">
         <img id="found" src="assets/selected.png">
-        <img id="attribution-button" src="assets/attribution-button.png">
 
         <img id="sts-sky" src="assets/sts-sky1-flip-bird.jpg">
 
@@ -62,7 +59,7 @@
         <!-- mixins -->
         <!-- popups -->
 
-        <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-card" position="7.482 4.973 0.279"  rotation="20 -80 0"  visible="false">
+        <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-card" position="7.482 1.642 0.368"  rotation="20 -80 0"  visible="false">
         </a-mixin>
         <a-mixin id="alpr-mobile"  position="4.076 5.453 6.580" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
         </a-mixin>
@@ -70,7 +67,7 @@
         </a-mixin>
         <a-mixin id="bodycam"  position="-6.684 1.118 -4.531" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#bodycam-card" visible="false" >
         </a-mixin>
-        <a-mixin id="camera1"   geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false;src:#camera-card" position="2.906 2.988 -2.956" rotation="20 -40 0" visible="false"
+        <a-mixin id="camera1"   geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false;src:#camera-card" position="3.300 2.988 -2.717" rotation="20 -40 0" visible="false"
          >
        </a-mixin>
        <a-mixin id="camera2"    geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#camera-card" position="7.0 1.4 3.612" rotation="0 -120 0"  visible="false"
@@ -119,7 +116,7 @@
           <a-entity id="cursor" position="0 0 -3"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
           material="color: white; shader: flat"
-          cursor=" fuse: true" raycaster="objects: [data-clickable]";>
+          cursor="maxDistance: 30; fuse: true" raycaster="objects: [data-clickable]";>
           <a-animation begin="click" easing="ease-in" attribute="scale"
           fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
@@ -227,11 +224,9 @@
 
   <!-- exit -->
   <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
-      <a-text mixin="close" data-clickable event-set__enter=" _target: #exit-popup;">
-      </a-text>
-      <a-entity id="sls" mixin="close" data-clickable geometry="height: 0.75; width: 3;"  position="-0.113 -0.706 0.240"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+      <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
       </a-entity>
-      <a-entity replay id="replay2" mixin="replay" data-clickable  geometry="height: 0.75; width: 3;"  position="-0.202 -1.709 0.667"  >
+      <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-popup; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
       </a-entity>
   </a-entity>
 
@@ -261,7 +256,7 @@
 
     <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
     </a-entity>
-    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 5; height: 1.2;" material="color: #ec1e1e ; shader: flat; side: front; opacity: 1; src: #attribution-button" rotation="-90 0 0" visible="true"  >
+    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 5; height: 1.2;" material="color: #ec1e1e ; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: Attribution; width: 20;">
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
