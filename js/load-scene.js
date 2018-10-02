@@ -6,12 +6,14 @@ AFRAME.registerComponent('loadscene', {
       document.getElementById('ambience').play();
       document.getElementById('camera-audio').addEventListener('loaded', function() { alert('ok') })
     });
-    if (AFRAME.utils.device.isMobile()){
-      document.getElementById('sts-live').setAttribute('visible', true);
-    } else {
+    //if (AFRAME.utils.device.isMobile()){
+    //  alert("ok mobile");
+    //  document.getElementById('sts-live').setAttribute('visible', true);
+  //  } else {
+  //    alert("ok headset browser");
       this.el.addEventListener("click", (e)=> {
         document.getElementById('sts-live').setAttribute('visible', true);
       });
-    }
+    //}
   }
 });
