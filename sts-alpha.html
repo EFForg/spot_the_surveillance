@@ -25,17 +25,18 @@
         <img id="alpr-mobile-card"  src="assets/alpr-mobile-card.png">
         <img id="biometric-card" src="assets/biometric-card.png">
         <img id="bodycam-card" src="assets/bodycam-card.png">
-        <img id="counter-bg" src="assets/binos-in-box.png">
+        <img id="counter-bg" src="assets/resized-binoculars-power-of-2.png">
         <img id="camera-card" src="assets/camera-card.png">
         <img id="congrats-card" src="assets/congrats-card-replay.png">
         <img id="drone-card"  src="assets/drone-card.png">
         <img id="intro-card" src="assets/intro-card.png">
         <img id="eff-logo" src="assets/eff-logo-black.svg">
         <img id="attribution-card" src="assets/attribution-card.png">
-        <img id="exit-card" src="assets/exit-card.png">
+        <img id="exit-card" src="assets/exit-card-replay.png">
         <img id="left-arrow" src="assets/arrows-left.png">
         <img id="right-arrow" src="assets/arrows-right.png">
         <img id="found" src="assets/selected.png">
+        <img id="attribution-button" src="assets/attribution-button.png">
 
         <img id="sts-sky" src="assets/sky-lighten.jpg">
 
@@ -216,7 +217,7 @@
 
   <!-- attribution -->
   <a-entity  id="attribution-popup" mixin="attribution-text">
-    <a-entity id="more-attribution" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.016 -2.535 0.485"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+    <a-entity id="more-attribution" mixin="buttons" data-clickable geometry="height: 0.75; width: 3; " position="-0.016 -2.535 0.485"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
     </a-entity>
     <a-text mixin="close" data-clickable event-set__enter=" _target: #attribution-popup;">
     </a-text>
@@ -226,7 +227,7 @@
   <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
       <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
       </a-entity>
-      <a-entity id="resume" mixin="close" data-clickable event-set__enter="_event: click; _target: #exit-popup; visible: false; sound.volume: 0;"   geometry="height: 1; width: 1.6;" position="-0.095 -1.997 0.910"  >
+      <a-entity replay id="replay2" data-clickable  mixin="replay" position="-0.095 -1.997 0.910" >
       </a-entity>
   </a-entity>
 
@@ -256,7 +257,7 @@
 
     <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
     </a-entity>
-    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 5; height: 1.2;" material="color: #ec1e1e ; shader: flat; side: front; opacity: 1;" rotation="-90 0 0" visible="true"  text="color: white; align: center; value: Attribution; width: 20;">
+    <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button" rotation="-90 0 0" visible="true"  >
     </a-entity>
     <a-entity id="magic-carpet" mixin="exit">
     </a-entity>
