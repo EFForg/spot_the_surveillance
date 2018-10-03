@@ -6,14 +6,12 @@ AFRAME.registerComponent('loadscene', {
       document.getElementById('ambience').play();
       document.getElementById('camera-audio').addEventListener('loaded', function() { alert('ok') })
     });
-    //if (AFRAME.utils.device.isMobile()){
-    //  alert("ok mobile");
-    //  document.getElementById('sts-live').setAttribute('visible', true);
-  //  } else {
-  //    alert("ok headset browser");
+    if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
+      document.getElementById('sts-live').setAttribute('visible', true);
+    } else {
       this.el.addEventListener("click", (e)=> {
         document.getElementById('sts-live').setAttribute('visible', true);
       });
-    //}
+    }
   }
 });
