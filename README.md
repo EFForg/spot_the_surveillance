@@ -1,5 +1,4 @@
-# spot_the_surveillance
-
+# Spot the Surveillance
 Spot the Surveillance is an open-source educational VR tool to help people identify street-level surveillance 
 in their community. As each surveillance device is identified, the user is informed on how the device is used 
 via text and narration. The experience is created with accessibility in mind, 
