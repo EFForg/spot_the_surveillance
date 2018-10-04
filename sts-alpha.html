@@ -170,37 +170,37 @@
     <!-- all the popups -->
 
     <a-sound  id="alpr-popup" mixin="alpr" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-audio">
-        <a-text mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0; material.visible: false;" >
+        <a-text id="alpr-close" mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0; material.visible: false;" >
         </a-text>
     </a-sound>
 
     <a-sound  id="alpr-mobile-popup" mixin="alpr-mobile" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-mobile-audio">
-      <a-text event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup;  visible: false; sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 1.6 1.189" material="color: black; shader: flat; side: front;visible: false; transparent: true; opacity: 0;" >
+      <a-text id="alpr-mobile-close" event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup;  visible: false; sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 1.6 1.189" material="color: black; shader: flat; side: front;visible: false; transparent: true; opacity: 0;" >
       </a-text>
     </a-sound>
 
    <a-sound  id="biometric-popup" mixin="biometric" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#biometric-audio">
-    <a-text mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0; material.visible: false;" >
+    <a-text id="biometric-close" mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0; material.visible: false;" >
     </a-text>
   </a-sound>
 
     <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#bodycam-audio">
-      <a-text mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0; material.visible: false;"  >
+      <a-text id="bodycam-close" mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0; material.visible: false;"  >
       </a-text>
     </a-sound>
 
     <a-sound  id="camera1-popup" mixin="camera1" data-clickable play-audio autoplay="false" loop="false"  volume="5"  visible="false" src="#camera-audio">
-      <a-text mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;  material.visible: false;" >
+      <a-text id="camera1-close" mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;  material.visible: false;" >
       </a-text>
     </a-sound>
 
     <a-sound  id="camera2-popup" mixin="camera2" data-clickable play-audio autoplay="false" loop="false"  volume="5"  visible="false" src="#camera2-audio">
-      <a-text mixin="close" data-clickable event-set__enter=" _target: #camera2-popup; sound.volume: 0; material.visible: false;"  >
+      <a-text id="camera2-close" mixin="close" data-clickable event-set__enter=" _target: #camera2-popup; sound.volume: 0; material.visible: false;"  >
       </a-text>
     </a-sound>
 
     <a-sound  id="drone-popup" mixin="drone" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#drone-audio">
-      <a-text mixin="close" event-set__enter=" _target: #drone-popup; sound.volume: 0;  material.visible: false;">
+      <a-text id="drone-close" mixin="close" event-set__enter=" _target: #drone-popup; sound.volume: 0;  material.visible: false;">
       </a-text>
     </a-sound>
 
