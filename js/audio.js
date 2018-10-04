@@ -7,14 +7,14 @@ AFRAME.registerComponent('play-audio', {
 
     self.el.addEventListener('mouseenter', () => {
       var viz = self.el.getAttribute('material').visible;
-      console.log('vis=' + viz);
+      //console.log('vis=' + viz);
       if (viz){
         if(!playing) {
-          console.log('playing');
+          // console.log('playing');
           audio.playSound();
         //  self.el.removeAttribute('data-clickable');
         } else {
-          console.log('stopping')
+        //  console.log('stopping')
           audio.stopSound();
         //  self.el.setAttribute('data-clickable');
         }
