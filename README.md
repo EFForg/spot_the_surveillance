@@ -13,3 +13,7 @@ After cloning/downloading, you'll need to launch a web server. An easy way to do
 python -m SimpleHTTPServer 8000
 
 Then to see the site, naviate to: http://localhost:8000
+
+The live version of this site can be found at: https://eff.org/spot-vr
+
+This project is licensed under GNU General Public License v3.0.
