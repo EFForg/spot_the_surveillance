@@ -8,9 +8,11 @@ AFRAME.registerComponent('loadscene', {
     });
     if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
       document.getElementById('sts-live').setAttribute('visible', true);
+      document.getElementById('ambience').play();
     } else {
       this.el.addEventListener("click", (e)=> {
         document.getElementById('sts-live').setAttribute('visible', true);
+        document.getElementById('ambience').play();
       });
     }
   }
