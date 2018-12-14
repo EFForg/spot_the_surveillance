@@ -64,8 +64,7 @@
         </a-mixin>
         <a-mixin id="alpr-mobile"  position="4.076 5.453 6.580" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
         </a-mixin>
-        <a-mixin id="biometric"  position="-7.264 1.235 -0.369" rotation="0 90 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#biometric-card" visible="false" >
-        </a-mixin>
+
         <a-mixin id="bodycam"  position="-6.684 1.118 -4.531" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#bodycam-card" visible="false" >
         </a-mixin>
         <a-mixin id="camera1"   geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false;src:#camera-card" position="3.300 2.988 -8.154" rotation="20 -40 0" visible="false"
@@ -179,10 +178,10 @@
       </a-text>
     </a-sound>
 
-   <a-sound  id="biometric-popup" mixin="biometric" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#biometric-audio">
+   <!--a-sound  id="biometric-popup"  data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#biometric-audio">
     <a-text id="biometric-close" mixin="close"  event-set__enter=" _target: #biometric-popup; sound.volume: 0; material.visible: false;" >
     </a-text>
-  </a-sound>
+  </a-sound-->
 
     <a-sound  id="bodycam-popup" mixin="bodycam" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#bodycam-audio">
       <a-text id="bodycam-close" mixin="close"  event-set__enter=" _target: #bodycam-popup; sound.volume: 0; material.visible: false;"  >
