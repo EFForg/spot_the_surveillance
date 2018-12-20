@@ -51,7 +51,7 @@ AFRAME.registerComponent('loadscene', {
       // move popups to their correct positions
       alprPop.setAttribute('position', { x: 7.482, y: 1.642, z: 0.368 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
-      biometricPop.setAttribute('position', { x: -7.264, y: 1.235, z: -0.369 });
+      biometricPop.setAttribute('position', { x: -8.229, y: 1.137, z: 0.118 });
       bodycamPop.setAttribute('position', { x: -6.684, y: 1.118, z: -4.531 });
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
