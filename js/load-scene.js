@@ -12,8 +12,8 @@ AFRAME.registerComponent('loadscene', {
       var camera1Hot = document.querySelector('#camera1-hotspot');
       var camera2Hot = document.querySelector('#camera2-hotspot');
       var droneHot = document.querySelector('#drone-hotspot');
-      birdHot = document.querySelector('#bird-hotspot');
-      lightHot = document.querySelector('#light-hotspot');
+      var birdHot = document.querySelector('#bird-hotspot');
+      var lightHot = document.querySelector('#light-hotspot');
       // popups
       var alprPop = document.querySelector('#alpr-popup');
       var alprMobilePop = document.querySelector('#alpr-mobile-popup');
@@ -22,8 +22,8 @@ AFRAME.registerComponent('loadscene', {
       var camera1Pop = document.querySelector('#camera1-popup');
       var camera2Pop = document.querySelector('#camera2-popup');
       var dronePop = document.querySelector('#drone-popup');
-      birdPop = document.querySelector('#bird-popup');
-      lightPop = document.querySelector('#light-popup');
+      var birdPop = document.querySelector('#bird-popup');
+      var lightPop = document.querySelector('#light-popup');
       // move hotspots to their correct positions
       //
       // these hotspots need to be positioned differently
@@ -51,8 +51,8 @@ AFRAME.registerComponent('loadscene', {
       // move popups to their correct positions
       alprPop.setAttribute('position', { x: 7.482, y: 1.642, z: 0.368 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
-      biometricPop.setAttribute('position', { x: -7.264, y: 1.235, z: -0.369 });
-      bodycamPop.setAttribute('position', { x: -6.684, y: 1.118, z: -4.531 });
+      biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
+      bodycamPop.setAttribute('position', { x: -6.627, y: 1.118, z: -4.589 });
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
       dronePop.setAttribute('position', { x: -4.509, y: 3.731, z: 8.831 });
