@@ -225,9 +225,9 @@
   <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
     <a-text mixin="close" data-clickable event-set__enter=" _target: #exit-popup;">
     </a-text>
-    <a-entity id="sls" mixin="close" data-clickable geometry="height: 1; width: 3; " position="-0.036 -0.881 0.394"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+    <a-entity id="sls" mixin="close" data-clickable geometry="height: 0.8; width: 3; " position="-0.105 -0.726 0.257"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
     </a-entity>
-    <a-entity replay id="replay2" data-clickable  mixin="replay" geometry="height: 1; width: 3; " position="-0.095 -1.997 0.910" >
+    <a-entity replay id="replay2" data-clickable  mixin="replay" geometry="primitive: plane; height: 1; width: 3;"material="visible: false; transparent: true; opacity: 0;" position="-0.178 -1.657 0.647" >
     </a-entity>
   </a-entity>
 
