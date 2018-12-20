@@ -97,15 +97,12 @@
   <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;"  scale="3 3 1">
   </a-mixin>
   <!-- this is the initial position of all hotspots/devices, so they are hidden behind the exit until the scene loads in load-scene.js-->
-  <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -340.523 10.223">
+  <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -341 10.223">
   </a-mixin>
   <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2">
   </a-mixin>
   <a-mixin id="close"  event-set__enter="_event: mouseenter; _target: #alpr; visible: false"
   position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
-</a-mixin>
-<a-mixin id="replay"
-geometry="primitive: plane; height: 0.35; width: 1.2;" material="visible: false; transparent: true; opacity: 0;" position="-0.010 -1.525 0.074"  >
 </a-mixin>
 
 <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
@@ -236,12 +233,7 @@ geometry="primitive: plane; height: 0.35; width: 1.2;" material="visible: false;
 
   <!-- congrats -->
   <a-entity id="congrats-all" >
-    <a-sound  id="congrats-popup" mixin="congrats" data-clickable rotation="0 -80 0" autoplay="false" loop="false" volume="5"  visible="false" src="#congrats-audio">
-      <a-entity id="sls1" mixin="close" data-clickable geometry="height: 0.5; width: 2.1; "  position="0 -0.658 0.399" exitlink="href:https://www.eff.org/issues/street-level-surveillance" >
-      </a-entity>
-      <a-entity replay id="replay1" data-clickable  mixin="replay">
-      </a-entity>
-    </a-sound>
+    <!-- congrats card loaded dynamically in counter-congrats.js -->
 
     <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
     </a-entity>
