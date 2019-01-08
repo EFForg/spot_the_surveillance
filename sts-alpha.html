@@ -203,7 +203,7 @@
   </a-sound>
 
   <!-- false positives -->
-  <a-sound  id="bird-popup" mixin="false-positive init-position" data-clickable play-audio autoplay="false" loop="false" src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="30 200 0"  visible="false" >
+  <a-sound  id="bird-popup" mixin="false-positive init-position" data-clickable play-audio autoplay="false" loop="false" geometry=";  height: 3; width: 4.5; "src="#bird-audio" volume="5"  text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!" rotation="30 200 0"  visible="false" >
     <a-entity mixin="close" event-set__enter="_event: mouseenter; _target: #bird-popup; visible: false; sound.volume: 0;  material.visible: false;" geometry="width: 0.5; height: 0.5;"  material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="1.226 0.604 0.394" >
     </a-entity>
   </a-sound>

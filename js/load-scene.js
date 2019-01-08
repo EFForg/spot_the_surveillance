@@ -56,7 +56,7 @@ AFRAME.registerComponent('loadscene', {
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
       dronePop.setAttribute('position', { x: -4.509, y: 3.731, z: 8.831 });
-      birdPop.setAttribute('position', { x: 1.822, y: 4.358, z: 6.778 });
+      birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });
       lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
     }
 
