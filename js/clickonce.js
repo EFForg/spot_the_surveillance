@@ -5,7 +5,6 @@ AFRAME.registerComponent('click-once', {
     var raycaster = scene.querySelector('[cursor]').components.raycaster;
 
     var clickHandler = function (e) {
-      //console.log('remove data-clickable');
       self.el.removeAttribute('data-clickable');
       // Remove event listener since no longer needed.enter
       self.el.removeEventListener('mouseenter', clickHandler);
