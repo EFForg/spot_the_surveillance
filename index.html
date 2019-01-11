@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
   <title>Spot the Surveillance</title>
-  <meta name="description" content="EFF Street-Level Surveillance VR prototype" />
+  <meta name="description" content="Spot the Surveillance is an open-source educational virtual reality (VR) tool to help people identify street-level surveillance in their community. As each surveillance device is identified, the user is informed on how the device is used via text and narration." />
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="css/sts.css">
   <meta content="utf-8" http-equiv="encoding">
@@ -61,15 +61,15 @@
         <!-- mixins -->
 
         <!-- popups -->
-        <!-- initial position for all popup is below exit/magic carpet -->
+        <!-- initial position for all popup is below exit/magic carpet. They are moved after user clicks Get Started for headsets/desktop, and after the scene loads for mobile/cardboard -->
         <a-mixin id="init-position" position="48 -341 11">
         <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-card"  rotation="20 -80 0"  visible="false">
         </a-mixin>
         <a-mixin id="alpr-mobile"  geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#alpr-mobile-card" rotation="20 -150 0"  visible="false" >
         </a-mixin>
-        <a-mixin id="biometric" rotation="0 90 0"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#biometric-card" visible="false" >
+        <a-mixin id="biometric"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#biometric-card" rotation="0 90 0" visible="false" >
         </a-mixin>
-        <a-mixin id="bodycam" rotation="0 60 0"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#bodycam-card" visible="false" >
+        <a-mixin id="bodycam"  geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; visible: false; src:#bodycam-card" rotation="0 60 0" visible="false" >
         </a-mixin>
         <a-mixin id="camera1" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; visible: false;src:#camera-card"  rotation="20 -40 0" visible="false">
       </a-mixin>
@@ -81,16 +81,16 @@
   </a-mixin>
   <a-mixin id="false-positive"  geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true; visible: false; "  visible="false">
   </a-mixin>
-  <a-mixin id="intro"  position="3.3 4.0 -5.991" rotation="0 -20 0" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  sound="src: #intro-audio; autoplay: false; loop: false; volume: 5;"  visible="true">
+  <a-mixin id="intro"  position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card"  rotation="0 -20 0" sound="src: #intro-audio; autoplay: false; loop: false; volume: 5;"  visible="true">
   </a-mixin>
 
   <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" >
   </a-mixin>
   <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" >
   </a-mixin>
-  <a-mixin id="congrats"  position="5.584 1.250 -1.325" geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card; visible:false;" visible="false" >
+  <a-mixin id="congrats"   geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card; visible:false;" position="5.584 1.250 -1.325" visible="false" >
   </a-mixin>
-  <a-mixin id="arrow"  position="0 -5 -2" geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow" visible="false" >
+  <a-mixin id="arrow"  geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow"  position="0 -5 -2" visible="false" >
   </a-mixin>
 
   <!-- misc mixins -->
@@ -105,18 +105,18 @@
   position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" >
 </a-mixin>
 
-<a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true" position="8 -40.524 2.747" geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" rotation="-90 0 0" visible="true" >
+<a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; color: #ec1e1e; shader: flat; side: front; opacity: 1; src:#eff-logo" position="8 -40.524 2.747" rotation="-90 0 0" visible="true" >
 </a-mixin>
-<a-mixin id="exit" geometry="primitive: sphere" position="47.468 -340.523 10.223" scale="300 1 300" material="color: #ec1e1e" >
+<a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300">
 </a-mixin>
 </a-assets>
 
 
 <a-entity camera look-controls wasd-controls position="0 2.2 4" >
-  <a-entity id="cursor" position="0 0 -3"
+  <a-entity id="cursor" cursor="maxDistance: 30; fuse: true"
   geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
-  material="color: white; shader: flat"
-  cursor="maxDistance: 30; fuse: true" raycaster="objects: [data-clickable]";>
+  material="color: white; shader: flat;"  position="0 0 -3"
+   raycaster="objects: [data-clickable]";>
   <a-animation begin="click" easing="ease-in" attribute="scale"
   fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
   <a-animation begin="fusing" easing="ease-in" attribute="scale"
@@ -227,7 +227,7 @@
     </a-text>
     <a-entity id="sls" mixin="close" data-clickable geometry="height: 0.8; width: 3; " position="-0.105 -0.726 0.257"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
     </a-entity>
-    <a-entity replay id="replay2" data-clickable  mixin="replay" geometry="primitive: plane; height: 1; width: 3;"material="visible: false; transparent: true; opacity: 0;" position="-0.178 -1.657 0.647" >
+    <a-entity replay id="replay2" data-clickable  mixin="replay" geometry="primitive: plane; height: 1; width: 3;" material="visible: false; transparent: true; opacity: 0;" position="-0.178 -1.657 0.647" >
     </a-entity>
   </a-entity>
 
@@ -252,7 +252,7 @@
 
   <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
   </a-entity>
-  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" position="1.821 -12.750 -4.727" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button" rotation="-90 0 0" visible="true"  >
+  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="1.821 -12.750 -4.727" rotation="-90 0 0" visible="true"  >
   </a-entity>
   <a-entity id="magic-carpet" mixin="exit">
   </a-entity>
