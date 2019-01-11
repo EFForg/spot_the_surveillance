@@ -28,13 +28,14 @@ AFRAME.registerComponent('loadscene', {
       //
       // these hotspots need to be positioned differently
       // for desktop/mobile, or they appear incorrectly positioned
+      // for desktop/mobile
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
         alprMobileHot.setAttribute('position', { x: 3.622, y: 2.229, z: 12.881 });
-        bodycamHot.setAttribute('position', { x: -4.564, y: 0.577, z: -6.036 });
+        bodycamHot.setAttribute('position', { x: -4.420, y: 0.567, z: -6.036 });
         camera1Hot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
-        // hotspots positions for headsets
+        // hotspots positions for headsets/cardboard
       } else {
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -11.27 });
         alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
