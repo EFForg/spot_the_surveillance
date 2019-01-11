@@ -168,12 +168,12 @@
 
   <!-- all the popups -->
   <a-sound  id="alpr-popup" mixin="alpr init-position" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-audio">
-    <a-text id="alpr-close" mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0; material.visible: false;" >
+    <a-text id="alpr-close" mixin="close" event-set__enter=" _target: #alpr-popup; sound.volume: 0; material.visible: false;" position="1.95 2.23 1.1">
     </a-text>
   </a-sound>
 
   <a-sound  id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#alpr-mobile-audio">
-    <a-text id="alpr-mobile-close" event-set__enter="_event: mouseenter; _target: #alpr-mobile-popup;  visible: false; sound.volume: 0;" geometry="primitive: plane; width: 0.5; height: 0.5;"  position="1.600 1.6 1.189" material="color: black; shader: flat; side: front;visible: false; transparent: true; opacity: 0;" >
+    <a-text id="alpr-mobile-close" mixin="close" event-set__enter=" _target: #alpr-mobile-popup;  sound.volume: 0; material.visible: false;"  position="2.0 0.8 1.6" >
     </a-text>
   </a-sound>
 
@@ -188,17 +188,17 @@
   </a-sound>
 
   <a-sound  id="camera1-popup" mixin="camera1 init-position" data-clickable play-audio autoplay="false" loop="false"  volume="5"  visible="false" src="#camera-audio">
-    <a-text id="camera1-close" mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;  material.visible: false;" >
+    <a-text id="camera1-close" mixin="close" data-clickable event-set__enter=" _target: #camera1-popup; sound.volume: 0;  material.visible: false;" position="3.1 2.9 1.5">
     </a-text>
   </a-sound>
 
   <a-sound  id="camera2-popup" mixin="camera2 init-position" data-clickable play-audio autoplay="false" loop="false"  volume="5"  visible="false" src="#camera2-audio">
-    <a-text id="camera2-close" mixin="close" data-clickable event-set__enter=" _target: #camera2-popup; sound.volume: 0; material.visible: false;"  >
+    <a-text id="camera2-close" mixin="close" data-clickable event-set__enter=" _target: #camera2-popup; sound.volume: 0; material.visible: false;" position="2.25 1.5 1.2" >
     </a-text>
   </a-sound>
 
   <a-sound  id="drone-popup" mixin="drone init-position" data-clickable play-audio autoplay="false" loop="false" volume="5"  visible="false" src="#drone-audio">
-    <a-text id="drone-close" mixin="close" event-set__enter=" _target: #drone-popup; sound.volume: 0;  material.visible: false;">
+    <a-text id="drone-close" mixin="close" event-set__enter=" _target: #drone-popup; sound.volume: 0;  material.visible: false;" position="2.12 2.18 1.1">
     </a-text>
   </a-sound>
 
