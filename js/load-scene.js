@@ -4,7 +4,7 @@ AFRAME.registerComponent('loadscene', {
     // so they can't be accidentally clicked on before the user loads
     // the scene
     function browserReposition() {
-      // hotspot
+      // hotspots
       var alprHot = document.querySelector('#alpr-hotspot');
       var alprMobileHot = document.querySelector('#alpr-mobile-hotspot');
       var biometricHot = document.querySelector('#biometric-hotspot');
@@ -49,7 +49,7 @@ AFRAME.registerComponent('loadscene', {
       birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
 
-      // move popups to their correct positions
+      // move popups to their correct positions from beneath the "magic carpet (exit)"
       alprPop.setAttribute('position', { x: 7.482, y: 1.642, z: 0.368 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
@@ -63,7 +63,6 @@ AFRAME.registerComponent('loadscene', {
 
 
     document.querySelector('a-scene').addEventListener('loaded', function () {
-      // console.log("OK LOADED");
       document.getElementById('intro-audio').play();
       document.getElementById('ambience').play();
       document.getElementById('camera-audio').addEventListener('loaded', function() { console.log('ok') })
@@ -79,7 +78,5 @@ AFRAME.registerComponent('loadscene', {
         browserReposition();
       });
     }
-
-
   }
 });
