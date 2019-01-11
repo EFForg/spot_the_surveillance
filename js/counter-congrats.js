@@ -49,7 +49,6 @@ AFRAME.registerComponent('listener', {
 						congratsEl.setAttribute('position', {x:5.584, y: 1.25, z:-1.325 });
 						congratsEl.setAttribute('rotation', {x: 0, y: -80, z: 0});
 						congratsEl.setAttribute('data-clickable','');
-						//congratsEl.setAttribute('play-audio','');
 						congratsEl.setAttribute('autoplay', 'false');
 						congratsEl.setAttribute('loop', 'false');
 						congratsEl.setAttribute('volume', 5);
