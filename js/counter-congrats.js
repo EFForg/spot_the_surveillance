@@ -37,7 +37,9 @@ AFRAME.registerComponent('listener', {
 			if (score == 7) {
 				function tada() {
 					var congratsEl = document.createElement('a-sound');
-					// create congrats card
+					let playing = false;
+
+					// Create Congrats card
 					function loadCongrats(){
 						var congratsAll = document.querySelector('#congrats-all');
 						var congratsEl = document.createElement('a-sound');
@@ -47,7 +49,7 @@ AFRAME.registerComponent('listener', {
 						congratsEl.setAttribute('position', {x:5.584, y: 1.25, z:-1.325 });
 						congratsEl.setAttribute('rotation', {x: 0, y: -80, z: 0});
 						congratsEl.setAttribute('data-clickable','');
-						congratsEl.setAttribute('play-audio','');
+						//congratsEl.setAttribute('play-audio','');
 						congratsEl.setAttribute('autoplay', 'false');
 						congratsEl.setAttribute('loop', 'false');
 						congratsEl.setAttribute('volume', 5);
@@ -76,27 +78,27 @@ AFRAME.registerComponent('listener', {
 						replayEl.setAttribute('replay','');
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
+						congratsLeft1.setAttribute('visible', true);
+						congratsLeft2.setAttribute('visible', true);
+						congratsRight1.setAttribute('visible', true);
+						congratsRight2.setAttribute('visible', true);
+						congratsAudio = congratsEl.components.sound;
+						congratsEl.addEventListener('mouseenter', () => {
+							if (!playing) {
+								congratsAudio.playSound();
+								playing = true;
+							}
+						});
+						congratsEl.addEventListener('mouseleave', () => {
+							congratsAudio.stopSound();
+							playing = false;
+
+						});
 					}
 
 					loadCongrats();
 
-					congratsLeft1.setAttribute('visible', true);
-					congratsLeft2.setAttribute('visible', true);
-					congratsRight1.setAttribute('visible', true);
-					congratsRight2.setAttribute('visible', true);
-					congratsAudio = congratsEl.components.sound;
-					let playing = false;
-					congratsEl.addEventListener('mouseenter', () => {
-						if (!playing) {
-							congratsAudio.playSound();
-							playing = true;
-						}
-					});
-					congratsEl.addEventListener('mouseleave', () => {
-						congratsAudio.stopSound();
-						playing = false;
 
-					});
 					function confetti() {
 						var sceneEl = document.querySelector('#sts-live');
 						var confettiEl = document.createElement('a-entity');
@@ -135,7 +137,7 @@ AFRAME.registerComponent('listener', {
 					intro.setAttribute('visible', false);
 				}
 				setTimeout(tada, 5000);
-				setTimeout(hidePopups, 20000);
+				//setTimeout(hidePopups, 20000);
 			}
 		});
 	}
