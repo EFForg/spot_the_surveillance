@@ -256,11 +256,12 @@
   </a-entity>
   <a-entity id="magic-carpet" mixin="exit">
   </a-entity>
-  <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; autoplay: false; loop: true; volume: 1;"  >
+  <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky"  >
   </a-entity>
 </a-entity> <!-- end sts-live -->
 </a-scene>
 </div>
+<audio src="assets/audio/traffic-fade.mp3" controls="false" loop="true" autoplay="true" volume="0.1" ></audio>
 </body>
 <script src="js/audio-hotspot.js"></script> <!-- audio cues -->
 </html>
