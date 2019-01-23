@@ -130,7 +130,7 @@
 <a-entity  id="intro-popup" mixin="intro" sound="loop: false;">
   <a-entity id="get-started" loadscene mixin="close" data-clickable  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905" rotation="0 -20 0">
   </a-entity>
-  <a-entity id="hint-button" data-clickable click-once geometry="primitive: sphere; height: 1; width: 1" postion:" 1 1 1">
+  <a-entity id="hint-button" data-clickable click-once geometry="primitive: plane; height: 0.5; width: 2" material="color: white; shader: flat; side: front; opacity: 1; transparent: false; visible: true;"  position="0.072 -2.7 0.905" rotation="0 -20 0" text="color: black; align: center; value: Easy Mode; height: 0.5; width: 2;">
   </a-entity>
 </a-entity>
 <!-- everything besides the intro card, camera and counter -->
