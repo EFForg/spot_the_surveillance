@@ -12,24 +12,37 @@ AFRAME.registerComponent('sts-hotspot', {
     popupEl.dataset.hotspot = self.el.id;
 
     self.el.addEventListener('mouseenter', function () {
-      self.el.setAttribute('sts-hotspot', { playing: true });
-      self.el.dataset.playing = true;
-
-      popupEl.setAttribute('material', { visible: true });
       popupEl.setAttribute('visible', true);
     });
+
+    popupEl.addEventListener('mouseenter', function () {
+      var isVisible = popupEl.getAttribute('visible');
+      if (isVisible) {
+        self.el.setAttribute('sts-hotspot', { playing: true });
+      }
+    });
+
+    popupEl.addEventListener('mouseleave', function () {
+      var isVisible = popupEl.getAttribute('visible');
+      if (isVisible) {
+        self.el.setAttribute('sts-hotspot', { playing: false });
+      }
+    });
+
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(this.preloadAsset.bind(this));
+    } else {
+      this.preloadAsset();
+    }
   },
 
-  stopAllHotspotSound: function () {
-    var AllHotspotSound = document.querySelectorAll('[data-playing]');
-    AllHotspotSound.forEach(function (hotspotEl) {
-      hotspotEl.setAttribute('sts-hotspot', { playing: false });
-    })
+  preloadAsset: function () {
+    var sound = this.data.sound;
+    sound.load();
   },
 
   startSound: function () {
     var sound = this.data.sound;
-    sound.load();
     sound.play();
   },
 
@@ -50,8 +63,7 @@ AFRAME.registerComponent('sts-hotspot', {
     }
 
     if (playing) {
-      this.stopAllHotspotSound();
-      if (sound.readyState >= 2) {
+      if (sound.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
         this.startSound();
       } else {
         sound.addEventListener('canplaythrough', this.startSound.bind(this));

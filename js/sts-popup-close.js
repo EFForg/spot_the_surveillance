@@ -3,6 +3,9 @@ AFRAME.registerComponent('sts-popup-close', {
     var el = this.el;
     el.addEventListener('mouseenter', function () {
       var parent = el.closest('[visible]');
+      if (!parent) {
+        return;
+      }
       var visible = parent.getAttribute('visible');
       if (!visible) {
         return;
@@ -10,7 +13,7 @@ AFRAME.registerComponent('sts-popup-close', {
       parent.setAttribute('visible', false);
 
       var hotspot = document.getElementById(parent.dataset.hotspot);
-      hotspot.setAttribute('sts-hotspot', { playing: false  });
+      hotspot.setAttribute('sts-hotspot', { playing: false });
     });
   }
 });
