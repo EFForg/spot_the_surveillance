@@ -42,17 +42,14 @@ AFRAME.registerComponent('listener', {
 					// Create Congrats card
 					function loadCongrats(){
 						var congratsAll = document.querySelector('#congrats-all');
-						var congratsEl = document.createElement('a-sound');
+						var congratsEl = document.createElement('a-entity');
 						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
 						congratsEl.setAttribute('position', {x:5.584, y: 1.25, z:-1.325 });
 						congratsEl.setAttribute('rotation', {x: 0, y: -80, z: 0});
 						congratsEl.setAttribute('data-clickable','');
-						congratsEl.setAttribute('autoplay', 'false');
-						congratsEl.setAttribute('loop', 'false');
-						congratsEl.setAttribute('volume', 5);
-						congratsEl.setAttribute('src','#congrats-audio');
+						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
 						congratsEl.id = "congrats-popup";
 						congratsAll.appendChild(congratsEl);``
 
