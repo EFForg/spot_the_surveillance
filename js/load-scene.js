@@ -63,6 +63,7 @@ AFRAME.registerComponent('loadscene', {
 
 
     document.querySelector('a-scene').addEventListener('loaded', function () {
+      document.getElementById('get-ready').style.display = 'none';
       document.getElementById('intro-audio').play();
       document.getElementById('ambience').play();
       document.getElementById('camera-audio').addEventListener('loaded', function() { console.log('ok') })
