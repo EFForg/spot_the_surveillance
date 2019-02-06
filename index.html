@@ -90,9 +90,9 @@
       <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
 
       <a-entity camera look-controls wasd-controls position="0 2.2 4" >
-        <a-entity id="cursor" cursor="maxDistance: 30; fuse: true"
+        <a-entity id="cursor" cursor="fuse: true"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
-          material="color: white; shader: flat;"  position="0 0 -3"
+          material="color: white; shader: flat;" position="0 0 -3"
           raycaster="objects: [data-clickable]">
           <a-animation begin="click" easing="ease-in" attribute="scale"
             fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
