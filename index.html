@@ -20,7 +20,7 @@
   <div id="get-ready">
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
-    <a-scene>
+    <a-scene loadscene>
       <a-assets timeout="10000">
         <!-- images -->
         <img id="alpr-card"  src="assets/images/alpr-card.png">
@@ -72,7 +72,7 @@
       <a-mixin id="camera2" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera2-card" rotation="0 -120 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
-      <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0" visible="true"></a-mixin>
+      <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
 
       <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" ></a-mixin>
       <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" ></a-mixin>
@@ -103,8 +103,8 @@
       </a-entity>
 
       <!-- intro -->
-      <a-entity id="intro-popup" mixin="intro">
-        <a-entity id="get-started" loadscene mixin="close" data-clickable  event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" material="visible: false; transparent: true; opacity: 0;" position="0.072 -1.707 0.905" rotation="0 -20 0">
+      <a-entity id="intro-popup" mixin="intro" visible="true">
+        <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 -20 0">
         </a-entity>
       </a-entity>
 
