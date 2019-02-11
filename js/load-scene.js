@@ -61,23 +61,54 @@ AFRAME.registerComponent('loadscene', {
       lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
     }
 
+    var containerEl = document.getElementById('sts-live');
+    var sceneEl = document.querySelector('a-scene');
+    var introAudioEl = document.getElementById('intro-audio');
+    var ambienceAudio = document.getElementById('ambience');
+    var getReady = document.getElementById('get-ready');
+    var getStartedButton = document.getElementById('get-started');
 
-    document.querySelector('a-scene').addEventListener('loaded', function () {
-      document.getElementById('get-ready').style.display = 'none';
-      document.getElementById('intro-audio').play();
-      document.getElementById('ambience').play();
-      document.getElementById('camera-audio').addEventListener('loaded', function() { console.log('ok') })
-    });
-    if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
-      document.getElementById('sts-live').setAttribute('visible', true);
-      document.getElementById('ambience').play();
+    var enterVREl;
+    var audioStarted = false;
+    var userPressEvent = 'ontouchstart' in window ? 'touchend' : 'mousedown';
+
+    function onUserPressDown() {
+      if (audioStarted) {
+        return;
+      }
+      introAudioEl.play();
+      ambienceAudio.play();
+      audioStarted = true;
+
+      if (enterVREl) {
+        enterVREl.removeEventListener(userPressEvent, onUserPressDown);
+      }
+      sceneEl.removeEventListener(userPressEvent, onUserPressDown);
+    }
+
+    function onSceneLoaded() {
+      enterVREl = sceneEl.components['vr-mode-ui'].enterVREl;
+      getReady.style.display = 'none';
+      introAudioEl.load();
+      ambienceAudio.load();
+      // start audio after geseture on enter VR button.
+      enterVREl.addEventListener(userPressEvent, onUserPressDown);
+      sceneEl.removeEventListener('loaded', onSceneLoaded);
       browserReposition();
-    } else {
-      this.el.addEventListener("click", (e)=> {
-        document.getElementById('sts-live').setAttribute('visible', true);
-        document.getElementById('ambience').play();
-        browserReposition();
-      });
+    }
+
+    // start audio after user gesture on scene.
+    sceneEl.addEventListener(userPressEvent, onUserPressDown);
+    sceneEl.addEventListener('loaded', onSceneLoaded);
+
+    // container is only visible once get-started button is clicked.
+    getStartedButton.addEventListener('click', function () {
+      containerEl.setAttribute('visible', true);
+      introAudioEl.pause();
+    });
+
+    if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
+      containerEl.setAttribute('visible', true);
     }
   }
 });
