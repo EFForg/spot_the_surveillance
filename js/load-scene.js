@@ -97,15 +97,19 @@ AFRAME.registerComponent('loadscene', {
       browserReposition();
     }
 
+    function onStartClick() {
+      introAudioEl.pause();
+      // container is only visible once get-started button is clicked.
+      containerEl.setAttribute('visible', true);
+      // remove button from targettable raycaster objects.
+      getStartedButton.removeAttribute('data-clickable');
+      getStartedButton.removeEventListener('click', onStartClick);
+    }
+
     // start audio after user gesture on scene.
     sceneEl.addEventListener(userPressEvent, onUserPressDown);
     sceneEl.addEventListener('loaded', onSceneLoaded);
-
-    // container is only visible once get-started button is clicked.
-    getStartedButton.addEventListener('click', function () {
-      containerEl.setAttribute('visible', true);
-      introAudioEl.pause();
-    });
+    getStartedButton.addEventListener('click', onStartClick);
 
     if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
       containerEl.setAttribute('visible', true);
