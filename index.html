@@ -54,7 +54,7 @@
         <audio id="bird-audio" src="assets/audio/bird.ogg" preload="auto"></audio>
         <audio id="light-audio" src="assets/audio/light.ogg" preload="auto"></audio>
         <audio id="exit-audio" src="assets/audio/exit.ogg" preload="auto"></audio>
-        <a-asset-item response-type="arraybuffer" id="congrats-audio" src="assets/audio/congrats.ogg"></a-asset-item>
+        <audio id="congrats-audio" src="assets/audio/congrats.ogg" preload="auto"></audio>
         <audio id="ambience" src="assets/audio/traffic-fade.ogg" preload="auto"></audio>
         <audio id="intro-audio" src="assets/audio/intro.ogg" preload="auto"></audio>
         <audio id="ding" src="assets/audio/piano-ding-eff.ogg" preload="auto"></audio>
@@ -90,9 +90,9 @@
       <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
 
       <a-entity camera look-controls wasd-controls position="0 2.2 4" >
-        <a-entity id="cursor" cursor="maxDistance: 30; fuse: true"
+        <a-entity id="cursor" cursor="fuse: true"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
-          material="color: white; shader: flat;"  position="0 0 -3"
+          material="color: white; shader: flat;" position="0 0 -3"
           raycaster="objects: [data-clickable]">
           <a-animation begin="click" easing="ease-in" attribute="scale"
             fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
@@ -153,13 +153,12 @@
   <!-- false positives, initially position under the exit -->
   <a-sphere id="bird-hotspot" data-clickable
     sts-hotspot="show: #bird-popup; sound: #bird-audio"
-    mixin="see-through" geometry="height:3; width: 3" position="47.468 -340.523 10.223" rotation="110 0 0">
+    mixin="see-through" position="47.468 -340.523 10.223" rotation="110 0 0">
   </a-sphere>
 
   <a-sphere id="light-hotspot" data-clickable
     sts-hotspot="show: #light-popup; sound: #light-audio"
     mixin="see-through"
-    geometry="height:2; width: 2;"
     position="47.468 -340.523 10.223" rotation= "0 40 0" scale="2 2 2" visible="true">
   </a-sphere>
 
@@ -213,8 +212,8 @@
   </a-entity>
 
   <!-- exit -->
-  <a-entity  id="exit-popup" mixin="exit-text"   sound="src: #exit-audio; autoplay: false; loop: false; volume: 5; on: click">
-    <a-text mixin="close" data-clickable event-set__enter=" _target: #exit-popup;">
+  <a-entity  id="exit-popup" mixin="exit-text" data-clickable visible="false">
+    <a-text mixin="close" data-clickable sts-popup-close>
     </a-text>
     <a-entity id="sls" mixin="close" data-clickable geometry="height: 0.8; width: 3; " position="-0.105 -0.726 0.257"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
     </a-entity>
@@ -241,13 +240,14 @@
   </a-entity>
   <!-- end popups -->
 
-  <a-entity id="exit-sts" data-clickable  mixin="exit-logo"  >
+  <a-entity id="exit-sts" data-clickable mixin="exit-logo"
+    sts-hotspot="show: #exit-popup; sound: #exit-audio">
   </a-entity>
   <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="1.821 -12.750 -4.727" rotation="-90 0 0" visible="true"  >
   </a-entity>
   <a-entity id="magic-carpet" mixin="exit">
   </a-entity>
-  <a-entity id="sky" geometry="primitive: sphere; radius:1000"  material="shader: flat; side: back;  src:#sts-sky" sound="src: #ambience; autoplay: false; loop: true; volume: 1;"  >
+  <a-entity id="sky" geometry="primitive: sphere; radius: 1000"  material="shader: flat; side: back; src: #sts-sky">
   </a-entity>
 </a-entity> <!-- end sts-live -->
 </a-scene>

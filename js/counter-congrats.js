@@ -42,6 +42,7 @@ AFRAME.registerComponent('listener', {
 					// Create Congrats card
 					function loadCongrats(){
 						var congratsAll = document.querySelector('#congrats-all');
+						var congratsAudio = document.querySelector('#congrats-audio');
 						var congratsEl = document.createElement('a-entity');
 						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
@@ -78,15 +79,15 @@ AFRAME.registerComponent('listener', {
 						congratsLeft2.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
 						congratsRight2.setAttribute('visible', true);
-						congratsAudio = congratsEl.components.sound;
+						congratsAudio.load();
 						congratsEl.addEventListener('mouseenter', () => {
 							if (!playing) {
-								congratsAudio.playSound();
+								congratsAudio.play();
 								playing = true;
 							}
 						});
 						congratsEl.addEventListener('mouseleave', () => {
-							congratsAudio.stopSound();
+							congratsAudio.pause();
 							playing = false;
 
 						});
