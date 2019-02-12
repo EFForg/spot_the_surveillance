@@ -2,37 +2,56 @@ AFRAME.registerComponent('sts-hotspot', {
   schema: {
     show: { type: 'selector' },
     sound: { type: 'selector' },
-    playing: { default: false }
+    playing: { default: false },
+    restart: { default: false },
+    audioOnHotspot: { default: false }
   },
 
   init: function () {
-    var self = this;
-    var popupEl = this.data.show;
+    var el = this.el;
+    var popupEl = this.popupEl = this.data.show;
 
-    popupEl.dataset.hotspot = self.el.id;
+    popupEl.dataset.hotspot = this.el.id;
 
-    self.el.addEventListener('mouseenter', function () {
-      popupEl.setAttribute('visible', true);
-    });
+    el.addEventListener('mouseenter', this.hotspotMouseEnter.bind(this));
 
-    popupEl.addEventListener('mouseenter', function () {
-      var isVisible = popupEl.getAttribute('visible');
-      if (isVisible) {
-        self.el.setAttribute('sts-hotspot', { playing: true });
-      }
-    });
-
-    popupEl.addEventListener('mouseleave', function () {
-      var isVisible = popupEl.getAttribute('visible');
-      if (isVisible) {
-        self.el.setAttribute('sts-hotspot', { playing: false });
-      }
-    });
+    if (!this.data.audioOnHotspot) {
+      popupEl.addEventListener('mouseenter', this.popupMouseEnter.bind(this));
+      popupEl.addEventListener('mouseleave', this.popupMouseLeave.bind(this));
+    }
 
     if (window.requestIdleCallback) {
       window.requestIdleCallback(this.preloadAsset.bind(this));
     } else {
       this.preloadAsset();
+    }
+  },
+
+  hotspotMouseEnter: function () {
+    var hotspotEl = this.el;
+    var popupEl = this.data.show;
+
+    popupEl.setAttribute('visible', true);
+    if (this.data.audioOnHotspot) {
+      hotspotEl.setAttribute('sts-hotspot', { playing: true, restart: true });
+    }
+  },
+
+  popupMouseEnter: function () {
+    var el = this.el;
+    var popupEl = this.data.show;
+    var isVisible = popupEl.getAttribute('visible');
+    if (isVisible) {
+      el.setAttribute('sts-hotspot', { playing: true });
+    }
+  },
+
+  popupMouseLeave: function () {
+    var el = this.el;
+    var popupEl = this.data.show;
+    var isVisible = popupEl.getAttribute('visible');
+    if (isVisible) {
+      el.setAttribute('sts-hotspot', { playing: false });
     }
   },
 
@@ -43,6 +62,9 @@ AFRAME.registerComponent('sts-hotspot', {
 
   startSound: function () {
     var sound = this.data.sound;
+    if (this.data.restart) {
+      sound.load();
+    }
     sound.play();
   },
 
