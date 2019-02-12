@@ -90,6 +90,7 @@ AFRAME.registerComponent('loadscene', {
       enterVREl = sceneEl.components['vr-mode-ui'].enterVREl;
       getReady.style.display = 'none';
       introAudioEl.load();
+      ambienceAudio.volume = ambienceAudio.getAttribute('volume');
       ambienceAudio.load();
       // start audio after geseture on enter VR button.
       enterVREl.addEventListener(userPressEvent, onUserPressDown);
