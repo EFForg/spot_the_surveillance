@@ -94,7 +94,6 @@ AFRAME.registerComponent('loadscene', {
       // start audio after geseture on enter VR button.
       enterVREl.addEventListener(userPressEvent, onUserPressDown);
       sceneEl.removeEventListener('loaded', onSceneLoaded);
-      browserReposition();
     }
 
     function onStartClick() {
@@ -104,6 +103,7 @@ AFRAME.registerComponent('loadscene', {
       // remove button from targettable raycaster objects.
       getStartedButton.removeAttribute('data-clickable');
       getStartedButton.removeEventListener('click', onStartClick);
+      browserReposition();
     }
 
     // start audio after user gesture on scene.
