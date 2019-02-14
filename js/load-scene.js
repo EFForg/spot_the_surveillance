@@ -72,13 +72,25 @@ AFRAME.registerComponent('loadscene', {
     var audioStarted = false;
     var userPressEvent = 'ontouchstart' in window ? 'touchend' : 'mousedown';
 
-    function onUserPressDown() {
+    function playAudio() {
       if (audioStarted) {
         return;
       }
-      introAudioEl.play();
-      ambienceAudio.play();
-      audioStarted = true;
+
+      var playIntro = introAudioEl.play();
+      var playAmbience = ambienceAudio.play();
+
+      Promise.all([playIntro, playAmbience])
+        .then(function () {
+          audioStarted = true;
+        })
+        .catch(function (error) {
+          console.error('Audio not playing', error);
+        });
+    }
+
+    function onUserPressDown() {
+      playAudio();
 
       if (enterVREl) {
         enterVREl.removeEventListener(userPressEvent, onUserPressDown);
@@ -92,6 +104,7 @@ AFRAME.registerComponent('loadscene', {
       introAudioEl.load();
       ambienceAudio.volume = ambienceAudio.getAttribute('volume');
       ambienceAudio.load();
+      playAudio();
       // start audio after geseture on enter VR button.
       enterVREl.addEventListener(userPressEvent, onUserPressDown);
       sceneEl.removeEventListener('loaded', onSceneLoaded);
