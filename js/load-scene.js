@@ -125,7 +125,19 @@ AFRAME.registerComponent('loadscene', {
     sceneEl.addEventListener('loaded', onSceneLoaded);
     getStartedButton.addEventListener('click', onStartClick);
 
-    if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
+    // NOTE: This works around an A-Frame bug (in 0.8.2/0.9.0) that incorrectly identifies Firefox Reality as a mobile
+    // browser (since its `User-Agent` string contains 'Android' and 'Mobile VR'). Issue
+    // https://github.com/aframevr/aframe/issues/4032 has since been fixed in `master`. Once a new A-Frame version is
+    // released, this can be replaced with `AFRAME.utils.device.isMobile()`.
+    var isMobileWithoutVR = (function () {
+      // Detect browsers in standalone VR headsets.
+      if (/(OculusBrowser)|(SamsungBrowser)|(Mobile VR)/i.test(navigator.userAgent)) {
+        return false;
+      }
+      return AFRAME.utils.device.isMobile();
+    })();
+
+    if (isMobileWithoutVR) {
       containerEl.setAttribute('visible', true);
     }
   }
