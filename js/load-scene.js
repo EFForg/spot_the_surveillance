@@ -61,22 +61,84 @@ AFRAME.registerComponent('loadscene', {
       lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
     }
 
+    var containerEl = document.getElementById('sts-live');
+    var sceneEl = document.querySelector('a-scene');
+    var introAudioEl = document.getElementById('intro-audio');
+    var ambienceAudio = document.getElementById('ambience');
+    var getReady = document.getElementById('get-ready');
+    var getStartedButton = document.getElementById('get-started');
 
-    document.querySelector('a-scene').addEventListener('loaded', function () {
-      document.getElementById('intro-audio').play();
-      document.getElementById('ambience').play();
-      document.getElementById('camera-audio').addEventListener('loaded', function() { console.log('ok') })
-    });
-    if (AFRAME.utils.device.isMobile() && !AFRAME.utils.device.isGearVR()){
-      document.getElementById('sts-live').setAttribute('visible', true);
-      document.getElementById('ambience').play();
+    var enterVREl;
+    var audioStarted = false;
+    var userPressEvent = 'ontouchstart' in window ? 'touchend' : 'mousedown';
+
+    function playAudio() {
+      if (audioStarted) {
+        return;
+      }
+
+      var playIntro = introAudioEl.play();
+      var playAmbience = ambienceAudio.play();
+
+      Promise.all([playIntro, playAmbience])
+        .then(function () {
+          audioStarted = true;
+        })
+        .catch(function (error) {
+          console.error('Audio not playing', error);
+        });
+    }
+
+    function onUserPressDown() {
+      playAudio();
+
+      if (enterVREl) {
+        enterVREl.removeEventListener(userPressEvent, onUserPressDown);
+      }
+      sceneEl.removeEventListener(userPressEvent, onUserPressDown);
+    }
+
+    function onSceneLoaded() {
+      enterVREl = sceneEl.components['vr-mode-ui'].enterVREl;
+      getReady.style.display = 'none';
+      introAudioEl.load();
+      ambienceAudio.volume = ambienceAudio.getAttribute('volume');
+      ambienceAudio.load();
+      playAudio();
+      // start audio after geseture on enter VR button.
+      enterVREl.addEventListener(userPressEvent, onUserPressDown);
+      sceneEl.removeEventListener('loaded', onSceneLoaded);
+    }
+
+    function onStartClick() {
+      introAudioEl.pause();
+      // container is only visible once get-started button is clicked.
+      containerEl.setAttribute('visible', true);
+      // remove button from targettable raycaster objects.
+      getStartedButton.removeAttribute('data-clickable');
+      getStartedButton.removeEventListener('click', onStartClick);
       browserReposition();
-    } else {
-      this.el.addEventListener("click", (e)=> {
-        document.getElementById('sts-live').setAttribute('visible', true);
-        document.getElementById('ambience').play();
-        browserReposition();
-      });
+    }
+
+    // start audio after user gesture on scene.
+    sceneEl.addEventListener(userPressEvent, onUserPressDown);
+    sceneEl.addEventListener('loaded', onSceneLoaded);
+    getStartedButton.addEventListener('click', onStartClick);
+
+    // NOTE: This works around an A-Frame bug (in 0.8.2/0.9.0) that incorrectly identifies Firefox Reality as a mobile
+    // browser (since its `User-Agent` string contains 'Android' and 'Mobile VR'). Issue
+    // https://github.com/aframevr/aframe/issues/4032 has since been fixed in `master`. Once a new A-Frame version is
+    // released, this can be replaced with `AFRAME.utils.device.isMobile()`.
+    var isMobileWithoutVR = (function () {
+      // Detect browsers in standalone VR headsets.
+      if (/(OculusBrowser)|(SamsungBrowser)|(Mobile VR)/i.test(navigator.userAgent)) {
+        return false;
+      }
+      return AFRAME.utils.device.isMobile();
+    })();
+
+    if (isMobileWithoutVR) {
+      containerEl.setAttribute('visible', true);
     }
   }
 });
