@@ -50,13 +50,13 @@ AFRAME.registerComponent('loadscene', {
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
-      alprPop.setAttribute('position', { x: 7.482, y: 1.642, z: 0.368 });
+      alprPop.setAttribute('position', { x: 7.218, y: 1.642, z: -1.328 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
       bodycamPop.setAttribute('position', { x: -6.627, y: 1.118, z: -4.589 });
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
-      dronePop.setAttribute('position', { x: -4.509, y: 3.731, z: 8.831 });
+      dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
       birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });
       lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
     }
