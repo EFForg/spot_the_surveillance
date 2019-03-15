@@ -110,7 +110,7 @@ AFRAME.registerComponent('listener', {
 							size: 0.5,
 							velocityValue: '0 15 0'
 						});
-						confettiEl.setAttribute('position', { x: 5.914, y: 1.9, z: -0.927 });
+						confettiEl.setAttribute('position', {x: -5.573, y: 1, z: 5.5 });
 						confettiEl.setAttribute('material', {
 							transparent: true,
 							visible: false
