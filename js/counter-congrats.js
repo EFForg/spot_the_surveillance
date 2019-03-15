@@ -3,8 +3,7 @@ AFRAME.registerComponent('listener', {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
 		var congrats = document.querySelector('#congrats-popup');
-		var congratsLeft1 = document.querySelector('#congrats-left-arrow1');
-		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
+		var congratsLeft = document.querySelector('#congrats-left-arrow');
 		var congratsRight1 = document.querySelector('#congrats-right-arrow1');
 		var congratsRight2 = document.querySelector('#congrats-right-arrow2');
 		//var confetti = document.querySelector('#confetti');
@@ -75,8 +74,8 @@ AFRAME.registerComponent('listener', {
 						replayEl.setAttribute('replay','');
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
-						congratsLeft1.setAttribute('visible', true);
-						congratsLeft2.setAttribute('visible', true);
+
+						congratsLeft.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
 						congratsRight2.setAttribute('visible', true);
 						congratsAudio.load();
