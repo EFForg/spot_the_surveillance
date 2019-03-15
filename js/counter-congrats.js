@@ -46,7 +46,12 @@ AFRAME.registerComponent('listener', {
 						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
-						congratsEl.setAttribute('position', {x: -5.573, y: 1.988, z: 4.858 });
+						if ( !AFRAME.utils.device.checkHeadsetConnected() ) {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.2, z: 4.782 });
+						}
+						else {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.020, z: 4.307 });
+						}
 						congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
 						congratsEl.setAttribute('data-clickable','');
 						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
