@@ -50,7 +50,7 @@ AFRAME.registerComponent('loadscene', {
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
-      alprPop.setAttribute('position', { x: 7.482, y: 1.642, z: 0.368 });
+      alprPop.setAttribute('position', { x: 7.218, y: 1.642, z: -1.328 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
       bodycamPop.setAttribute('position', { x: -6.627, y: 1.118, z: -4.589 });
