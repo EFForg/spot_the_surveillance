@@ -1,4 +1,4 @@
-var hint = document.getElementById("hint-button");
+var hint = document.getElementById("easy-button");
 
 var alpr = document.querySelector('#alpr-hotspot');
 var alprMobile = document.querySelector('#alpr-mobile-hotspot');

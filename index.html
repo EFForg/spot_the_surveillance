@@ -33,6 +33,7 @@
         <img id="congrats-card" src="assets/images/congrats-card-replay.png">
         <img id="drone-card"  src="assets/images/drone-card.png">
         <img id="intro-card" src="assets/images/intro-card.png">
+        <img id="easy-mode" src="assets/images/easy-mode-button.png">
         <img id="eff-logo" src="assets/images/eff-logo-black.png">
         <img id="attribution-card" src="assets/images/attribution-card.png">
         <img id="exit-card" src="assets/images/exit-card-replay.png">
@@ -106,7 +107,7 @@
       <a-entity id="intro-popup" mixin="intro" visible="true">
         <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 -20 0">
         </a-entity>
-        <a-entity id="hint-button" data-clickable click-once geometry="primitive: plane; height: 0.5; width: 2" material="color: white; shader: flat; side: front; opacity: 1; transparent: false; visible: true;"  position="0.072 -2.7 0.905" rotation="0 -20 0" text="color: black; align: center; value: Easy Mode; height: 0.5; width: 2;">
+        <a-entity  id="easy-button" data-clickable event-set__enter="_event: mouseenter; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.8; src: #easy-mode"  position="0.072 -3.5 1.5" rotation="0 0 0" visible="true"  >
         </a-entity>
       </a-entity>
 
