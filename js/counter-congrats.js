@@ -3,8 +3,7 @@ AFRAME.registerComponent('listener', {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
 		var congrats = document.querySelector('#congrats-popup');
-		var congratsLeft1 = document.querySelector('#congrats-left-arrow1');
-		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
+		var congratsLeft = document.querySelector('#congrats-left-arrow');
 		var congratsRight1 = document.querySelector('#congrats-right-arrow1');
 		var congratsRight2 = document.querySelector('#congrats-right-arrow2');
 		//var confetti = document.querySelector('#confetti');
@@ -47,8 +46,13 @@ AFRAME.registerComponent('listener', {
 						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
-						congratsEl.setAttribute('position', {x:5.584, y: 1.25, z:-1.325 });
-						congratsEl.setAttribute('rotation', {x: 0, y: -80, z: 0});
+						if ( !AFRAME.utils.device.checkHeadsetConnected() ) {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.2, z: 4.782 });
+						}
+						else {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.020, z: 4.307 });
+						}
+						congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
 						congratsEl.setAttribute('data-clickable','');
 						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
 						congratsEl.id = "congrats-popup";
@@ -75,8 +79,8 @@ AFRAME.registerComponent('listener', {
 						replayEl.setAttribute('replay','');
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
-						congratsLeft1.setAttribute('visible', true);
-						congratsLeft2.setAttribute('visible', true);
+
+						congratsLeft.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
 						congratsRight2.setAttribute('visible', true);
 						congratsAudio.load();
@@ -110,7 +114,7 @@ AFRAME.registerComponent('listener', {
 							size: 0.5,
 							velocityValue: '0 15 0'
 						});
-						confettiEl.setAttribute('position', { x: 5.914, y: 1.9, z: -0.927 });
+						confettiEl.setAttribute('position', {x: -5.573, y: 1, z: 5.5 });
 						confettiEl.setAttribute('material', {
 							transparent: true,
 							visible: false

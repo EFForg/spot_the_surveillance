@@ -134,7 +134,7 @@
 
     <a-sphere id="bodycam-hotspot" data-clickable click-once
       sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio"
-      mixin="spotted" geometry="height: 1; width: 1" scale="1 1 1" visible="false">
+      mixin="spotted" geometry="height: 4; width: 4"  visible="false">
     </a-sphere>
 
     <a-sphere id="camera1-hotspot" data-clickable click-once
@@ -167,7 +167,7 @@
 
   <!-- all the popups -->
   <a-entity id="alpr-popup" mixin="alpr init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="1.95 2.23 1.1"></a-entity>
+    <a-entity mixin="close" sts-popup-close position="7.385 1.642 -0.182"></a-entity>
   </a-entity>
 
   <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
@@ -228,16 +228,13 @@
   <a-entity id="congrats-all" >
     <!-- congrats card loaded dynamically in counter-congrats.js -->
 
-    <a-entity  id="congrats-left-arrow1" mixin="arrow" position="-1.961 1.9 9.023" rotation="0 -190 0" material="src:#left-arrow" >
+    <a-entity  id="congrats-right-arrow1" mixin="arrow" position="-0.271 1.9 9.851" rotation="0 -190 0" material="src:#right-arrow" >
     </a-entity>
 
-    <a-entity  id="congrats-left-arrow2" mixin="arrow" position="4.683 1.9 6.271" rotation="0 -120 0" material="src:#left-arrow" >
+    <a-entity  id="congrats-right-arrow2" mixin="arrow" position="7.406 1.9 9.856" rotation="0 -120 0" material="src:#right-arrow" >
     </a-entity>
 
-    <a-entity  id="congrats-right-arrow1" mixin="arrow"  position="-5.721 1.9 4.142"  rotation="0 80 0">
-    </a-entity>
-
-    <a-entity  id="congrats-right-arrow2" mixin="arrow"  position="-2.440 1.9 -5.174"  rotation="0 40 0">
+    <a-entity  id="congrats-left-arrow" mixin="arrow"  position="-0.513 1.9 -6.222"  rotation="0 40 0" material="src:#left-arrow">
     </a-entity>
 
   </a-entity>
