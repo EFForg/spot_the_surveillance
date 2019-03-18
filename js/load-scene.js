@@ -32,14 +32,14 @@ AFRAME.registerComponent('loadscene', {
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
         alprMobileHot.setAttribute('position', { x: 3.622, y: 2.229, z: 12.881 });
-        bodycamHot.setAttribute('position', { x: -4.420, y: 0.567, z: -6.036 });
+        bodycamHot.setAttribute('position', { x: -9.716, y: -1.166, z: -16.629 });
         camera1Hot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
         // hotspots positions for headsets/cardboard
       } else {
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -11.27 });
         alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
-        bodycamHot.setAttribute('position', { x: -2.85, y: 0.577, z: -6.036 });
+        bodycamHot.setAttribute('position', { x: -8.563, y: -1.176, z: -18.202 });
         camera1Hot.setAttribute('position', { x: 23.244, y: 58.391, z: -39.778 });
         droneHot.setAttribute('position', { x: -3.999, y: 33.763, z: 28.948 });
       }
@@ -53,7 +53,7 @@ AFRAME.registerComponent('loadscene', {
       alprPop.setAttribute('position', { x: 7.218, y: 1.642, z: -1.328 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
-      bodycamPop.setAttribute('position', { x: -6.627, y: 1.118, z: -4.589 });
+      bodycamPop.setAttribute('position', { x: -7.275, y: 0.992, z: -4.693 });
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
       dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
