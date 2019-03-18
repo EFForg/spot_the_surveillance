@@ -34,6 +34,7 @@ AFRAME.registerComponent('loadscene', {
         alprMobileHot.setAttribute('position', { x: 3.622, y: 2.229, z: 12.881 });
         bodycamHot.setAttribute('position', { x: -9.716, y: -1.166, z: -16.629 });
         camera1Hot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
+        camera2Hot.setAttribute('position', { x: 67.041, y: 27.413, z: 18.717 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
         // hotspots positions for headsets/cardboard
       } else {
@@ -41,21 +42,21 @@ AFRAME.registerComponent('loadscene', {
         alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
         bodycamHot.setAttribute('position', { x: -8.563, y: -1.176, z: -18.202 });
         camera1Hot.setAttribute('position', { x: 23.244, y: 58.391, z: -39.778 });
+        camera2Hot.setAttribute('position', { x: 68.682, y: 26.636, z: 15.660 });
         droneHot.setAttribute('position', { x: -3.999, y: 33.763, z: 28.948 });
       }
       // these hotspots have the same position regardless of device
       biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
-      camera2Hot.setAttribute('position', { x: 67.684, y: 28.461, z: 17.549 });
       birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
-      alprPop.setAttribute('position', { x: 7.218, y: 1.642, z: -1.328 });
+      alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
       bodycamPop.setAttribute('position', { x: -7.275, y: 0.992, z: -4.693 });
       camera1Pop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
-      camera2Pop.setAttribute('position', { x: 7.0, y: 1.4, z: 3.612 });
+      camera2Pop.setAttribute('position', { x: 7.087, y: 1.287, z: 3.056 });
       dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
       birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });
       lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
@@ -81,12 +82,12 @@ AFRAME.registerComponent('loadscene', {
       var playAmbience = ambienceAudio.play();
 
       Promise.all([playIntro, playAmbience])
-        .then(function () {
-          audioStarted = true;
-        })
-        .catch(function (error) {
-          console.error('Audio not playing', error);
-        });
+      .then(function () {
+        audioStarted = true;
+      })
+      .catch(function (error) {
+        console.error('Audio not playing', error);
+      });
     }
 
     function onUserPressDown() {
