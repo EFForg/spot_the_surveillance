@@ -14,6 +14,8 @@
   <script src="js/sts-popup-close.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
+  <script src="js/congrats-close.js"></script>
+
 
 </head>
 <body>
@@ -30,7 +32,7 @@
         <img id="counter-bg" src="assets/images/binoculars.png">
         <img id="camera1-card" src="assets/images/camera1-card.png">
         <img id="camera2-card" src="assets/images/camera2-card.png">
-        <img id="congrats-card" src="assets/images/congrats-card-replay.png">
+        <img id="congrats-card" src="assets/images/congrats-card.png">
         <img id="drone-card"  src="assets/images/drone-card.png">
         <img id="intro-card" src="assets/images/intro-card-logo.png">
         <img id="eff-logo" src="assets/images/eff-logo-black.png">
@@ -222,7 +224,7 @@
   </a-entity>
 
   <!-- congrats -->
-  <a-entity id="congrats-all" >
+  <a-entity id="congrats-all" congratsclose>
     <!-- congrats card loaded dynamically in counter-congrats.js -->
 
     <a-entity  id="congrats-right-arrow1" mixin="arrow" position="-0.271 1.9 9.851" rotation="0 -190 0" material="src:#right-arrow" >
