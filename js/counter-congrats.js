@@ -111,7 +111,7 @@ AFRAME.registerComponent('listener', {
 
 
 					function confetti() {
-						var sceneEl = document.querySelector('#sts-live');
+						var congratsEl = document.querySelector('#congrats-all')
 						var confettiEl = document.createElement('a-entity');
 
 						confettiEl.setAttribute('particle-system', {
@@ -130,7 +130,7 @@ AFRAME.registerComponent('listener', {
 							visible: false
 						});
 						confettiEl.id = "confetti";
-						sceneEl.appendChild(confettiEl);
+						congratsEl.appendChild(confettiEl);
 					}
 					confetti();
 				}
