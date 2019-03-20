@@ -80,14 +80,14 @@ AFRAME.registerComponent('listener', {
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
 
+
 						// create close button
 						var closeEl = document.createElement('a-entity');
-						closeEl.setAttribute('geometry', {primitive: 'plane', height:1, width: 1, });
-						closeEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true'});
-						closeEl.setAttribute('visible', 'false');
-						closeEl.setAttribute('position', {x:1.779, y: 1.336, z: 1.513 });
+						closeEl.setAttribute('position', {x:1.378, y: 1.496, z: 0.209 });
 						closeEl.setAttribute('data-clickable','');
-						closeEl.id = "close1";
+						closeEl.setAttribute('mixin','close');
+						closeEl.setAttribute('congrats-close','');
+						closeEl.id = "close-congrats";
 						congratsEl.appendChild(closeEl);
 
 						congratsLeft.setAttribute('visible', true);

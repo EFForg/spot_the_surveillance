@@ -1,10 +1,9 @@
-AFRAME.registerComponent('congratsclose', {
+AFRAME.registerComponent('congrats-close', {
   init: function () {
-    var scene = document.querySelector('a-scene');
-    this.el.addEventListener('click', evt => {
-      console.log('congrats close ****************');
-      entity = this.el
-      entity.parentNode.removeChild(entity);
+    var el = this.el;
+    el.addEventListener('mouseenter', function () {
+      var parent = el.closest('[visible]');
+      parent.setAttribute('visible', false);
     });
   }
 });
