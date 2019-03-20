@@ -80,6 +80,16 @@ AFRAME.registerComponent('listener', {
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
 
+
+						// create close button
+						var closeEl = document.createElement('a-entity');
+						closeEl.setAttribute('position', {x:1.378, y: 1.496, z: 0.209 });
+						closeEl.setAttribute('data-clickable','');
+						closeEl.setAttribute('mixin','close');
+						closeEl.setAttribute('congrats-close','');
+						closeEl.id = "close-congrats";
+						congratsEl.appendChild(closeEl);
+
 						congratsLeft.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
 						congratsRight2.setAttribute('visible', true);
@@ -101,7 +111,7 @@ AFRAME.registerComponent('listener', {
 
 
 					function confetti() {
-						var sceneEl = document.querySelector('#sts-live');
+						var congratsEl = document.querySelector('#congrats-all')
 						var confettiEl = document.createElement('a-entity');
 
 						confettiEl.setAttribute('particle-system', {
@@ -120,7 +130,7 @@ AFRAME.registerComponent('listener', {
 							visible: false
 						});
 						confettiEl.id = "confetti";
-						sceneEl.appendChild(confettiEl);
+						congratsEl.appendChild(confettiEl);
 					}
 					confetti();
 				}
