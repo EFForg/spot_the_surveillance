@@ -3,8 +3,7 @@ AFRAME.registerComponent('listener', {
 		var score = 0;
 		var scene = document.querySelector('a-scene');
 		var congrats = document.querySelector('#congrats-popup');
-		var congratsLeft1 = document.querySelector('#congrats-left-arrow1');
-		var congratsLeft2 = document.querySelector('#congrats-left-arrow2');
+		var congratsLeft = document.querySelector('#congrats-left-arrow');
 		var congratsRight1 = document.querySelector('#congrats-right-arrow1');
 		var congratsRight2 = document.querySelector('#congrats-right-arrow2');
 		//var confetti = document.querySelector('#confetti');
@@ -42,17 +41,20 @@ AFRAME.registerComponent('listener', {
 					// Create Congrats card
 					function loadCongrats(){
 						var congratsAll = document.querySelector('#congrats-all');
-						var congratsEl = document.createElement('a-sound');
+						var congratsAudio = document.querySelector('#congrats-audio');
+						var congratsEl = document.createElement('a-entity');
 						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
-						congratsEl.setAttribute('position', {x:5.584, y: 1.25, z:-1.325 });
-						congratsEl.setAttribute('rotation', {x: 0, y: -80, z: 0});
+						if ( !AFRAME.utils.device.checkHeadsetConnected() ) {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.2, z: 4.782 });
+						}
+						else {
+							congratsEl.setAttribute('position', {x: -5.98, y: 2.020, z: 4.307 });
+						}
+						congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
 						congratsEl.setAttribute('data-clickable','');
-						congratsEl.setAttribute('autoplay', 'false');
-						congratsEl.setAttribute('loop', 'false');
-						congratsEl.setAttribute('volume', 5);
-						congratsEl.setAttribute('src','#congrats-audio');
+						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
 						congratsEl.id = "congrats-popup";
 						congratsAll.appendChild(congratsEl);``
 
@@ -77,19 +79,40 @@ AFRAME.registerComponent('listener', {
 						replayEl.setAttribute('replay','');
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
-						congratsLeft1.setAttribute('visible', true);
-						congratsLeft2.setAttribute('visible', true);
+
+						// create close button
+						var closeEl = document.createElement('a-entity');
+						closeEl.setAttribute('position', {x:1.378, y: 1.496, z: 0.209 });
+						closeEl.setAttribute('data-clickable','');
+						closeEl.setAttribute('mixin','close');
+						closeEl.setAttribute('congrats-close','');
+						closeEl.id = "close-congrats";
+						congratsEl.appendChild(closeEl);
+
+						// create reopen button
+						var reopenEl = document.createElement('a-entity');
+						reopenEl.setAttribute('geometry', {primitive: 'plane', height:0.75, width: 2.1, });
+						reopenEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#reopen'});
+						reopenEl.setAttribute('position', {x: -4.436, y: 4.251, z: 4.558 });
+						reopenEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
+						reopenEl.setAttribute('visible', false);
+						reopenEl.setAttribute('data-clickable','');
+						reopenEl.setAttribute('reopen-cards','');
+						reopenEl.id = "reopen-cards";
+						congratsAll.appendChild(reopenEl);
+
+						congratsLeft.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
 						congratsRight2.setAttribute('visible', true);
-						congratsAudio = congratsEl.components.sound;
+						congratsAudio.load();
 						congratsEl.addEventListener('mouseenter', () => {
 							if (!playing) {
-								congratsAudio.playSound();
+								congratsAudio.play();
 								playing = true;
 							}
 						});
 						congratsEl.addEventListener('mouseleave', () => {
-							congratsAudio.stopSound();
+							congratsAudio.pause();
 							playing = false;
 
 						});
@@ -99,7 +122,7 @@ AFRAME.registerComponent('listener', {
 
 
 					function confetti() {
-						var sceneEl = document.querySelector('#sts-live');
+						var congratsEl = document.querySelector('#congrats-all')
 						var confettiEl = document.createElement('a-entity');
 
 						confettiEl.setAttribute('particle-system', {
@@ -112,31 +135,17 @@ AFRAME.registerComponent('listener', {
 							size: 0.5,
 							velocityValue: '0 15 0'
 						});
-						confettiEl.setAttribute('position', { x: 5.914, y: 1.9, z: -0.927 });
+						confettiEl.setAttribute('position', {x: -5.573, y: 1, z: 5.5 });
 						confettiEl.setAttribute('material', {
 							transparent: true,
 							visible: false
 						});
 						confettiEl.id = "confetti";
-						sceneEl.appendChild(confettiEl);
+						congratsEl.appendChild(confettiEl);
 					}
 					confetti();
 				}
-				// remove all other popups
-				function hidePopups() {
-					alpr.setAttribute('visible', false);
-					alprMobile.setAttribute('visible', false);
-					biometric.setAttribute('visible', false);
-					bodyCam.setAttribute('visible', false);
-					camera1.setAttribute('visible', false);
-					camera2.setAttribute('visible', false);
-					drone.setAttribute('visible', false);
-					bird.setAttribute('visible', false);
-					light.setAttribute('visible', false);
-					intro.setAttribute('visible', false);
-				}
 				setTimeout(tada, 5000);
-				//setTimeout(hidePopups, 20000);
 			}
 		});
 	}
