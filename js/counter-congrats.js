@@ -80,7 +80,6 @@ AFRAME.registerComponent('listener', {
 						replayEl.id = "replay1";
 						congratsEl.appendChild(replayEl);
 
-
 						// create close button
 						var closeEl = document.createElement('a-entity');
 						closeEl.setAttribute('position', {x:1.378, y: 1.496, z: 0.209 });
@@ -89,6 +88,17 @@ AFRAME.registerComponent('listener', {
 						closeEl.setAttribute('congrats-close','');
 						closeEl.id = "close-congrats";
 						congratsEl.appendChild(closeEl);
+
+						// create reopen button
+						var reopenEl = document.createElement('a-entity');
+						reopenEl.setAttribute('geometry', {primitive: 'plane', height:0.75, width: 2.1, });
+						reopenEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#reopen'});
+						reopenEl.setAttribute('position', {x: -6.04, y: 2.2, z: 4.782 });
+						reopenEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
+						reopenEl.setAttribute('visible', false);
+						reopenEl.setAttribute('data-clickable','');
+						reopenEl.id = "reopen-cards";
+						congratsAll.appendChild(reopenEl);
 
 						congratsLeft.setAttribute('visible', true);
 						congratsRight1.setAttribute('visible', true);
