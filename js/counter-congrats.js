@@ -144,21 +144,7 @@ AFRAME.registerComponent('listener', {
 					}
 					confetti();
 				}
-				// remove all other popups
-				function hidePopups() {
-					alpr.setAttribute('visible', false);
-					alprMobile.setAttribute('visible', false);
-					biometric.setAttribute('visible', false);
-					bodyCam.setAttribute('visible', false);
-					camera1.setAttribute('visible', false);
-					camera2.setAttribute('visible', false);
-					drone.setAttribute('visible', false);
-					bird.setAttribute('visible', false);
-					light.setAttribute('visible', false);
-					intro.setAttribute('visible', false);
-				}
 				setTimeout(tada, 5000);
-				//setTimeout(hidePopups, 20000);
 			}
 		});
 	}
