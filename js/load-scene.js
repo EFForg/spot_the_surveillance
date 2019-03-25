@@ -14,6 +14,7 @@ AFRAME.registerComponent('loadscene', {
       var droneHot = document.querySelector('#drone-hotspot');
       var birdHot = document.querySelector('#bird-hotspot');
       var lightHot = document.querySelector('#light-hotspot');
+      var attribHot = document.querySelector('#attribution-hotspot');
       // popups
       var alprPop = document.querySelector('#alpr-popup');
       var alprMobilePop = document.querySelector('#alpr-mobile-popup');
@@ -49,6 +50,7 @@ AFRAME.registerComponent('loadscene', {
       biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
       birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
+      attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
       alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
