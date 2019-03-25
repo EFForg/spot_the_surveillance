@@ -73,6 +73,7 @@ AFRAME.registerComponent('loadscene', {
     var ambienceAudio = document.getElementById('ambience');
     var getReady = document.getElementById('get-ready');
     var getStartedButton = document.getElementById('get-started');
+    var easyButton = document.getElementById('easy-button');
 
     var enterVREl;
     var audioStarted = false;
@@ -111,7 +112,7 @@ AFRAME.registerComponent('loadscene', {
       ambienceAudio.volume = ambienceAudio.getAttribute('volume');
       ambienceAudio.load();
       playAudio();
-      // start audio after geseture on enter VR button.
+      // start audio after gesture on enter VR button.
       enterVREl.addEventListener(userPressEvent, onUserPressDown);
       sceneEl.removeEventListener('loaded', onSceneLoaded);
     }
@@ -124,6 +125,7 @@ AFRAME.registerComponent('loadscene', {
       getStartedButton.removeAttribute('data-clickable');
       getStartedButton.removeEventListener('click', onStartClick);
       browserReposition();
+      easyButton.removeAttribute('data-clickable');
     }
 
     // start audio after user gesture on scene.
