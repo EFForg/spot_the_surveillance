@@ -1,0 +1,267 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>Spot the Surveillance / Descubre La Vigilancia</title>
+  <meta name="description" content="Spot the Surveillance is an open-source educational virtual reality (VR) tool to help people identify street-level surveillance in their community. As each surveillance device is identified, the user is informed on how the device is used via text and narration." />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="css/sts.css">
+  <meta content="utf-8" http-equiv="encoding">
+  <script src="js/aframe/releases/0.8.2/aframe.min.js"></script>
+  <script src="js/aframe-event-set-component.js"></script>
+  <script src="js/aframe-particle-system-component.js"></script>
+  <script src="js/load-scene.js"></script>
+  <script src="js/clickonce.js"></script>
+  <script src="js/counter-congrats.js"></script>
+  <script src="js/sts-hotspot.js"></script>
+  <script src="js/sts-popup-close.js"></script>
+  <script src="js/links.js"></script>
+  <script src="js/replay.js"></script>
+  <script src="js/congrats-close.js"></script>
+  <script src="js/reopen-cards.js"></script>
+
+</head>
+<body>
+  <div id="get-ready">
+    <h1>Prepárate para Descubrir la Vigilancia...</h1>
+  </div>
+    <a-scene loadscene>
+      <a-assets timeout="10000">
+        <!-- images -->
+        <img id="alpr-card"  src="assets/images-es/alpr-card-es.png">
+        <img id="alpr-mobile-card"  src="assets/images-es/alpr-mobile-card-es.png">
+        <img id="biometric-card" src="assets/images-es/biometric-card-es.png">
+        <img id="bodycam-card" src="assets/images-es/bodycam-card-es.png">
+        <img id="counter-bg" src="assets/images/binoculars.png">
+        <img id="camera1-card" src="assets/images-es/camera1-card-es.png">
+        <img id="camera2-card" src="assets/images-es/camera2-card-es.png">
+        <img id="congrats-card" src="assets/images-es/congrats-card-es.png">
+        <img id="reopen" src="assets/images-es/reopen-es.png">
+        <img id="drone-card"  src="assets/images-es/drone-card-es.png">
+        <img id="intro-card" src="assets/images-es/intro-card-es.png">
+        <img id="easy-mode" src="assets/images-es/easy-mode-button-es.png">
+        <img id="eff-logo" src="assets/images/eff-logo-black.png">
+        <img id="attribution-card" src="assets/images-es/attribution-card-es.png">
+        <img id="exit-card" src="assets/images-es/exit-card-es.png">
+        <img id="left-arrow" src="assets/images/left-arrow.png">
+        <img id="right-arrow" src="assets/images/right-arrow.png">
+        <img id="found" src="assets/images/selected.png">
+        <img id="attribution-button" src="assets/images-es/attribution-button-es.png">
+
+        <img id="sts-sky" src="assets/images/sky-lighten.jpg">
+
+        <!-- sounds -->
+        <audio id="alpr-audio" src="assets/audio-es/alpr.mp3" preload="auto"></audio>
+        <audio id="alpr-mobile-audio" src="assets/audio-es/alpr-mobile.mp3" preload="auto"></audio>
+        <audio id="biometric-audio" src="assets/audio-es/biometric.mp3" preload="auto"></audio>
+        <audio id="bodycam-audio" src="assets/audio-es/bodycam.mp3" preload="auto"></audio>
+        <audio id="camera1-audio" src="assets/audio-es/camera1.mp3" preload="auto"></audio>
+        <audio id="camera2-audio" src="assets/audio-es/camera2.mp3" preload="auto"></audio>
+        <audio id="drone-audio" src="assets/audio-es/drone.mp3" preload="auto"></audio>
+        <audio id="bird-audio" src="assets/audio-es/bird.mp3" preload="auto"></audio>
+        <audio id="light-audio" src="assets/audio-es/light.mp3" preload="auto"></audio>
+        <audio id="exit-audio" src="assets/audio-es/exit.mp3" preload="auto"></audio>
+        <audio id="congrats-audio" src="assets/audio-es/congrats.mp3" preload="auto"></audio>
+        <audio id="ambience" src="assets/audio/traffic-fade.ogg" loop volume="0.4" preload="auto"></audio>
+        <audio id="intro-audio" src="assets/audio-es/intro.mp3" preload="auto"></audio>
+        <audio id="ding" src="assets/audio/piano-ding-eff.ogg" preload="auto"></audio>
+      </a-assets>
+
+      <!-- mixins -->
+      <!-- popups -->
+      <!-- initial position for all popup is below exit/magic carpet. They are moved after user clicks Get Started for headsets/desktop, and after the scene loads for mobile/cardboard -->
+      <a-mixin id="init-position" position="48 -341 11"></a-mixin>
+      <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -60 0"></a-mixin>
+      <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
+      <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 90 0"></a-mixin>
+      <a-mixin id="bodycam" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 60 0"></a-mixin>
+      <a-mixin id="camera1" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera1-card" rotation="20 -40 0"></a-mixin>
+      <a-mixin id="camera2" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera2-card" rotation="0 -110 0"></a-mixin>
+      <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
+      <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
+      <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
+
+      <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" ></a-mixin>
+      <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" ></a-mixin>
+      <a-mixin id="congrats"   geometry="primitive: plane; width: 4; height: 4; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#congrats-card; visible:false;" position="5.584 1.250 -1.325" visible="false" ></a-mixin>
+      <a-mixin id="arrow"  geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow"  position="0 -5 -2" visible="false" ></a-mixin>
+
+      <!-- misc mixins -->
+      <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;" scale="3 3 1"></a-mixin>
+      <!-- this is the initial position of all hotspots/devices, so they are hidden behind the exit until the scene loads in load-scene.js-->
+      <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -341 10.223"></a-mixin>
+      <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2"></a-mixin>
+      <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" ></a-mixin>
+
+      <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
+      <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
+
+      <a-entity camera look-controls wasd-controls position="0 2.2 4" >
+        <a-entity id="cursor" cursor="fuse: true"
+          geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
+          material="color: white; shader: flat;" position="0 0 -3"
+          raycaster="objects: [data-clickable]">
+          <a-animation begin="click" easing="ease-in" attribute="scale"
+            fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="fusing" easing="ease-in" attribute="scale"
+            fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+        </a-entity>
+        <a-entity mixin="counter" id="count-display"></a-entity>
+      </a-entity>
+
+      <!-- intro -->
+      <a-entity id="intro-popup" mixin="intro" visible="true">
+        <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 -20 0">
+        </a-entity>
+        <a-entity  id="easy-button" data-clickable event-set__enter="_event: mouseenter; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.528 -3.147 3.593" rotation="0 -20 0" visible="true"  >
+        </a-entity>
+      </a-entity>
+
+<!-- everything besides the intro card, camera and counter -->
+
+<a-entity id="sts-live" visible="false">
+  <!-- all the surveillance objects  -->
+  <a-entity listener id="surveillance-objects">
+
+    <a-sphere id="alpr-hotspot" data-clickable click-once
+      sts-hotspot="show: #alpr-popup; sound: #alpr-audio"
+      mixin="spotted" geometry="height:6; width:6;" rotation="50 0 0" visible="false">
+    </a-sphere>
+
+    <a-sphere id="alpr-mobile-hotspot" data-clickable click-once
+      sts-hotspot="show: #alpr-mobile-popup; sound: #alpr-mobile-audio"
+      mixin="spotted" geometry="height: 2.5; width: 3;" rotation="180 0 20" visible="false">
+    </a-sphere>
+
+    <a-sphere id="biometric-hotspot" data-clickable click-once
+      sts-hotspot="show: #biometric-popup; sound: #biometric-audio"
+      mixin="spotted" geometry="height: 7; width: 7;"  rotation="0 20 0" visible="false">
+    </a-sphere>
+
+    <a-sphere id="bodycam-hotspot" data-clickable click-once
+      sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio"
+      mixin="spotted" geometry="height: 4; width: 4"  visible="false">
+    </a-sphere>
+
+    <a-sphere id="camera1-hotspot" data-clickable click-once
+      sts-hotspot="show: #camera1-popup; sound: #camera1-audio"
+      mixin="spotted" geometry="height:12; width: 12;" rotation="40 0 0" visible="false">
+    </a-sphere>
+
+    <a-sphere id="camera2-hotspot" data-clickable click-once
+      sts-hotspot="show: #camera2-popup; sound: #camera2-audio"
+      mixin="spotted" geometry="height:4; width: 4;" rotation="180 70 0" scale="3 3 3" visible="false">
+    </a-sphere>
+
+    <a-sphere id="drone-hotspot" data-clickable click-once
+      sts-hotspot="show: #drone-popup; sound: #drone-audio"
+      mixin="spotted" geometry="height:10; width: 10;" rotation="70 90 0" visible="false">
+    </a-sphere>
+  </a-entity>
+
+  <!-- false positives, initially position under the exit -->
+  <a-sphere id="bird-hotspot" data-clickable
+    sts-hotspot="show: #bird-popup; sound: #bird-audio; audioOnHotspot: true"
+    mixin="see-through" position="47.468 -340.523 10.223" rotation="110 0 0">
+  </a-sphere>
+
+  <a-sphere id="light-hotspot" data-clickable
+    sts-hotspot="show: #light-popup; sound: #light-audio; audioOnHotspot: true"
+    mixin="see-through"
+    position="47.468 -340.523 10.223" rotation= "0 40 0" scale="2 2 2" visible="true">
+  </a-sphere>
+
+  <!-- all the popups -->
+  <a-entity id="alpr-popup" mixin="alpr init-position" data-clickable visible="false">
+      <a-entity mixin="close" sts-popup-close position="2.025 2.087 0.075"></a-entity>
+  </a-entity>
+
+  <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close position="2.0 0.8 1.6" ></a-entity>
+  </a-entity>
+
+  <a-entity id="biometric-popup" mixin="biometric init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close></a-entity>
+  </a-entity>
+
+  <a-entity id="bodycam-popup" mixin="bodycam init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close></a-entity>
+  </a-entity>
+
+  <a-entity id="camera1-popup" mixin="camera1 init-posi tion" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close position="3.1 2.9 1.5"></a-entity>
+  </a-entity>
+
+  <a-entity id="camera2-popup" mixin="camera2 init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close position="2.25 1.5 1.2" ></a-entity>
+  </a-entity>
+
+  <a-entity id="drone-popup" mixin="drone init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close position="2.12 2.18 1.1"></a-entity>
+  </a-entity>
+
+  <!-- false positives -->
+  <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"
+    text="color: white; align: center; value: Buen intento, pero solo es un pajaro. ¡Sigue buscando!">
+    <a-entity mixin="close" sts-popup-close text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394" ></a-entity>
+  </a-entity>
+
+  <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="40 60 0" visible="false"
+    text="color: white; align: center; value: Buen intento, pero solo es un punto de luz. ¡Sigue buscando!">
+    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
+    </a-entity>
+  </a-entity>
+
+  <!-- attribution -->
+  <a-entity  id="attribution-popup" mixin="attribution-text">
+    <a-text mixin="close" data-clickable event-set__enter=" _target: #attribution-popup;">
+    </a-text>
+    <a-entity id="more-attribution" mixin="close" data-clickable  geometry="height: 1; width: 3;" position="-0.016 -2.535 0.485"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+    </a-entity>
+  </a-entity>
+
+  <!-- exit -->
+  <a-entity  id="exit-popup" mixin="exit-text" data-clickable visible="false">
+    <a-text mixin="close" data-clickable sts-popup-close>
+    </a-text>
+    <a-entity id="sls" mixin="close" data-clickable geometry="height: 0.8; width: 3; " position="-0.105 -0.726 0.257"  exitlink="href: https://www.eff.org/issues/street-level-surveillance;" >
+    </a-entity>
+    <a-entity replay id="replay2" data-clickable  mixin="replay" geometry="primitive: plane; height: 1; width: 3;" material="visible: false; transparent: true; opacity: 0;" position="-0.178 -1.657 0.647" >
+    </a-entity>
+  </a-entity>
+
+  <!-- congrats -->
+  <a-entity id="congrats-all">
+    <!-- congrats card loaded dynamically in counter-congrats.js -->
+
+    <a-entity  id="congrats-right-arrow1" mixin="arrow" position="-0.271 1.9 9.851" rotation="0 -190 0" material="src:#right-arrow" >
+    </a-entity>
+
+    <a-entity  id="congrats-right-arrow2" mixin="arrow" position="7.826 1.9 9.404" rotation="0 -150 0" material="src:#right-arrow" >
+    </a-entity>
+
+    <a-entity  id="congrats-left-arrow" mixin="arrow"  position="-0.513 1.9 -6.222"  rotation="0 40 0" material="src:#left-arrow">
+    </a-entity>
+
+  </a-entity>
+  <!-- end popups -->
+
+  <a-entity id="exit-sts" data-clickable mixin="exit-logo"
+    sts-hotspot="show: #exit-popup; sound: #exit-audio">
+  </a-entity>
+  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true"  >
+  </a-entity>
+  <a-entity id="magic-carpet" mixin="exit">
+  </a-entity>
+  <a-entity id="sky" geometry="primitive: sphere; radius: 1000"  material="shader: flat; side: back; src: #sts-sky">
+  </a-entity>
+</a-entity> <!-- end sts-live -->
+</a-scene>
+</body>
+<script src="js/audio-hotspot.js"></script> <!-- audio cues -->
+<script src="js/hint.js"></script> <!-- hint (easy) mode -->
+
+<noscript><img src="https://anon-stats.eff.org/js/?idsite=34s&amp;rec=1&amp;action_name=" style="border:0" height="0" width="0" alt="" /></noscript>
+<div style="height: 0; width: 0; position: absolute" id="anon-stats"></div>
+<script type="text/javascript">
+document.getElementById('anon-stats').innerHTML = '<img src="https://anon-stats.eff.org/js/?idsite=34&amp;rec=1&amp;urlref=' + encodeURIComponent(document.referrer) + '&amp;action_name=' + encodeURIComponent(document.title) + '" style="border:0" height="0" width="0" alt="" />';
+</script>
+
+</html>
