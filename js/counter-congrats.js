@@ -29,9 +29,9 @@ AFRAME.registerComponent('listener', {
 			e.target.dataset.wasClicked = true;
 
 			// Score up.
-			var scoreBoard = document.querySelector('#count-display');
+			var scoreBoard = Array.prototype.find.call(document.querySelectorAll('.count-display'), el => el.getAttribute('visible'));
 			score++;
-			var newScore = score + ' / 7'
+			var newScore = score + ' / 7';
 			scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
 				function tada() {
