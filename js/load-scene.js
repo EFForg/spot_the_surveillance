@@ -14,6 +14,9 @@ AFRAME.registerComponent('loadscene', {
       var droneHot = document.querySelector('#drone-hotspot');
       var birdHot = document.querySelector('#bird-hotspot');
       var lightHot = document.querySelector('#light-hotspot');
+      var attribHot = document.querySelector('#attribution-hotspot');
+      var exitHot = document.querySelector('#exit-sts');
+
       // popups
       var alprPop = document.querySelector('#alpr-popup');
       var alprMobilePop = document.querySelector('#alpr-mobile-popup');
@@ -49,6 +52,8 @@ AFRAME.registerComponent('loadscene', {
       biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
       birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
+      attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
+      exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
       alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
@@ -68,6 +73,7 @@ AFRAME.registerComponent('loadscene', {
     var ambienceAudio = document.getElementById('ambience');
     var getReady = document.getElementById('get-ready');
     var getStartedButton = document.getElementById('get-started');
+    var easyButton = document.getElementById('easy-button');
 
     var enterVREl;
     var audioStarted = false;
@@ -106,7 +112,7 @@ AFRAME.registerComponent('loadscene', {
       ambienceAudio.volume = ambienceAudio.getAttribute('volume');
       ambienceAudio.load();
       playAudio();
-      // start audio after geseture on enter VR button.
+      // start audio after gesture on enter VR button.
       enterVREl.addEventListener(userPressEvent, onUserPressDown);
       sceneEl.removeEventListener('loaded', onSceneLoaded);
     }
@@ -119,6 +125,7 @@ AFRAME.registerComponent('loadscene', {
       getStartedButton.removeAttribute('data-clickable');
       getStartedButton.removeEventListener('click', onStartClick);
       browserReposition();
+      easyButton.removeAttribute('data-clickable');
     }
 
     // start audio after user gesture on scene.
