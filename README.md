@@ -24,6 +24,7 @@ Spot the Surveillance is an open-source educational VR tool to help people ident
 
 Spot the Surveillance uses Mozilla's Aframe web framework: https://aframe.io/
 
+## How to run the experience
 To run locally:
 After cloning/downloading, you'll need to launch a web server. An easy way to do this is by running SimpleHTTPServer:
 python -m SimpleHTTPServer 8000
