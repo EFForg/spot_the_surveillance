@@ -1,10 +1,15 @@
 # Spot the Surveillance
-## Version 1.1
 Spot the Surveillance is an open-source educational VR tool to help people identify street-level surveillance in their community. As each surveillance device is identified, the user is informed on how the device is used via text and narration. The experience is created with accessibility in mind, so is entirely gaze-based for people with mobility challenges. Audio is also used to assist low-vision users.
 
-For users who find the experience challenging, there is an "easy mode" which is activated by a button the using can click before starting the experience. This mode has a visual indicator of where all the devices are so the user can identify them more easily.
+## Version 1.2
+Changes since 1.1:
+- Easy mode. For users who find the experience challenging, there is an "easy mode" which is activated by a button the using can click before starting the experience. This mode has a visual indicator of where all the devices are so the user can identify them more easily.
+- Spanish version at index-es.html, Descubre La Vigilancia.
+- Upgrades to performance
+- Bug fixes to many gazed-based interactions
 
-There is a Spanish version at index-es.html, Descubre La Vigilancia.
+## Version 1.1
+Spot the Surveillance is an open-source educational VR tool to help people identify street-level surveillance in their community. As each surveillance device is identified, the user is informed on how the device is used via text and narration. The experience is created with accessibility in mind, so is entirely gaze-based for people with mobility challenges. Audio is also used to assist low-vision users.
 
 Spot the Surveillance uses Mozilla's Aframe web framework: https://aframe.io/
 
