@@ -7,13 +7,13 @@ There is also a Spanish version available at index-es.html, Descubre La Vigilanc
 
 ## Version 1.2
 Changes since 1.1:
-- Easy mode. 
+- Easy mode
 - Spanish version
 - Upgrades to performance including smaller image and audio files to speed up loading time
 - more consistent audio playing
 - Several changes to improve the experience for low-vision users, including: 
     - making the "X" to close the information cards smaller
-    - More clearly recognizabel arrows to direct user to congratulations card
+    - More clearly recognizable arrows to direct user to congratulations card
 - user can reopen all information cards at the end of the experience
 - repositioned congratulations card to make it less "cramped" in between other cards
 - Bug fixes to many gazed-based interactions
