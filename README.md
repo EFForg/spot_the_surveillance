@@ -12,7 +12,7 @@ Changes since 1.1:
 - Upgrades to performance including smaller image and audio files to speed up loading time
 - more consistent audio playing
 - Several changes to improve the experience for low-vision users, including: 
-    - making the "X" to close the information cards smaller
+    - making the "X" to close the information cards more visible
     - More clearly recognizable arrows to direct user to congratulations card
 - user can reopen all information cards at the end of the experience
 - repositioned congratulations card to make it less "cramped" in between other cards
