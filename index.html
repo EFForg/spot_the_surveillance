@@ -31,7 +31,7 @@
         <img id="bodycam-card" src="assets/images/bodycam-card.png">
         <img id="counter-bg" src="assets/images/binoculars.png">
         <img id="camera1-card" src="assets/images/camera1-card.png">
-        <img id="camera2-card" src="assets/images/camera2-card.png">
+        <img id="shot-spotter-card" src="assets/images/shot-spotter-card.jpg">
         <img id="congrats-card" src="assets/images/congrats-card.png">
         <img id="reopen" src="assets/images/reopen.png">
         <img id="drone-card"  src="assets/images/drone-card.png">
@@ -73,7 +73,7 @@
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 90 0"></a-mixin>
       <a-mixin id="bodycam" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 60 0"></a-mixin>
       <a-mixin id="camera1" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera1-card" rotation="20 -40 0"></a-mixin>
-      <a-mixin id="camera2" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera2-card" rotation="0 -110 0"></a-mixin>
+      <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -110 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
       <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
@@ -189,7 +189,7 @@
     <a-entity mixin="close" sts-popup-close position="3.1 2.9 1.5"></a-entity>
   </a-entity>
 
-  <a-entity id="camera2-popup" mixin="camera2 init-position" data-clickable visible="false">
+  <a-entity id="camera2-popup" mixin="shot-spotter init-position" data-clickable visible="false">
     <a-entity mixin="close" sts-popup-close position="2.25 1.5 1.2" ></a-entity>
   </a-entity>
 
