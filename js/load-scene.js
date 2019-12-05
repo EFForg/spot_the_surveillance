@@ -39,7 +39,7 @@ AFRAME.registerComponent('loadscene', {
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
         shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
-        // hotspots positions for desktop/cardboard
+        // hotspots positions for headset/cardboard
       } else {
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -11.27 });
         alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
