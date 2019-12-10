@@ -30,8 +30,8 @@
         <img id="biometric-card" src="assets/images-es/biometric-card-es.png">
         <img id="bodycam-card" src="assets/images-es/bodycam-card-es.png">
         <img id="counter-bg" src="assets/images/binoculars.png">
-        <img id="camera1-card" src="assets/images-es/camera1-card-es.png">
-        <img id="camera2-card" src="assets/images-es/camera2-card-es.png">
+        <img id="camera-card" src="assets/images-es/camera1-card-es.png">
+        <img id="shot-spotter-card" src="assets/images-es/shotspotter-card-es.png">
         <img id="congrats-card" src="assets/images-es/congrats-card-es.png">
         <img id="reopen" src="assets/images-es/reopen-es.png">
         <img id="drone-card"  src="assets/images-es/drone-card-es.png">
@@ -45,15 +45,15 @@
         <img id="found" src="assets/images/selected.png">
         <img id="attribution-button" src="assets/images-es/attribution-button-es.png">
 
-        <img id="sts-sky" src="assets/images/sky-lighten.jpg">
+        <img id="sts-sky" src="assets/images/sky-shot-spotter.jpg">
 
         <!-- sounds -->
         <audio id="alpr-audio" src="assets/audio-es/alpr.mp3" preload="auto"></audio>
         <audio id="alpr-mobile-audio" src="assets/audio-es/alpr-mobile.mp3" preload="auto"></audio>
         <audio id="biometric-audio" src="assets/audio-es/biometric.mp3" preload="auto"></audio>
         <audio id="bodycam-audio" src="assets/audio-es/bodycam.mp3" preload="auto"></audio>
-        <audio id="camera1-audio" src="assets/audio-es/camera1.mp3" preload="auto"></audio>
-        <audio id="camera2-audio" src="assets/audio-es/camera2.mp3" preload="auto"></audio>
+        <audio id="camera-audio" src="assets/audio-es/camera.mp3" preload="auto"></audio>
+        <audio id="shot-spotter-audio" src="assets/audio-es/shot-spotter-es.mp3" preload="auto"></audio>
         <audio id="drone-audio" src="assets/audio-es/drone.mp3" preload="auto"></audio>
         <audio id="bird-audio" src="assets/audio-es/bird.mp3" preload="auto"></audio>
         <audio id="light-audio" src="assets/audio-es/light.mp3" preload="auto"></audio>
@@ -72,8 +72,8 @@
       <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 90 0"></a-mixin>
       <a-mixin id="bodycam" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 60 0"></a-mixin>
-      <a-mixin id="camera1" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera1-card" rotation="20 -40 0"></a-mixin>
-      <a-mixin id="camera2" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera2-card" rotation="0 -110 0"></a-mixin>
+      <a-mixin id="camera" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0"></a-mixin>
+      <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -110 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
       <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
@@ -140,13 +140,13 @@
       mixin="spotted" geometry="height: 4; width: 4"  visible="false">
     </a-sphere>
 
-    <a-sphere id="camera1-hotspot" data-clickable click-once
-      sts-hotspot="show: #camera1-popup; sound: #camera1-audio"
+    <a-sphere id="camera-hotspot" data-clickable click-once
+      sts-hotspot="show: #camera-popup; sound: #camera-audio"
       mixin="spotted" geometry="height:12; width: 12;" rotation="40 0 0" visible="false">
     </a-sphere>
 
-    <a-sphere id="camera2-hotspot" data-clickable click-once
-      sts-hotspot="show: #camera2-popup; sound: #camera2-audio"
+    <a-sphere id="shot-spotter-hotspot" data-clickable click-once
+      sts-hotspot="show: #shot-spotter-popup; sound: #shot-spotter-audio"
       mixin="spotted" geometry="height:4; width: 4;" rotation="180 70 0" scale="3 3 3" visible="false">
     </a-sphere>
 
@@ -185,11 +185,11 @@
     <a-entity mixin="close" sts-popup-close></a-entity>
   </a-entity>
 
-  <a-entity id="camera1-popup" mixin="camera1 init-posi tion" data-clickable visible="false">
+  <a-entity id="camera-popup" mixin="camera init-posi tion" data-clickable visible="false">
     <a-entity mixin="close" sts-popup-close position="3.1 2.9 1.5"></a-entity>
   </a-entity>
 
-  <a-entity id="camera2-popup" mixin="camera2 init-position" data-clickable visible="false">
+  <a-entity id="shot-spotter-popup" mixin="shot-spotter init-position" data-clickable visible="false">
     <a-entity mixin="close" sts-popup-close position="2.25 1.5 1.2" ></a-entity>
   </a-entity>
 
