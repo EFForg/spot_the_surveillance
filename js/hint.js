@@ -4,8 +4,8 @@ var alpr = document.querySelector('#alpr-hotspot');
 var alprMobile = document.querySelector('#alpr-mobile-hotspot');
 var biometric = document.querySelector('#biometric-hotspot');
 var bodyCam = document.querySelector('#bodycam-hotspot');
-var camera1 = document.querySelector('#camera1-hotspot');
-var camera2 = document.querySelector('#camera2-hotspot');
+var camera = document.querySelector('#camera-hotspot');
+var shotSpotter = document.querySelector('#shot-spotter-hotspot');
 var drone = document.querySelector('#drone-hotspot');
 
 function showHotspots() {
@@ -13,8 +13,8 @@ function showHotspots() {
   alprMobile.setAttribute('visible', true);
   biometric.setAttribute('visible', true);
   bodyCam.setAttribute('visible', true);
-  camera1.setAttribute('visible', true);
-  camera2.setAttribute('visible', true);
+  camera.setAttribute('visible', true);
+  shotSpotter.setAttribute('visible', true);
   drone.setAttribute('visible', true);
 }
 
