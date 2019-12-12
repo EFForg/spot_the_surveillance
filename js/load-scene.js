@@ -45,7 +45,7 @@ AFRAME.registerComponent('loadscene', {
         alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
         bodycamHot.setAttribute('position', { x: -8.563, y: -1.176, z: -18.202 });
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -39.778 });
-        shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
+        shotspotterHot.setAttribute('position', { x: 68, y: 33.092, z: 18.444 });
         droneHot.setAttribute('position', { x: -3.999, y: 33.763, z: 28.948 });
       }
       // these hotspots have the same position regardless of device

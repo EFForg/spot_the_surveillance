@@ -200,7 +200,8 @@
   <!-- false positives -->
   <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"
     text="color: white; align: center; value: Buen intento, pero solo es un pajaro. ¡Sigue buscando!">
-    <a-entity mixin="close" sts-popup-close text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394" ></a-entity>
+    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
+    </a-entity>
   </a-entity>
 
   <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="40 60 0" visible="false"
