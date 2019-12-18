@@ -5,6 +5,9 @@ For users who find the experience challenging, there is an "easy mode" which is 
 
 There is also a Spanish version available at index-es.html, Descubre La Vigilancia.
 
+## Version 1.2.1
+- Added shot spotter/gunshot detection, removed one of the PTZ cameras
+
 ## Version 1.2
 Changes since 1.1:
 - Easy mode
