@@ -8,13 +8,13 @@
   <script src="js/aframe-event-set-component.js"></script>
   <script src="js/aframe-particle-system-component.js"></script>
   <script src="js/load-scene.js"></script>
-  <script src="js/clickonce.js"></script>
-  <script src="js/counter-congrats.js"></script>
-  <script src="js/sts-hotspot.js"></script>
-  <script src="js/sts-popup-close.js"></script>
+  <script src="js/desktop/clickonce.js"></script>
+  <script src="js/desktop/counter-congrats.js"></script>
+  <script src="js/desktop/sts-hotspot.js"></script>
+  <script src="js/desktop/sts-popup-close.js"></script>
   <script src="js/links.js"></script>
   <script src="js/replay.js"></script>
-  <script src="js/congrats-close.js"></script>
+  <script src="js/desktop/congrats-close.js"></script>
   <script src="js/reopen-cards.js"></script>
 
 </head>
@@ -22,7 +22,7 @@
   <div id="get-ready">
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
-    <a-scene loadscene>
+    <a-scene loadscene cursor="rayOrigin: mouse">
       <a-assets timeout="10000">
         <!-- images -->
         <img id="alpr-card"  src="assets/images/alpr-card.png">
@@ -111,6 +111,14 @@
         <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 -20 0">
         </a-entity>
         <a-entity  id="easy-button" data-clickable event-set__enter="_event: mouseenter; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.528 -3.147 3.593" rotation="0 -20 0" visible="true"  >
+          <!--a-entity
+          animation="property: rotation"
+            begin="click"
+            dur="500"
+            fill="backwards"
+            to="30 30 360"
+            >
+          </a-entity-->
         </a-entity>
       </a-entity>
 
@@ -256,8 +264,8 @@
 </a-entity> <!-- end sts-live -->
 </a-scene>
 </body>
-<script src="js/audio-hotspot.js"></script> <!-- audio cues -->
-<script src="js/hint.js"></script> <!-- hint (easy) mode -->
+<script src="js/desktop/audio-hotspot.js"></script> <!-- audio cues -->
+<script src="js/desktop/hint.js"></script> <!-- hint (easy) mode -->
 
 <noscript><img src="https://anon-stats.eff.org/js/?idsite=34s&amp;rec=1&amp;action_name=" style="border:0" height="0" width="0" alt="" /></noscript>
 <div style="height: 0; width: 0; position: absolute" id="anon-stats"></div>
