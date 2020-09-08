@@ -18,6 +18,6 @@ function showHotspots() {
   drone.setAttribute('visible', true);
 }
 
-hint.addEventListener("mouseenter", function(e) {
+hint.addEventListener("click", function(e) {
   showHotspots();
 });
