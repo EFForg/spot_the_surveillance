@@ -1,7 +1,7 @@
 AFRAME.registerComponent('sts-popup-close', {
   init: function () {
     var el = this.el;
-    el.addEventListener('mouseenter', function () {
+    el.addEventListener('click', function () {
       var parent = el.closest('[visible]');
       if (!parent) {
         return;
