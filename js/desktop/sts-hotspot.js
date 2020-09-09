@@ -32,7 +32,6 @@ AFRAME.registerComponent('sts-hotspot', {
     var popupEl = this.data.show;
 
     popupEl.setAttribute('visible', true);
-    console.log('isVisisble');
     hotspotEl.setAttribute('geometry', { primitive: 'plane', width: 5, height: 5 });
     hotspotEl.setAttribute('material', { opacity: 1 });
     hotspotEl.setAttribute('mixin', 'spotted' );
