@@ -13,7 +13,7 @@ AFRAME.registerComponent('sts-hotspot', {
 
     popupEl.dataset.hotspot = this.el.id;
 
-    el.addEventListener('mouseenter', this.hotspotMouseEnter.bind(this));
+    el.addEventListener('click', this.hotspotMouseEnter.bind(this));
 
     if (!this.data.audioOnHotspot) {
       popupEl.addEventListener('mouseenter', this.popupMouseEnter.bind(this));
