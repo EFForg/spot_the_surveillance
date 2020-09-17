@@ -53,7 +53,7 @@ AFRAME.registerComponent('loadscene', {
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
       biometricPop.setAttribute('position', { x: 2.497, y: 0.992, z: -3.576 });
       bodycamPop.setAttribute('position', { x: 1.26, y: 0.992, z: -4.693 });
-      cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
+      cameraPop.setAttribute('position', { x: 3.264, y: 2.887, z: -5.652 });
       shotspotterPop.setAttribute('position', { x: 7.087, y: 1.287, z: 3.056 });
       dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
       birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });

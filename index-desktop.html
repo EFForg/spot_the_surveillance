@@ -25,8 +25,10 @@
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
     <a-scene loadscene>
-      <a-entity id="camera"  look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4">
-      <a-entity mixin="counter" id="count-display"></a-entity></a-entity>
+      <a-entity id="camera" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4">
+        <a-entity mixin="counter" id="count-display">
+        </a-entity>
+      </a-entity>
       <a-assets timeout="10000">
         <!-- images -->
         <img id="alpr-card"  src="assets/images/alpr-card.png">
@@ -76,7 +78,7 @@
       <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 0 0"></a-mixin>
       <a-mixin id="bodycam" geometry="primitive: plane; width: 6.5; height: 6.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 0 0"></a-mixin>
-      <a-mixin id="camera" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0"></a-mixin>
+      <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="0 -40 0"></a-mixin>
       <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -110 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
@@ -136,7 +138,9 @@
 
     <a-sphere id="camera-hotspot" data-clickable click-once
       sts-hotspot="show: #camera-popup; sound: #camera-audio"
-      geometry="radius: 12;" material="opacity:0" rotation="40 0 0" >
+      geometry="radius: 12;"
+      material="opacity:0"
+      rotation="40 0 0" >
     </a-sphere>
 
     <a-sphere id="shot-spotter-hotspot" data-clickable click-once
@@ -179,8 +183,8 @@
     <a-entity mixin="close" sts-popup-close></a-entity>
   </a-entity>
 
-  <a-entity id="camera-popup" mixin="camera init-posi tion" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="3.1 2.9 1.5"></a-entity>
+  <a-entity id="camera-popup" mixin="ptz-camera init-position" data-clickable visible="false">
+    <a-entity mixin="close" sts-popup-close position="2.566 1.939 1.948"></a-entity>
   </a-entity>
 
   <a-entity id="shot-spotter-popup" mixin="shot-spotter init-position" data-clickable visible="false">
