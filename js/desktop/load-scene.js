@@ -57,7 +57,7 @@ AFRAME.registerComponent('loadscene', {
       shotspotterPop.setAttribute('position', { x: 3.865, y: 1.294, z: 3.710 });
       dronePop.setAttribute('position', { x: -5.758, y: 2.911, z: 3.993 });
       birdPop.setAttribute('position', { x: 4.147, y: 6.494, z: 7.412 });
-      lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
+      lightPop.setAttribute('position', { x: -7.945, y: 1.544, z: -0.366 });
     }
 
     var containerEl = document.getElementById('sts-live');

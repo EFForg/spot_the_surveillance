@@ -81,7 +81,7 @@
       <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="0 -40 0"></a-mixin>
       <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -100 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="0 140 0"></a-mixin>
-      <a-mixin id="false-positive" geometry="primitive: plane;  height: 4; width: 6; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;" scale="2 2 2"></a-mixin>
+      <a-mixin id="false-positive" geometry="primitive: plane;  height: 4; width: 6; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
       <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
 
       <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" ></a-mixin>
@@ -196,15 +196,15 @@
   </a-entity>
 
   <!-- false positives -->
-  <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"
+  <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"  scale="2 2 2"
     text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!">
     <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
     </a-entity>
   </a-entity>
 
-  <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="40 60 0" visible="false"
+  <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="0 60 0" visible="false"
     text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking!">
-    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
+    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="2.609 1.540 0.158">
     </a-entity>
   </a-entity>
 
