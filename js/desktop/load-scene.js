@@ -40,13 +40,6 @@ AFRAME.registerComponent('loadscene', {
         shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
         // hotspots positions for headset/cardboard
-      } else {
-        alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -11.27 });
-        alprMobileHot.setAttribute('position', { x: 3.622, y: 1.58, z: 8.019 });
-        bodycamHot.setAttribute('position', { x: -8.563, y: -1.176, z: -18.202 });
-        cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -39.778 });
-        shotspotterHot.setAttribute('position', { x: 68, y: 33.092, z: 18.444 });
-        droneHot.setAttribute('position', { x: -3.999, y: 33.763, z: 28.948 });
       }
       // these hotspots have the same position regardless of device
       biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
@@ -58,7 +51,7 @@ AFRAME.registerComponent('loadscene', {
       // move popups to their correct positions from beneath the "magic carpet (exit)"
       alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
       alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
-      biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
+      biometricPop.setAttribute('position', { x: 2.497, y: 0.992, z: -3.576 });
       bodycamPop.setAttribute('position', { x: 1.26, y: 0.992, z: -4.693 });
       cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
       shotspotterPop.setAttribute('position', { x: 7.087, y: 1.287, z: 3.056 });
