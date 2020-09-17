@@ -9,7 +9,7 @@
   <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
   <!--script src="js/aframe-event-set-component.js"></script-->
   <script src="js/aframe-particle-system-component.js"></script>
-  <script src="js/load-scene.js"></script>
+  <script src="js/desktop/load-scene.js"></script>
   <script src="js/desktop/clickonce.js"></script>
   <script src="js/desktop/counter-congrats.js"></script>
   <script src="js/desktop/sts-hotspot.js"></script>
@@ -25,7 +25,7 @@
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
     <a-scene loadscene>
-      <a-entity id="camera" camera="userHeight: 1.3" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4">
+      <a-entity id="camera"  look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4">
       <a-entity mixin="counter" id="count-display"></a-entity></a-entity>
       <a-assets timeout="10000">
         <!-- images -->
@@ -75,7 +75,7 @@
       <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -60 0"></a-mixin>
       <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 90 0"></a-mixin>
-      <a-mixin id="bodycam" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 60 0"></a-mixin>
+      <a-mixin id="bodycam" geometry="primitive: plane; width: 6.5; height: 6.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 0 0"></a-mixin>
       <a-mixin id="camera" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0"></a-mixin>
       <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -110 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
@@ -115,36 +115,38 @@
 
     <a-sphere id="alpr-hotspot" data-clickable click-once
       sts-hotspot="show: #alpr-popup; sound: #alpr-audio"
-      geometry="height:6; width:6;" material="opacity:0" rotation="50 0 0" >
+      geometry="radius: 6;" material="opacity:0" rotation="50 0 0" >
     </a-sphere>
 
     <a-sphere id="alpr-mobile-hotspot" data-clickable click-once
       sts-hotspot="show: #alpr-mobile-popup; sound: #alpr-mobile-audio"
-      geometry="height: 2.5; width: 3;" material="opacity:0" rotation="180 0 20" >
+      geometry="radius: 3;" material="opacity:0" rotation="180 0 20" >
     </a-sphere>
 
     <a-sphere id="biometric-hotspot" data-clickable click-once
       sts-hotspot="show: #biometric-popup; sound: #biometric-audio"
-       geometry="height: 7; width: 7;"  material="opacity:0" rotation="0 20 0" >
+       geometry="radius: 7;"  material="opacity:0" rotation="0 20 0" >
     </a-sphere>
 
     <a-sphere id="bodycam-hotspot" data-clickable click-once
-      sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio;"  geometry="height: 4; width: 4" material="opacity:0" >
+      sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio;"
+      geometry="radius: 4"
+      material="opacity:0" >
     </a-sphere>
 
     <a-sphere id="camera-hotspot" data-clickable click-once
       sts-hotspot="show: #camera-popup; sound: #camera-audio"
-      geometry="height:12; width: 12;" material="opacity:0" rotation="40 0 0" >
+      geometry="radius: 12;" material="opacity:0" rotation="40 0 0" >
     </a-sphere>
 
     <a-sphere id="shot-spotter-hotspot" data-clickable click-once
       sts-hotspot="show: #shot-spotter-popup; sound: #shot-spotter-audio"
-       geometry="height:4; width: 4;" material="opacity:0" rotation="180 70 0" scale="3 3 3" >
+       geometry="radius: 4;" material="opacity:0" rotation="180 70 0" scale="3 3 3" >
     </a-sphere>
 
     <a-sphere id="drone-hotspot" data-clickable click-once
       sts-hotspot="show: #drone-popup; sound: #drone-audio"
-      geometry="height:10; width: 10;" material="opacity:0" rotation="70 90 0" >
+      geometry="radius: 10;" material="opacity:0" rotation="70 90 0" >
     </a-sphere>
   </a-entity>
 
