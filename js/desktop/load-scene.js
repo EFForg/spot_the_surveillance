@@ -38,7 +38,7 @@ AFRAME.registerComponent('loadscene', {
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
         alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
-        bodycamHot.setAttribute('position', { x: -9.716, y: -1.166, z: -16.629 });
+        bodycamHot.setAttribute('position', { x: -7.927, y: -1.304, z: -16.629 });
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
         shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
