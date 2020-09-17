@@ -127,7 +127,7 @@
 
     <a-sphere id="biometric-hotspot" data-clickable click-once
       sts-hotspot="show: #biometric-popup; sound: #biometric-audio"
-       geometry="radius: 7;"  material="opacity:0" rotation="0 20 0" >
+       geometry="radius: 7;"  material="opacity:0" rotation="0 0 0" >
     </a-sphere>
 
     <a-sphere id="bodycam-hotspot" data-clickable click-once
@@ -138,9 +138,10 @@
 
     <a-sphere id="camera-hotspot" data-clickable click-once
       sts-hotspot="show: #camera-popup; sound: #camera-audio"
-      geometry="radius: 12;"
+      geometry="radius: 24;"
       material="opacity:0"
-      rotation="40 0 0" >
+      rotation="40 0 0"
+      scale="2 2 2" >
     </a-sphere>
 
     <a-sphere id="shot-spotter-hotspot" data-clickable click-once

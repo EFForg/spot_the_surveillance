@@ -39,13 +39,13 @@ AFRAME.registerComponent('loadscene', {
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
         alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
         bodycamHot.setAttribute('position', { x: -7.927, y: -1.304, z: -16.629 });
-        cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
+        cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -38.207 });
         shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
         // hotspots positions for headset/cardboard
       }
       // these hotspots have the same position regardless of device
-      biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
+      biometricHot.setAttribute('position', { x: -14.129, y: -9.634, z: -25.215 });
       birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
       lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
       attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
