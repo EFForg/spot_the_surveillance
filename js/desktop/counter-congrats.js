@@ -43,16 +43,17 @@ AFRAME.registerComponent('listener', {
 						var congratsAll = document.querySelector('#congrats-all');
 						var congratsAudio = document.querySelector('#congrats-audio');
 						var congratsEl = document.createElement('a-entity');
-						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 4, height: 4});
+						congratsEl.setAttribute('geometry', {primitive: 'plane', width: 6, height: 6});
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
-						if ( !AFRAME.utils.device.checkHeadsetConnected() ) {
-							congratsEl.setAttribute('position', {x: -5.98, y: 2.2, z: 4.782 });
+						if ( /* desktop */ !AFRAME.utils.device.checkHeadsetConnected() ) {
+							congratsEl.setAttribute('position', {x: -1.807, y: 1.187, z: 4.678 });
+							congratsEl.setAttribute('rotation', {x: 0, y: 150, z: 0});
 						}
 						else {
 							congratsEl.setAttribute('position', {x: -5.98, y: 2.020, z: 4.307 });
+							congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
 						}
-						congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
 						congratsEl.setAttribute('data-clickable','');
 						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
 						congratsEl.id = "congrats-popup";
