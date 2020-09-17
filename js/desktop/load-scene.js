@@ -27,6 +27,9 @@ AFRAME.registerComponent('loadscene', {
       var dronePop = document.querySelector('#drone-popup');
       var birdPop = document.querySelector('#bird-popup');
       var lightPop = document.querySelector('#light-popup');
+
+      var introCard = document.querySelector('#intro-popup');
+      var easyButton = document.querySelector('#easy-button');
       // move hotspots to their correct positions
       //
       // these hotspots need to be positioned differently
@@ -58,6 +61,10 @@ AFRAME.registerComponent('loadscene', {
       dronePop.setAttribute('position', { x: -5.758, y: 2.911, z: 3.993 });
       birdPop.setAttribute('position', { x: 4.147, y: 6.494, z: 7.412 });
       lightPop.setAttribute('position', { x: -7.945, y: 1.544, z: -0.366 });
+
+      // reposition intro card & easy button below exit
+      introCard.setAttribute('position', { x: 48, y: -341, z: 11 });
+      easyButton.setAttribute('position', { x: 48, y: -341, z: 11 });
     }
 
     var containerEl = document.getElementById('sts-live');
