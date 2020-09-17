@@ -75,7 +75,7 @@
       <!-- initial position for all popup is below exit/magic carpet. They are moved after user clicks Get Started for headsets/desktop, and after the scene loads for mobile/cardboard -->
       <a-mixin id="init-position" position="48 -341 11"></a-mixin>
       <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -60 0"></a-mixin>
-      <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
+      <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 12; height: 12;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="5 -150 0"></a-mixin>
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 0 0"></a-mixin>
       <a-mixin id="bodycam" geometry="primitive: plane; width: 6.5; height: 6.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 0 0"></a-mixin>
       <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="0 -40 0"></a-mixin>
@@ -172,7 +172,7 @@
   </a-entity>
 
   <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.0 0.8 1.6" ></a-entity>
+    <a-entity mixin="close" sts-popup-close position="2.302 4.204 1.369" ></a-entity>
   </a-entity>
 
   <a-entity id="biometric-popup" mixin="biometric init-position" data-clickable visible="false">

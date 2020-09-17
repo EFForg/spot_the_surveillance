@@ -34,7 +34,7 @@ AFRAME.registerComponent('loadscene', {
       // for desktop/mobile
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
-        alprMobileHot.setAttribute('position', { x: 3.622, y: 2.229, z: 12.881 });
+        alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
         bodycamHot.setAttribute('position', { x: -9.716, y: -1.166, z: -16.629 });
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
         shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
@@ -50,7 +50,7 @@ AFRAME.registerComponent('loadscene', {
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
       alprPop.setAttribute('position', { x: 4.500, y: 1.827, z: -1.884 });
-      alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
+      alprMobilePop.setAttribute('position', { x: -2.289, y: 3.727, z: 13 });
       biometricPop.setAttribute('position', { x: 2.497, y: 0.992, z: -3.576 });
       bodycamPop.setAttribute('position', { x: 1.26, y: 0.992, z: -4.693 });
       cameraPop.setAttribute('position', { x: 3.264, y: 2.887, z: -5.652 });
