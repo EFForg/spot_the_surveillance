@@ -47,7 +47,7 @@ AFRAME.registerComponent('loadscene', {
       // these hotspots have the same position regardless of device
       biometricHot.setAttribute('position', { x: -14.129, y: -9.634, z: -25.215 });
       birdHot.setAttribute('position', { x: 9.039, y: 42.5, z: 17.084 });
-      lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
+      lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -9.666 });
       attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
       exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
 
