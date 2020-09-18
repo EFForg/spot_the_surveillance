@@ -36,7 +36,7 @@ AFRAME.registerComponent('loadscene', {
       // for desktop/mobile, or they appear incorrectly positioned
       // for desktop/mobile
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
-        alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
+        alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -10.9 });
         alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
         bodycamHot.setAttribute('position', { x: -7.927, y: -1.304, z: -16.629 });
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -38.207 });
