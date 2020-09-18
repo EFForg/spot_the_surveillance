@@ -40,7 +40,7 @@ AFRAME.registerComponent('loadscene', {
         alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
         bodycamHot.setAttribute('position', { x: -7.927, y: -1.304, z: -16.629 });
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -38.207 });
-        shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
+        shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 18.38 });
         droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
         // hotspots positions for headset/cardboard
       }
