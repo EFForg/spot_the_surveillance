@@ -7,9 +7,9 @@ AFRAME.registerComponent('click-once', {
     var clickHandler = function (e) {
       self.el.removeAttribute('data-clickable');
       // Remove event listener since no longer needed.enter
-      self.el.removeEventListener('mouseenter', clickHandler);
+      self.el.removeEventListener('click', clickHandler);
     };
     // Add event listener for click.
-    self.el.addEventListener('mouseenter', clickHandler);
+    self.el.addEventListener('click', clickHandler);
   }
 });

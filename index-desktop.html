@@ -25,7 +25,7 @@
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
     <a-scene loadscene>
-      <a-entity id="camera" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4">
+      <a-entity id="camera" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4" raycaster="objects: [data-clickable]">
       </a-entity>
       <a-assets timeout="10000">
         <!-- images -->
@@ -170,43 +170,43 @@
 
   <!-- all the popups -->
   <a-entity id="alpr-popup" mixin="alpr init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.025 2.087 0.075"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.025 2.087 0.075"></a-entity>
   </a-entity>
 
   <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.791 4.160 1.543" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.791 4.160 1.543" ></a-entity>
   </a-entity>
 
   <a-entity id="biometric-popup" mixin="biometric init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="0.936 1.76 1.2"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="0.936 1.76 1.2"></a-entity>
   </a-entity>
 
   <a-entity id="bodycam-popup" mixin="bodycam init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
   </a-entity>
 
   <a-entity id="camera-popup" mixin="ptz-camera init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.566 1.939 1.948"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.566 1.939 1.948"></a-entity>
   </a-entity>
 
   <a-entity id="shot-spotter-popup" mixin="shot-spotter init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="1.6 1.85 0.72" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="1.6 1.85 0.72" ></a-entity>
   </a-entity>
 
   <a-entity id="drone-popup" mixin="drone init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.12 2.18 1.1"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.12 2.18 1.1"></a-entity>
   </a-entity>
 
   <!-- false positives -->
   <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"  scale="2 2 2"
     text="color: white; align: center; value: Good try, but that's just a bird. Keep looking!">
-    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
+    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
     </a-entity>
   </a-entity>
 
   <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="0 60 0" visible="false"
     text="color: white; align: center; value: Good try, but that's just a light fixture. Keep looking!">
-    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="2.609 1.540 0.158">
+    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="2.609 1.540 0.158">
     </a-entity>
   </a-entity>
 
