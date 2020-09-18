@@ -88,7 +88,8 @@
       <a-mixin id="arrow"  geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow"  position="0 -5 -2" visible="false" ></a-mixin>
 
       <!-- misc mixins -->
-      <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;" scale="3 3 1"></a-mixin>
+      <a-mixin id="see-through"
+      material="color: white; transparent: true; opacity: 0;" scale="1 1 1"></a-mixin>
       <!-- this is the initial position of all hotspots/devices, so they are hidden behind the exit until the scene loads in load-scene.js-->
       <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -341 10.223"></a-mixin>
       <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 3.1 -2.2"></a-mixin>
@@ -103,7 +104,7 @@
       <a-entity id="intro-popup" mixin="intro" visible="true">
         <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 0 0">
         </a-entity>
-        <a-entity  id="easy-button" data-clickable event-set__enter="_event: mouseenter; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.290 -1.996 1.292" rotation="0 0 0" visible="true"  >
+        <a-entity  id="easy-button" data-clickable event-set__enter="_event: click; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.290 -1.996 1.292" rotation="0 0 0" visible="true"  >
         </a-entity>
       </a-entity>
 
@@ -158,8 +159,7 @@
   <a-sphere id="bird-hotspot" data-clickable
     sts-hotspot="show: #bird-popup; sound: #bird-audio; audioOnHotspot: true"
     mixin="see-through" position="47.468 -340.523 10.223"
-    rotation="110 0 0"
-    scale="1 1 1">
+    rotation="110 0 0">
   </a-sphere>
 
   <a-sphere id="light-hotspot" data-clickable
