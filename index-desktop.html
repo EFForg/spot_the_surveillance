@@ -93,9 +93,9 @@
       <!-- this is the initial position of all hotspots/devices, so they are hidden behind the exit until the scene loads in load-scene.js-->
       <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -341 10.223"></a-mixin>
       <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 3.1 -2.2"></a-mixin>
-      <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" ></a-mixin>
+      <a-mixin id="close" event-set__enter="_event: click; _target: #alpr; visible: false" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" ></a-mixin>
 
-      <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
+      <a-mixin id="exit-logo" event-set__enter="_event: click; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
       <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
 
 
@@ -247,7 +247,7 @@
   <a-entity id="exit-sts" data-clickable mixin="exit-logo"
     sts-hotspot="show: #exit-popup; sound: #exit-audio">
   </a-entity>
-  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true"  >
+  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: click; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true"  >
   </a-entity>
   <a-entity id="magic-carpet" mixin="exit">
   </a-entity>
