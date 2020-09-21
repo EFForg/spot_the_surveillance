@@ -94,17 +94,14 @@ AFRAME.registerComponent('listener', {
 						var reopenEl = document.createElement('a-entity');
 						reopenEl.setAttribute('geometry', {primitive: 'plane', height:0.75, width: 2.1, });
 						reopenEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#reopen'});
+						reopenEl.setAttribute('data-clickable','');
 						// for desktop/mobile
 						if ( !AFRAME.utils.device.checkHeadsetConnected() ){
-							reopenEl.setAttribute('position', {x: -4.436, y: 4.251, z: 4.1 })
-						}
-						else {
-							reopenEl.setAttribute('position', {x: -5.166, y: 4.251, z: 3.559 })
+							reopenEl.setAttribute('position', {x:	-2.272, y: 3.397, z: 4.1 })
 						}
 
-						reopenEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
+						reopenEl.setAttribute('rotation', {x: 0, y: 150, z: 0});
 						reopenEl.setAttribute('visible', false);
-						reopenEl.setAttribute('data-clickable','');
 						reopenEl.setAttribute('reopen-cards','');
 						reopenEl.id = "reopen-cards";
 						congratsAll.appendChild(reopenEl);
@@ -119,7 +116,7 @@ AFRAME.registerComponent('listener', {
 								playing = true;
 							}
 						});
-						congratsEl.addEventListener('mouseleave', () => {
+						congratsEl.addEventListener('click', () => {
 							congratsAudio.pause();
 							playing = false;
 
