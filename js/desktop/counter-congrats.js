@@ -47,7 +47,7 @@ AFRAME.registerComponent('listener', {
 						congratsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 1, transparent: 'true', visible: 'true', src: '#congrats-card'});
 						congratsEl.setAttribute('visible', 'true');
 						if ( /* desktop */ !AFRAME.utils.device.checkHeadsetConnected() ) {
-							congratsEl.setAttribute('position', {x: -1.807, y: 1.187, z: 4.678 });
+							congratsEl.setAttribute('position', {x: 0, y: 1.187, z: 4.678 });
 							congratsEl.setAttribute('rotation', {x: 0, y: 150, z: 0});
 						}
 						else {
@@ -83,7 +83,7 @@ AFRAME.registerComponent('listener', {
 
 						// create close button
 						var closeEl = document.createElement('a-entity');
-						closeEl.setAttribute('position', {x:1.378, y: 1.496, z: 0.209 });
+						closeEl.setAttribute('position', { x:2.239, y: 2.337, z: 0.168 });
 						closeEl.setAttribute('data-clickable','');
 						closeEl.setAttribute('mixin','close');
 						closeEl.setAttribute('congrats-close','');
@@ -150,7 +150,7 @@ AFRAME.registerComponent('listener', {
 					}
 					confetti();
 				}
-				setTimeout(tada, 5000);
+				setTimeout(tada, 4000);
 			}
 		});
 	}
