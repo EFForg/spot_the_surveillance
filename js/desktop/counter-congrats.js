@@ -31,8 +31,9 @@ AFRAME.registerComponent('listener', {
 			// Score up.
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
-			var newScore = score + ' / 7'
-			scoreBoard.setAttribute('text', 'value',  newScore);
+			var newScore = score + ' / 7';
+			scoreBoard.textContent += newScore;
+			//scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
 				function tada() {
 					var congratsEl = document.createElement('a-sound');
@@ -50,10 +51,6 @@ AFRAME.registerComponent('listener', {
 							congratsEl.setAttribute('position', {x: 0, y: 1.187, z: 4.678 });
 							congratsEl.setAttribute('rotation', {x: 0, y: 150, z: 0});
 						}
-						else {
-							congratsEl.setAttribute('position', {x: -5.98, y: 2.020, z: 4.307 });
-							congratsEl.setAttribute('rotation', {x: 0, y: 110, z: 0});
-						}
 						congratsEl.setAttribute('data-clickable','');
 						congratsEl.setAttribute('sound','src: #congrats-audio; volume: 5; loop: false; autoplay: false');
 						congratsEl.id = "congrats-popup";
@@ -64,7 +61,7 @@ AFRAME.registerComponent('listener', {
 						slsEl.setAttribute('geometry', {primitive: 'plane', height:0.5, width: 2.1, });
 						slsEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 0, transparent: 'true', visible: 'false'});
 						slsEl.setAttribute('visible', 'false');
-						slsEl.setAttribute('position', {x:0, y: -0.658, z: 0.399 });
+						slsEl.setAttribute('position', { x:0.145, y: -0.950, z: 0.315 });
 						slsEl.setAttribute('data-clickable','');
 						slsEl.setAttribute('exitlink',"href:https://www.eff.org/issues/street-level-surveillance")
 						slsEl.id = "sls1";
@@ -75,7 +72,7 @@ AFRAME.registerComponent('listener', {
 						replayEl.setAttribute('geometry', {primitive: 'plane', height:0.35, width: 1.2, });
 						replayEl.setAttribute('material', {shader: 'flat', side: 'front', opacity: 0, transparent: 'true', visible: 'false'});
 						replayEl.setAttribute('visible', 'false');
-						replayEl.setAttribute('position', {x:-0.010, y: -1.525, z: 0.074 });
+						replayEl.setAttribute('position', { x:-0.010, y: -2.296, z: 0.074 });
 						replayEl.setAttribute('data-clickable','');
 						replayEl.setAttribute('replay','');
 						replayEl.id = "replay1";
@@ -97,7 +94,7 @@ AFRAME.registerComponent('listener', {
 						reopenEl.setAttribute('data-clickable','');
 						// for desktop/mobile
 						if ( !AFRAME.utils.device.checkHeadsetConnected() ){
-							reopenEl.setAttribute('position', {x:	-2.272, y: 3.397, z: 4.1 })
+							reopenEl.setAttribute('position', {x:	-4.016, y: 3.397, z: 2.378 })
 						}
 
 						reopenEl.setAttribute('rotation', {x: 0, y: 150, z: 0});

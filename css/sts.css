@@ -16,3 +16,15 @@ h1 {
   width: 100%;
   z-index: 999;
 }
+
+#count-display {
+  background-image: url("/assets/images/binos-in-box.png");
+  background-repeat: no-repeat;
+  color: white;
+  display: block;
+  height: 6rem;
+  opacity: 0.8;
+  position: absolute;
+  width: 20rem;
+  z-index: 10;
+}

@@ -24,6 +24,8 @@
   <div id="get-ready">
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
+  <div id="count-display">
+  </div>
     <a-scene loadscene>
       <a-entity id="camera" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4" raycaster="objects: [data-clickable]">
       </a-entity>
@@ -111,8 +113,8 @@
 <!-- everything besides the intro card, camera and counter -->
 
 <a-entity id="sts-live" visible="false">
-  <a-entity mixin="counter" id="count-display">
-  </a-entity>
+  <!--a-entity mixin="counter" id="count-display">
+  </a-entity-->
   <!-- all the surveillance objects  -->
   <a-entity listener id="surveillance-objects">
 
