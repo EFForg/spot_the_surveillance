@@ -73,11 +73,11 @@
       <!-- popups -->
       <!-- initial position for all popup is below exit/magic carpet. They are moved after user clicks Get Started for headsets/desktop, and after the scene loads for mobile/cardboard -->
       <a-mixin id="init-position" position="48 -341 11"></a-mixin>
-      <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -60 0"></a-mixin>
+      <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -70 0"></a-mixin>
       <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 12; height: 12;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="5 -150 0"></a-mixin>
       <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 0 0"></a-mixin>
       <a-mixin id="bodycam" geometry="primitive: plane; width: 6.5; height: 6.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 0 0"></a-mixin>
-      <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="0 -40 0"></a-mixin>
+      <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="10 -40 0"></a-mixin>
       <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -100 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="0 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 4; width: 6; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
@@ -183,7 +183,7 @@
   </a-entity>
 
   <a-entity id="bodycam-popup" mixin="bodycam init-position" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="3.317 2.396 1.2"></a-entity>
   </a-entity>
 
   <a-entity id="camera-popup" mixin="ptz-camera init-position" data-clickable visible="false">
