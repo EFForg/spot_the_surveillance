@@ -22,7 +22,7 @@ h1 {
   background-repeat: no-repeat;
   background-size: contain;
   color: white;
-  display: block;
+  display: none;
   font-family: sans-serif;
   font-size: 0.9rem;
   height: 1.5rem;

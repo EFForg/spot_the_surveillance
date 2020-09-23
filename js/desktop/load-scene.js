@@ -65,6 +65,10 @@ AFRAME.registerComponent('loadscene', {
       // reposition intro card & easy button below exit
       introCard.setAttribute('position', { x: 48, y: -341, z: 11 });
       easyButton.setAttribute('position', { x: 48, y: -341, z: 11 });
+
+      // show count-display div
+      var score = document.getElementById("count-display");
+      score.setAttribute("style", "display: block");
     }
 
     var containerEl = document.getElementById('sts-live');
