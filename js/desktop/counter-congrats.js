@@ -32,7 +32,7 @@ AFRAME.registerComponent('listener', {
 			var scoreBoard = document.querySelector('#count-display');
 			score++;
 			var newScore = score + ' / 7';
-			scoreBoard.textContent += newScore;
+			scoreBoard.textContent = newScore;
 			//scoreBoard.setAttribute('text', 'value',  newScore);
 			if (score == 7) {
 				function tada() {

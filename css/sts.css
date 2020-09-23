@@ -20,11 +20,18 @@ h1 {
 #count-display {
   background-image: url("/assets/images/binos-in-box.png");
   background-repeat: no-repeat;
+  background-size: contain;
   color: white;
   display: block;
-  height: 6rem;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  height: 1.5rem;
+  left: 2rem;
+  padding-left: 3rem;
+  padding-top: 0.7rem;
   opacity: 0.8;
+  top: 2rem;
   position: absolute;
-  width: 20rem;
+  width: 10rem;
   z-index: 10;
 }
