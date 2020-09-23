@@ -10,7 +10,6 @@ AFRAME.registerComponent('reopen-cards', {
 		var shotSpotter = document.querySelector('#shot-spotter-popup');
 		var drone = document.querySelector('#drone-popup');;
     el.addEventListener('click', function () {
-          console.log('reopen cards');
         alpr.setAttribute('visible', true);
         alprMobile.setAttribute('visible', true);
         biometric.setAttribute('visible', true);
