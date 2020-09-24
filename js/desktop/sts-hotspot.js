@@ -30,11 +30,15 @@ AFRAME.registerComponent('sts-hotspot', {
   hotspotMouseEnter: function () {
     var hotspotEl = this.el;
     var popupEl = this.data.show;
-
     popupEl.setAttribute('visible', true);
-    hotspotEl.setAttribute('geometry', { primitive: 'plane', width: 5, height: 5 });
-    hotspotEl.setAttribute('material', { opacity: 1 });
-    hotspotEl.setAttribute('mixin', 'spotted' );
+    if (hotspotEl.hasAttribute('mixin', 'see-through')) { //false positive
+    } else {
+        hotspotEl.setAttribute('geometry', { primitive: 'plane', width: 5, height: 5 });
+        hotspotEl.setAttribute('mixin', 'spotted' );
+        hotspotEl.setAttribute('material', { opacity: 1 });
+    }
+
+
     if (this.data.audioOnHotspot) {
       hotspotEl.setAttribute('sts-hotspot', { playing: true, restart: true });
     }
