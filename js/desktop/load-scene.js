@@ -52,15 +52,15 @@ AFRAME.registerComponent('loadscene', {
       exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
 
       // move popups to their correct positions from beneath the "magic carpet (exit)"
-      alprPop.setAttribute('position', { x: 4.977, y: 1.361, z: -0.33 });
-      alprMobilePop.setAttribute('position', { x: -2.289, y: 3.727, z: 13 });
-      biometricPop.setAttribute('position', { x: 1.055, y: 0.896, z: -3.576 });
-      bodycamPop.setAttribute('position', { x: -6.838, y: 0.896, z: -4.68 });
-      cameraPop.setAttribute('position', { x: 4.253, y: 4.747, z: -4.745 });
-      shotspotterPop.setAttribute('position', { x: 4.137, y: 1.052, z: 4.522 });
-      dronePop.setAttribute('position', { x: -5.758, y: 2.911, z: 3.993 });
-      birdPop.setAttribute('position', { x: 4.147, y: 6.494, z: 7.412 });
-      lightPop.setAttribute('position', { x: -7.945, y: 1.544, z: -0.366 });
+      alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
+      alprMobilePop.setAttribute('position', { x: 5.197, y: 9.945, z: 7.8 });
+      biometricPop.setAttribute('position', { x: -8.806, y: 0.993, z: -0.661 });
+      bodycamPop.setAttribute('position', { x: -7.445, y: 0.737, z: -5.574 });
+      cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
+      shotspotterPop.setAttribute('position', { x: 3.719, y: 0.729, z: 3.119 });
+      dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 6 });
+      birdPop.setAttribute('position', { x: 2, y: 12, z: 13 });
+      lightPop.setAttribute('position', { x: -7.945, y: 5.156, z: 0.389 });
 
       // reposition intro card & easy button below exit
       introCard.setAttribute('position', { x: 48, y: -341, z: 11 });
