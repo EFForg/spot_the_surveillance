@@ -8,7 +8,8 @@ AFRAME.registerComponent('reopen-cards', {
 		var bodyCam = document.querySelector('#bodycam-popup');
 		var camera = document.querySelector('#camera-popup');
 		var shotSpotter = document.querySelector('#shot-spotter-popup');
-		var drone = document.querySelector('#drone-popup');;
+		var drone = document.querySelector('#drone-popup');
+    
     el.addEventListener('mouseenter', function () {
         alpr.setAttribute('visible', true);
         alprMobile.setAttribute('visible', true);
