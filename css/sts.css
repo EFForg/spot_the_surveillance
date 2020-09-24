@@ -36,3 +36,7 @@ h1 {
   width: 10rem;
   z-index: 10;
 }
+
+#desktop .a-enter-vr-button {
+  display: none;
+}
