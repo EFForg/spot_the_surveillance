@@ -81,7 +81,7 @@
       <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -120 0"></a-mixin>
       <a-mixin id="drone" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="0 140 0"></a-mixin>
       <a-mixin id="false-positive" geometry="primitive: plane;  height: 4; width: 6; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
-      <a-mixin id="intro" position="-0.868 1.674 -4.041" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 0 0"></a-mixin>
+      <a-mixin id="intro" position="0.141 1.674 -4.041" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 0 0"></a-mixin>
 
       <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" ></a-mixin>
       <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" ></a-mixin>
@@ -105,7 +105,7 @@
       <a-entity id="intro-popup" mixin="intro" visible="true">
         <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 0 0">
         </a-entity>
-        <a-entity  id="easy-button" data-clickable event-set__enter="_event: click; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.290 -1.996 1.292" rotation="0 0 0" visible="true"  >
+        <a-entity  id="easy-button" data-clickable event-set__enter="_event: click; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="-0.054 -1.996 1.292" rotation="0 0 0" visible="true"  >
         </a-entity>
       </a-entity>
 
