@@ -8,7 +8,7 @@ AFRAME.registerComponent('congrats-close', {
     var confetti = document.querySelector('#confetti');
     var reopenCards = document.querySelector('#reopen-cards');
 
-    el.addEventListener('click', function () {
+    el.addEventListener('mouseenter', function () {
       var parent = el.closest('[visible]');
       parent.setAttribute('visible', false);
       congratsLeft.setAttribute('visible', false);
