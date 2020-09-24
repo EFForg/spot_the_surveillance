@@ -29,7 +29,7 @@ AFRAME.registerComponent('listener', {
 			e.target.dataset.wasClicked = true;
 
 			// Score up.
-			var scoreBoard = document.querySelector('#count-display');
+			var scoreBoard = document.querySelector('#score');
 			score++;
 			var newScore = score + ' / 7';
 			scoreBoard.textContent = newScore;

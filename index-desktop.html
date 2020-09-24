@@ -22,7 +22,7 @@
   <div id="get-ready">
     <h1>Get ready to Spot the Surveillance...</h1>
   </div>
-  <div id="count-display">
+  <div id="score">
     0 / 7
   </div>
     <a-scene loadscene>
@@ -109,14 +109,12 @@
         </a-entity>
       </a-entity>
 
-<!-- everything besides the intro card, camera and counter -->
+<!-- everything besides the intro card, camera  -->
 
 <a-entity id="sts-live" visible="false">
-  <!--a-entity mixin="counter" id="count-display">
-  </a-entity-->
+
   <!-- all the surveillance objects  -->
   <a-entity listener id="surveillance-objects">
-
     <a-sphere id="alpr-hotspot" data-clickable click-once
       sts-hotspot="show: #alpr-popup; sound: #alpr-audio"
       geometry="radius: 3;" material="opacity:0" rotation="50 0 0" >

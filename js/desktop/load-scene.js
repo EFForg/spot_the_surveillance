@@ -66,8 +66,8 @@ AFRAME.registerComponent('loadscene', {
       introCard.setAttribute('position', { x: 48, y: -341, z: 11 });
       easyButton.setAttribute('position', { x: 48, y: -341, z: 11 });
 
-      // show count-display div
-      var score = document.getElementById("count-display");
+      // show score div
+      var score = document.getElementById("score");
       score.setAttribute("style", "display: block");
     }
 
