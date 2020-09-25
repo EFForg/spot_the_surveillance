@@ -67,7 +67,7 @@ AFRAME.registerComponent('loadscene', {
       easyButton.setAttribute('position', { x: 48, y: -341, z: 11 });
 
       // show score div
-      var score = document.getElementById("score");
+      var score = document.getElementById("scorecard");
       score.setAttribute("style", "display: block");
     }
 
