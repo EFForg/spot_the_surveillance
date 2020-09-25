@@ -16,3 +16,39 @@ h1 {
   width: 100%;
   z-index: 999;
 }
+
+#score {
+  background-image: url("/assets/images/binos-in-box.png");
+  /* background-image: url("https://schatzkin.dev.eff.org/files/sts/assets/images/binos-in-box.png");*/
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  display: none;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  height: 6rem;
+  left: 2rem;
+  padding-left: 4.14rem;;
+  padding-top: 1rem;
+  opacity: 0.8;
+  top: 2rem;
+  position: absolute;
+  width: 15rem;
+  z-index: 10;
+}
+
+#score .numbers {
+    float: left;
+    padding-top: 4.4rem;
+}
+#score .text {
+  float: right;
+  font-size: 0.7rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  width: 8.5rem;
+}
+
+#desktop .a-enter-vr-button {
+  display: none;
+}

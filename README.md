@@ -3,7 +3,12 @@ Spot the Surveillance is an open-source educational VR tool to help people ident
 
 For users who find the experience challenging, there is an "easy mode" which is activated by a button the using can click before starting the experience. This mode has a visual indicator of where all the devices are so the user can identify them more easily.
 
-There is also a Spanish version available at index-es.html, Descubre La Vigilancia.
+There is a Spanish version available at index-es.html, Descubre La Vigilancia.
+
+There is a English desktop version available at index-desktop.html.
+
+## Version 1.3
+- Added desktop version, index-desktop.html. Desktop-only versions of javascript files are in js/desktop.
 
 ## Version 1.2.1
 - Added shot spotter/gunshot detection, removed one of the PTZ cameras
@@ -14,7 +19,7 @@ Changes since 1.1:
 - Spanish version
 - Upgrades to performance including smaller image and audio files to speed up loading time
 - more consistent audio playing
-- Several changes to improve the experience for low-vision users, including: 
+- Several changes to improve the experience for low-vision users, including:
     - making the "X" to close the information cards more visible
     - More clearly recognizable arrows to direct user to congratulations card
 - user can reopen all information cards at the end of the experience
