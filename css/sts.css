@@ -18,8 +18,7 @@ h1 {
 }
 
 #scorecard {
-  background-image: url("/assets/images/binos-in-box.png");
-  /* background-image: url("https://schatzkin.dev.eff.org/files/sts/assets/images/binos-in-box.png");*/
+  background-image: url("https://www.eff.org/spot-the-surveillance/assets/images/binos-in-box.png");
   background-repeat: no-repeat;
   background-size: contain;
   color: white;
