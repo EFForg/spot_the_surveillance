@@ -17,7 +17,7 @@ h1 {
   z-index: 999;
 }
 
-#score {
+#scorecard {
   background-image: url("/assets/images/binos-in-box.png");
   /* background-image: url("https://schatzkin.dev.eff.org/files/sts/assets/images/binos-in-box.png");*/
   background-repeat: no-repeat;
@@ -37,11 +37,11 @@ h1 {
   z-index: 10;
 }
 
-#score .numbers {
+#scorecard #score  {
     float: left;
     padding-top: 4.4rem;
 }
-#score .text {
+#scorecard .text {
   float: right;
   font-size: 0.7rem;
   padding-right: 1.5rem;
