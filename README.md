@@ -34,8 +34,11 @@ Spot the Surveillance uses Mozilla's Aframe web framework: https://aframe.io/
 
 ## How to run the experience
 To run locally:
-After cloning/downloading, you'll need to launch a web server. An easy way to do this is by running SimpleHTTPServer:
+After cloning/downloading, you'll need to launch a web server. An easy way to do this is by running SimpleHTTPServer (python 2):
 python -m SimpleHTTPServer 8000
+
+for python 3:
+python3 -m http.server 9000
 
 Then to see the site, naviate to: http://localhost:8000
 
