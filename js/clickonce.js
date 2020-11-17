@@ -7,9 +7,17 @@ AFRAME.registerComponent('click-once', {
     var clickHandler = function (e) {
       self.el.removeAttribute('data-clickable');
       // Remove event listener since no longer needed.enter
-      self.el.removeEventListener('mouseenter', clickHandler);
-    };
-    // Add event listener for click.
-    self.el.addEventListener('mouseenter', clickHandler);
-  }
-});
+      if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+        self.el.removeEventListener('mouseenter', clickHandler); }
+        else { // desktop
+          self.el.removeEventListener('click', clickHandler);
+        }
+      };
+      // Add event listener for click.
+      if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+        self.el.addEventListener('mouseenter', clickHandler); }
+        else { // desktop
+          self.el.addEventListener('click', clickHandler);
+        }
+      }
+    });

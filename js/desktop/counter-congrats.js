@@ -146,9 +146,9 @@ AFRAME.registerComponent('listener', {
 						congratsEl.appendChild(confettiEl);
 					}
 					confetti();
-				}
+				} // end tada
 				setTimeout(tada, 4000);
-			}
-		});
-	}
-});
+			} // end score == 7
+		});  // end click
+	}  // end init
+});  // end register

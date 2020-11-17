@@ -7,6 +7,9 @@ There is a Spanish version available at index-es.html, Descubre La Vigilancia.
 
 There is a English desktop version available at index-desktop.html.
 
+## Version 2.0
+- updated aframe version for English VR & desktop versions, consolidated js to single files again.
+
 ## Version 1.3
 - Added desktop version, index-desktop.html. Desktop-only versions of javascript files are in js/desktop.
 
@@ -34,8 +37,11 @@ Spot the Surveillance uses Mozilla's Aframe web framework: https://aframe.io/
 
 ## How to run the experience
 To run locally:
-After cloning/downloading, you'll need to launch a web server. An easy way to do this is by running SimpleHTTPServer:
+After cloning/downloading, you'll need to launch a web server. An easy way to do this is by running SimpleHTTPServer (python 2):
 python -m SimpleHTTPServer 8000
+
+for python 3:
+python3 -m http.server 9000
 
 Then to see the site, naviate to: http://localhost:8000
 

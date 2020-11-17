@@ -13,7 +13,13 @@ AFRAME.registerComponent('sts-hotspot', {
 
     popupEl.dataset.hotspot = this.el.id;
 
-    el.addEventListener('mouseenter', this.hotspotMouseEnter.bind(this));
+    if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+      el.addEventListener('mouseenter',
+      this.hotspotMouseEnter.bind(this));
+    } else { // desktop
+      el.addEventListener('click',
+      this.hotspotMouseEnter.bind(this));
+    }
 
     if (!this.data.audioOnHotspot) {
       popupEl.addEventListener('mouseenter', this.popupMouseEnter.bind(this));
@@ -30,10 +36,21 @@ AFRAME.registerComponent('sts-hotspot', {
   hotspotMouseEnter: function () {
     var hotspotEl = this.el;
     var popupEl = this.data.show;
-
     popupEl.setAttribute('visible', true);
-    if (this.data.audioOnHotspot) {
-      hotspotEl.setAttribute('sts-hotspot', { playing: true, restart: true });
+    if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+      if (this.data.audioOnHotspot) {
+        hotspotEl.setAttribute('sts-hotspot', { playing: true, restart: true });
+      }
+    } else { // desktop 
+      if (hotspotEl.hasAttribute('mixin', 'see-through')) { //false positive
+      } else {
+        hotspotEl.setAttribute('geometry', { primitive: 'plane', width: 5, height: 5 });
+        hotspotEl.setAttribute('mixin', 'spotted' );
+        hotspotEl.setAttribute('material', { opacity: 1 });
+      }
+      if (this.data.audioOnHotspot) {
+        hotspotEl.setAttribute('sts-hotspot', { playing: true, restart: true });
+      }
     }
   },
 

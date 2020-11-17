@@ -18,6 +18,26 @@ function showHotspots() {
   drone.setAttribute('visible', true);
 }
 
-hint.addEventListener("mouseenter", function(e) {
-  showHotspots();
-});
+function showHotspotsDesktop(el) {
+  el.setAttribute('visible', true);
+  el.setAttribute('geometry', { primitive: 'plane', width: 5, height: 5 });
+  el.setAttribute('material', { opacity: 1 });
+  el.setAttribute('mixin', 'spotted' );
+}
+
+if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+  hint.addEventListener("mouseenter", function(e) {
+    showHotspots();
+  });
+}
+else { // desktop
+  hint.addEventListener("click", function(e) {
+    showHotspotsDesktop(alpr);
+    showHotspotsDesktop(alprMobile);
+    showHotspotsDesktop(biometric);
+    showHotspotsDesktop(bodyCam);
+    showHotspotsDesktop(camera);
+    showHotspotsDesktop(drone);
+    showHotspotsDesktop(shotSpotter);
+  });
+}
