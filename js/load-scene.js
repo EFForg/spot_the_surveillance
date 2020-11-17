@@ -27,18 +27,43 @@ AFRAME.registerComponent('loadscene', {
       var dronePop = document.querySelector('#drone-popup');
       var birdPop = document.querySelector('#bird-popup');
       var lightPop = document.querySelector('#light-popup');
+      // following two variables are desktop only
+      var introCard = document.querySelector('#intro-popup');
+      var easyButton = document.querySelector('#easy-button');
       // move hotspots to their correct positions
-      //
-      // these hotspots need to be positioned differently
-      // for desktop/mobile, or they appear incorrectly positioned
+      // hotspots need to be positioned differently
+
       // for desktop/mobile
       if ( !AFRAME.utils.device.checkHeadsetConnected() ){
-        alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -7.485 });
-        alprMobileHot.setAttribute('position', { x: 3.622, y: 2.229, z: 12.881 });
-        bodycamHot.setAttribute('position', { x: -9.716, y: -1.166, z: -16.629 });
-        cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -35.322 });
-        shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 21.233 });
-        droneHot.setAttribute('position', { x: -3.999, y: 30.295, z: 28.948 });
+        alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -10.9 });
+        alprMobileHot.setAttribute('position', { x: 5.1, y: 1.5, z: 12.6 });
+        bodycamHot.setAttribute('position', { x: -7.927, y: -1.304, z: -16.629 });
+        cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -38.207 });
+        shotspotterHot.setAttribute('position', { x: 67.146, y: 33.105, z: 18.38 });
+        droneHot.setAttribute('position', { x: -4.764, y: 33.204, z: 28.948 });
+        biometricHot.setAttribute('position', { x: -14.129, y: -9.634, z: -25.215 });
+        birdHot.setAttribute('position', { x: 9.039, y: 42.5, z: 17.084 });
+        lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -9.666 });
+        attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
+        exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
+        // move popups to their correct positions from beneath the "magic carpet (exit)"
+        alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
+        alprMobilePop.setAttribute('position', { x: 5.197, y: 9.945, z: 7.8 });
+        biometricPop.setAttribute('position', { x: -8.806, y: 0.993, z: -0.661 });
+        bodycamPop.setAttribute('position', { x: -7.445, y: 0.737, z: -5.574 });
+        cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
+        shotspotterPop.setAttribute('position', { x: 3.719, y: 0.729, z: 3.119 });
+        dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 6 });
+        birdPop.setAttribute('position', { x: 2, y: 12, z: 13 });
+        lightPop.setAttribute('position', { x: -7.945, y: 5.156, z: 0.389 });
+
+        // reposition intro card & easy button below exit
+        introCard.setAttribute('position', { x: 48, y: -341, z: 11 });
+        easyButton.setAttribute('position', { x: 48, y: -341, z: 11 });
+        // show score div
+        var score = document.getElementById("scorecard");
+        score.setAttribute("style", "display: block");
+
         // hotspots positions for headset/cardboard
       } else {
         alprHot.setAttribute('position', { x: 10.379, y: 26.918, z: -11.27 });
@@ -47,24 +72,23 @@ AFRAME.registerComponent('loadscene', {
         cameraHot.setAttribute('position', { x: 23.244, y: 58.391, z: -39.778 });
         shotspotterHot.setAttribute('position', { x: 68, y: 33.092, z: 18.444 });
         droneHot.setAttribute('position', { x: -3.999, y: 33.763, z: 28.948 });
-      }
-      // these hotspots have the same position regardless of device
-      biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
-      birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
-      lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
-      attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
-      exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
+        biometricHot.setAttribute('position', { x: -14.982, y: -9.975, z: -25.215 });
+        birdHot.setAttribute('position', { x: 9.039, y: 40, z: 17.084 });
+        lightHot.setAttribute('position', { x: -19.031, y: 9.249, z: -8.468 });
+        attribHot.setAttribute('position', { x: 1.821, y: -12.750, z: -4.727 });
+        exitHot.setAttribute('position', { x: 8.0, y: -40.524, z: 2.747 });
 
-      // move popups to their correct positions from beneath the "magic carpet (exit)"
-      alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
-      alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
-      biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
-      bodycamPop.setAttribute('position', { x: -7.275, y: 0.992, z: -4.693 });
-      cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
-      shotspotterPop.setAttribute('position', { x: 7.087, y: 1.287, z: 3.056 });
-      dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
-      birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });
-      lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
+        // move popups to their correct positions from beneath the "magic carpet (exit)"
+        alprPop.setAttribute('position', { x: 6.098, y: 3.491, z: -1.681 });
+        alprMobilePop.setAttribute('position', { x: 4.076, y: 5.453, z: 6.580 });
+        biometricPop.setAttribute('position', { x: -8.806, y: 0.992, z: -0.1 });
+        bodycamPop.setAttribute('position', { x: -7.275, y: 0.992, z: -4.693 });
+        cameraPop.setAttribute('position', { x: 3.300, y: 2.988, z: -8.154 });
+        shotspotterPop.setAttribute('position', { x: 7.087, y: 1.287, z: 3.056 });
+        dronePop.setAttribute('position', { x: -4.668, y: 3.694, z: 10.072 });
+        birdPop.setAttribute('position', { x: 0.5, y: 6.8, z: 10 });
+        lightPop.setAttribute('position', { x: -3.026, y: 4.122, z: -0.366 });
+      }
     }
 
     var containerEl = document.getElementById('sts-live');

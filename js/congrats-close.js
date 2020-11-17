@@ -8,15 +8,29 @@ AFRAME.registerComponent('congrats-close', {
     var confetti = document.querySelector('#confetti');
     var reopenCards = document.querySelector('#reopen-cards');
 
-    el.addEventListener('mouseenter', function () {
-      var parent = el.closest('[visible]');
-      parent.setAttribute('visible', false);
-      congratsLeft.setAttribute('visible', false);
-      congratsRight1.setAttribute('visible', false);
-      congratsRight2.setAttribute('visible', false);
-      confetti.setAttribute('visible', false);
-      reopenCards.setAttribute('visible', true);
-      conAudio.src = "";  // end audio
-    });
+    if ( AFRAME.utils.device.checkHeadsetConnected() ) { // vr
+      el.addEventListener('mouseenter', function () {
+        var parent = el.closest('[visible]');
+        parent.setAttribute('visible', false);
+        congratsLeft.setAttribute('visible', false);
+        congratsRight1.setAttribute('visible', false);
+        congratsRight2.setAttribute('visible', false);
+        confetti.setAttribute('visible', false);
+        reopenCards.setAttribute('visible', true);
+        conAudio.src = "";  // end audio
+      });
+    }
+    else { // desktop
+      el.addEventListener('click', function () {
+        var parent = el.closest('[visible]');
+        parent.setAttribute('visible', false);
+        congratsLeft.setAttribute('visible', false);
+        congratsRight1.setAttribute('visible', false);
+        congratsRight2.setAttribute('visible', false);
+        confetti.setAttribute('visible', false);
+        reopenCards.setAttribute('visible', true);
+        conAudio.src = "";  // end audio
+      });
+    }
   }
 });
