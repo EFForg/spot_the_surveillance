@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <title>Spot the Surveillance / Descubre La Vigilancia</title>
+  <title>Descubre La Vigilancia</title>
   <meta name="description" content="Descubre la vigilancia es una experiencia de realidad virtual (RV) que enseña a la gente a identificar las diversas tecnologías de espionaje que la policía puede desplegar en las comunidades." />
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="css/sts.css">
@@ -170,43 +170,43 @@
 
   <!-- all the popups -->
   <a-entity id="alpr-popup" mixin="alpr init-position" data-clickable visible="false">
-      <a-entity mixin="close" sts-popup-close position="2.025 2.087 0.075"></a-entity>
+      <a-entity mixin="close" data-clickable sts-popup-close position="2.025 2.087 0.075"></a-entity>
   </a-entity>
 
   <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.0 0.8 1.6" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.0 0.8 1.6" ></a-entity>
   </a-entity>
 
   <a-entity id="biometric-popup" mixin="biometric init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
   </a-entity>
 
   <a-entity id="bodycam-popup" mixin="bodycam init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
   </a-entity>
 
-  <a-entity id="camera-popup" mixin="camera init-posi tion" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="3.1 2.9 1.5"></a-entity>
+  <a-entity id="camera-popup" mixin="ptz-camera init-posi tion" data-clickable visible="false">
+    <a-entity mixin="close" data-clickable sts-popup-close position="3.1 2.9 1.5"></a-entity>
   </a-entity>
 
   <a-entity id="shot-spotter-popup" mixin="shot-spotter init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.25 1.5 1.2" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.25 1.5 1.2" ></a-entity>
   </a-entity>
 
   <a-entity id="drone-popup" mixin="drone init-position" data-clickable visible="false">
-    <a-entity mixin="close" sts-popup-close position="2.12 2.18 1.1"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.12 2.18 1.1"></a-entity>
   </a-entity>
 
   <!-- false positives -->
   <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"
     text="color: white; align: center; value: Buen intento, pero solo es un pajaro. ¡Sigue buscando!">
-    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
+    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
     </a-entity>
   </a-entity>
 
   <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="40 60 0" visible="false"
     text="color: white; align: center; value: Buen intento, pero solo es un punto de luz. ¡Sigue buscando!">
-    <a-entity mixin="close" sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
+    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
     </a-entity>
   </a-entity>
 
