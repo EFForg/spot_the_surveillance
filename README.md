@@ -7,6 +7,9 @@ There is a Spanish version available at index-es.html, Descubre La Vigilancia.
 
 There is a English desktop version available at index-desktop.html.
 
+## Version 2.1
+- updated Spanish VR version, created Spanish desktop version.
+
 ## Version 2.0
 - updated aframe version for English VR & desktop versions, consolidated js to single files again.
 
