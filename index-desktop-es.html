@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-  <title>Descubre La Vigilancia</title>
+  <title>Descubre la Vigilancia</title>
   <meta name="description" content="Descubre la vigilancia es una experiencia de realidad virtual (RV) que enseña a la gente a identificar las diversas tecnologías de espionaje que la policía puede desplegar en las comunidades." />
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" href="css/sts.css">
@@ -18,11 +18,18 @@
   <script src="js/reopen-cards.js"></script>
 
 </head>
-<body>
+<body id="desktop">
   <div id="get-ready">
-    <h1>Prepárate para Descubre la Vigilancia...</h1>
+    <h1>Prepárate para Descubrir la Vigilancia...</h1>
+  </div>
+  <div id="scorecard">
+    <div id="score">0 / 7</div>
+    <div class="text">Sosten el botón del mouse y arrastra para moverte por la escena.
+    Haz clic en la tecnología de vigilancia para identificarla.</div>
   </div>
     <a-scene loadscene>
+      <a-entity id="camera" look-controls wasd-controls cursor="rayOrigin: mouse" position="0 2.2 4" raycaster="objects: [data-clickable]">
+      </a-entity>
       <a-assets timeout="10000">
         <!-- images -->
         <img id="alpr-card"  src="assets/images-es/alpr-card-es.png">
@@ -68,15 +75,15 @@
       <!-- popups -->
       <!-- initial position for all popup is below exit/magic carpet. They are moved after user clicks Get Started for headsets/desktop, and after the scene loads for mobile/cardboard -->
       <a-mixin id="init-position" position="48 -341 11"></a-mixin>
-      <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -60 0"></a-mixin>
-      <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 4.5; height: 4.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
-      <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 90 0"></a-mixin>
-      <a-mixin id="bodycam" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 60 0"></a-mixin>
-      <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="20 -40 0"></a-mixin>
-      <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -110 0"></a-mixin>
-      <a-mixin id="drone" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="10 140 0"></a-mixin>
-      <a-mixin id="false-positive" geometry="primitive: plane;  height: 2; width: 3; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
-      <a-mixin id="intro" position="3.3 4.0 -5.991" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 -20 0"></a-mixin>
+      <a-mixin id="alpr" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-card"  rotation="10 -70 0"></a-mixin>
+      <a-mixin id="alpr-mobile" geometry="primitive: plane; width: 12; height: 12;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#alpr-mobile-card" rotation="20 -150 0"></a-mixin>
+      <a-mixin id="biometric" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#biometric-card" rotation="0 70 0"></a-mixin>
+      <a-mixin id="bodycam" geometry="primitive: plane; width: 6.5; height: 6.5;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#bodycam-card" rotation="0 30 0"></a-mixin>
+      <a-mixin id="ptz-camera" geometry="primitive: plane; width: 7; height: 7;" material="shader: flat; side: front; opacity: 1; transparent: true; src:#camera-card" rotation="0 -20 0"></a-mixin>
+      <a-mixin id="shot-spotter" geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#shot-spotter-card" rotation="0 -120 0"></a-mixin>
+      <a-mixin id="drone" geometry="primitive: plane; width: 7; height: 7; " material="shader: flat; side: front; opacity: 1; transparent: true;src:#drone-card" rotation="0 180 0"></a-mixin>
+      <a-mixin id="false-positive" geometry="primitive: plane;  height: 4; width: 6; " material="color: black; shader: flat; side: front; opacity: 0.9; transparent: true;"></a-mixin>
+      <a-mixin id="intro" position="0 1.674 -4.041" geometry="primitive: plane; width: 5; height: 5;" material="shader: flat; side: front; opacity: 1; transparent: true; src: #intro-card" rotation="0 0 0"></a-mixin>
 
       <a-mixin id="attribution-text"  position="4.752 -4.470 -3.647" geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#attribution-card"  rotation="-50 -50 40" visible="false" ></a-mixin>
       <a-mixin id="exit-text"  geometry="primitive: plane; width: 6; height: 6; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#exit-card"  position="-2.472 -4.470 -3.647" rotation="-50 50 -40" visible="false" ></a-mixin>
@@ -84,82 +91,76 @@
       <a-mixin id="arrow"  geometry="primitive: plane; width: 2; height: 2; " material="shader: flat; side: front; opacity: 1; transparent: true; src:#right-arrow"  position="0 -5 -2" visible="false" ></a-mixin>
 
       <!-- misc mixins -->
-      <a-mixin id="see-through" material="color: white; transparent: true; opacity: 0;" scale="3 3 1"></a-mixin>
+      <a-mixin id="see-through"
+      material="color: white; transparent: true; opacity: 0;" scale="1 1 1"></a-mixin>
       <!-- this is the initial position of all hotspots/devices, so they are hidden behind the exit until the scene loads in load-scene.js-->
       <a-mixin id="spotted"  geometry="primitive: plane; width: 5; height: 5; " material="shader: flat; side: front;  transparent: true; src:#found;" position="47.468 -341 10.223"></a-mixin>
-      <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 -0.85 -2.2"></a-mixin>
-      <a-mixin id="close" event-set__enter="_event: mouseenter; _target: #alpr; visible: false" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" ></a-mixin>
+      <a-mixin id="counter"  geometry="primitive: plane; width: 1.5; height: 0.5; " material="shader: flat; side: front;  transparent: true; src:#counter-bg;" text="align: center; color: white; width: 2; height: 1 ; xOffset: 0.15; value: 0 / 7" position="0 3.1 -2.2"></a-mixin>
+      <a-mixin id="close" event-set__enter="_event: click; _target: #alpr; visible: false" position="1.6 1.7 1.2" geometry="primitive: plane; width: 1; height: 1;" material="color: black; shader: flat; side: front; opacity: 0; transparent: true; visible: false;" ></a-mixin>
 
-      <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
+      <a-mixin id="exit-logo" event-set__enter="_event: click; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
       <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
 
-      <a-entity camera look-controls wasd-controls position="0 2.2 4" >
-        <a-entity id="cursor" cursor="fuse: true"
-          geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
-          material="color: white; shader: flat;" position="0 0 -3"
-          raycaster="objects: [data-clickable]">
-          <a-animation begin="click" easing="ease-in" attribute="scale"
-            fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
-          <a-animation begin="fusing" easing="ease-in" attribute="scale"
-            fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
-        </a-entity>
-        <a-entity mixin="counter" id="count-display"></a-entity>
-      </a-entity>
+
 
       <!-- intro -->
       <a-entity id="intro-popup" mixin="intro" visible="true">
-        <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 -20 0">
+        <a-entity id="get-started" mixin="close" data-clickable event-set__enter="_event: click; _target: #intro-popup; visible: false" geometry="primitive: plane; height: 1; width: 3" position="0.072 -1.707 0.905" rotation="0 0 0">
         </a-entity>
-        <a-entity  id="easy-button" data-clickable event-set__enter="_event: mouseenter; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0.528 -3.147 3.593" rotation="0 -20 0" visible="true"  >
+        <a-entity  id="easy-button" data-clickable event-set__enter="_event: click; _target: #easy-button; material.opacity: 1" geometry="primitive: plane; width: 1.875; height: 0.75;" material="shader: flat; side: front; opacity: 0.4; src: #easy-mode"  position="0 -1.996 1.292" rotation="0 0 0" visible="true"  >
         </a-entity>
       </a-entity>
 
-<!-- everything besides the intro card, camera and counter -->
+<!-- everything besides the intro card, camera  -->
 
 <a-entity id="sts-live" visible="false">
+
   <!-- all the surveillance objects  -->
   <a-entity listener id="surveillance-objects">
-
     <a-sphere id="alpr-hotspot" data-clickable click-once
       sts-hotspot="show: #alpr-popup; sound: #alpr-audio"
-      mixin="spotted" geometry="height:6; width:6;" rotation="50 0 0" visible="false">
+      geometry="radius: 3;" material="opacity:0" rotation="50 0 0" >
     </a-sphere>
 
     <a-sphere id="alpr-mobile-hotspot" data-clickable click-once
       sts-hotspot="show: #alpr-mobile-popup; sound: #alpr-mobile-audio"
-      mixin="spotted" geometry="height: 2.5; width: 3;" rotation="180 0 20" visible="false">
+      geometry="radius: 3;" material="opacity:0" rotation="180 0 20" >
     </a-sphere>
 
     <a-sphere id="biometric-hotspot" data-clickable click-once
       sts-hotspot="show: #biometric-popup; sound: #biometric-audio"
-      mixin="spotted" geometry="height: 7; width: 7;"  rotation="0 20 0" visible="false">
+       geometry="radius: 1;"  material="opacity:0" rotation="0 0 0" >
     </a-sphere>
 
     <a-sphere id="bodycam-hotspot" data-clickable click-once
-      sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio"
-      mixin="spotted" geometry="height: 4; width: 4"  visible="false">
+      sts-hotspot="show: #bodycam-popup; sound: #bodycam-audio;"
+      geometry="radius: 1"
+      material="opacity:0" >
     </a-sphere>
 
     <a-sphere id="camera-hotspot" data-clickable click-once
       sts-hotspot="show: #camera-popup; sound: #camera-audio"
-      mixin="spotted" geometry="height:12; width: 12;" rotation="40 0 0" visible="false">
+      geometry="radius: 4;"
+      material="opacity:0"
+      rotation="40 0 0">
     </a-sphere>
 
     <a-sphere id="shot-spotter-hotspot" data-clickable click-once
       sts-hotspot="show: #shot-spotter-popup; sound: #shot-spotter-audio"
-      mixin="spotted" geometry="height:4; width: 4;" rotation="180 70 0" scale="3 3 3" visible="false">
+       geometry="radius: 4;" material="opacity:0" rotation="180 70 0" scale="3 3 3" >
     </a-sphere>
 
     <a-sphere id="drone-hotspot" data-clickable click-once
       sts-hotspot="show: #drone-popup; sound: #drone-audio"
-      mixin="spotted" geometry="height:10; width: 10;" rotation="70 90 0" visible="false">
+      geometry="radius: 10;" material="opacity:0" rotation="70 90 0" >
     </a-sphere>
   </a-entity>
 
   <!-- false positives, initially position under the exit -->
   <a-sphere id="bird-hotspot" data-clickable
     sts-hotspot="show: #bird-popup; sound: #bird-audio; audioOnHotspot: true"
-    mixin="see-through" position="47.468 -340.523 10.223" rotation="110 0 0">
+    mixin="see-through" position="47.468 -340.523 10.223"
+    rotation="110 0 0">
   </a-sphere>
 
   <a-sphere id="light-hotspot" data-clickable
@@ -170,27 +171,27 @@
 
   <!-- all the popups -->
   <a-entity id="alpr-popup" mixin="alpr init-position" data-clickable visible="false">
-      <a-entity mixin="close" data-clickable sts-popup-close position="2.025 2.087 0.075"></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.025 2.087 0.075"></a-entity>
   </a-entity>
 
   <a-entity id="alpr-mobile-popup" mixin="alpr-mobile init-position" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close position="2.0 0.8 1.6" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="4.680 3.882 1.696" ></a-entity>
   </a-entity>
 
   <a-entity id="biometric-popup" mixin="biometric init-position" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.198 1.866 0.741"></a-entity>
   </a-entity>
 
   <a-entity id="bodycam-popup" mixin="bodycam init-position" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.558 2.499 1.2"></a-entity>
   </a-entity>
 
-  <a-entity id="camera-popup" mixin="ptz-camera init-posi tion" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close position="3.1 2.9 1.5"></a-entity>
+  <a-entity id="camera-popup" mixin="ptz-camera init-position" data-clickable visible="false">
+    <a-entity mixin="close" data-clickable sts-popup-close position="2.566 1.939 1.948"></a-entity>
   </a-entity>
 
   <a-entity id="shot-spotter-popup" mixin="shot-spotter init-position" data-clickable visible="false">
-    <a-entity mixin="close" data-clickable sts-popup-close position="2.25 1.5 1.2" ></a-entity>
+    <a-entity mixin="close" data-clickable sts-popup-close position="1.6 1.85 0.72" ></a-entity>
   </a-entity>
 
   <a-entity id="drone-popup" mixin="drone init-position" data-clickable visible="false">
@@ -198,15 +199,15 @@
   </a-entity>
 
   <!-- false positives -->
-  <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"
+  <a-entity id="bird-popup" mixin="false-positive init-position" data-clickable geometry="height: 3; width: 4.5;" rotation="30 200 0" visible="false"  scale="2 2 2"
     text="color: white; align: center; value: Buen intento, pero solo es un pajaro. ¡Sigue buscando!">
     <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 0.9;" text="align: center; width: 6; height: 6; value: X" position="1.526 0.804 0.394">
     </a-entity>
   </a-entity>
 
-  <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="40 60 0" visible="false"
+  <a-entity  id="light-popup" mixin="false-positive init-position" data-clickable rotation="0 60 0" visible="false"
     text="color: white; align: center; value: Buen intento, pero solo es un punto de luz. ¡Sigue buscando!">
-    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="0.940 0.632 0.365">
+    <a-entity mixin="close" data-clickable sts-popup-close geometry="height: 0.5; width: 0.5" material="visible: true; transparent: false; opacity: 1;" text="align: center; width: 3; height: 3; value: X" position="2.609 1.540 0.158">
     </a-entity>
   </a-entity>
 
@@ -247,7 +248,7 @@
   <a-entity id="exit-sts" data-clickable mixin="exit-logo"
     sts-hotspot="show: #exit-popup; sound: #exit-audio">
   </a-entity>
-  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: mouseenter; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true"  >
+  <a-entity  id="attribution-hotspot" data-clickable event-set__enter="_event: click; _target: #attribution-popup; visible: true" geometry="primitive: plane; width: 5; height: 1.2;" material="shader: flat; side: front; opacity: 1; src: #attribution-button"  position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true"  >
   </a-entity>
   <a-entity id="magic-carpet" mixin="exit">
   </a-entity>
