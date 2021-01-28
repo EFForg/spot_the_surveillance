@@ -3,6 +3,27 @@ AFRAME.registerComponent('loadscene', {
     // load all hotspots and popups so they are under the exit/magic carpet,
     // so they can't be accidentally clicked on before the user loads
     // the scene
+
+    // activate sound for iOS below. Creating an audio context and a dummy sound
+    var context;
+    window.addEventListener('load', init, false);
+    function init() {
+      try {
+        window.AudioContext = window.AudioContext||window.webkitAudioContext;
+        context = new AudioContext();
+      }
+      catch(e) {
+        alert('Web Audio API is not supported in this browser');
+      }
+
+      // create a dummy sound - and play it immediately in same 'thread'
+       var oscillator = context.createOscillator();
+       oscillator.frequency.value = 400;
+       oscillator.connect(context.destination);
+       oscillator.start(0);
+       oscillator.stop(0);  // start and stopping at 0 means the sound won't be heard
+  }
+
     function browserReposition() {
       // hotspots
       var alprHot = document.querySelector('#alpr-hotspot');
