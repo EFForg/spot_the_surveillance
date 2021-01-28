@@ -16,7 +16,7 @@
   <script src="js/replay.js"></script>
   <script src="js/congrats-close.js"></script>
   <script src="js/reopen-cards.js"></script>
-
+  <script src="js/toggle-in-roomscale.js"></script>
 </head>
 <body>
   <div id="get-ready">
@@ -93,7 +93,7 @@
       <a-mixin id="exit-logo" event-set__enter="_event: mouseenter; _target: #exit-popup; visible: true"  geometry="primitive: plane; width: 50; height: 15;" material="transparent: true; src:#eff-logo" position="47.468 -340.523 10.223" rotation="-90 0 0" visible="true" ></a-mixin>
       <a-mixin id="exit" geometry="primitive: sphere"  material="color: #ec1e1e" position="47.468 -340.523 10.223"  scale="300 1 300"></a-mixin>
 
-      <a-entity camera look-controls wasd-controls position="0 2.2 4" >
+      <a-entity camera look-controls wasd-controls position="0 2.2 4">
         <a-entity id="cursor" cursor="fuse: true"
           geometry="primitive: ring; radiusInner: 0.1; radiusOuter: 0.15;"
           material="color: white; shader: flat;" position="0 0 -3"
@@ -103,8 +103,10 @@
           <a-animation begin="fusing" easing="ease-in" attribute="scale"
             fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
         </a-entity>
-        <a-entity mixin="counter" id="count-display"></a-entity>
+        <a-entity hide-in-roomscale mixin="counter" class="count-display"></a-entity>
       </a-entity>
+
+      <a-entity visible="false" show-in-roomscale position="2.75 2.2 1" rotation="0 -20 0" mixin="counter" class="count-display"></a-entity>
 
       <!-- intro -->
       <a-entity id="intro-popup" mixin="intro" visible="true">
